@@ -1,16 +1,93 @@
-# Godot 4+ specific ignores
-.godot/
-.nomedia
+# ==============================
+# Godot
+# ==============================
 
-# Godot-specific ignores
+# Godot 4+
+.godot/
+
+# Godot 3.x
 .import/
+
+.nomedia
 export.cfg
 export_credentials.cfg
 
-# Imported translations (automatically generated from CSV files)
+# Imported translations
 *.translation
 
-# Mono-specific ignores
+
+# ==============================
+# Godot Mono / C#
+# ==============================
+
 .mono/
 data_*/
 mono_crash.*.json
+
+# .NET build output
+bin/
+obj/
+
+
+# ==============================
+# macOS
+# ==============================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+
+
+# ==============================
+# Windows
+# ==============================
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+
+# ==============================
+# IDE / Editor
+# ==============================
+
+.vs/
+.vscode/
+.idea/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+
+# ==============================
+# Temporary / Backup Files
+# ==============================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+~$*
+
+
+# ==============================
+# Logs
+# ==============================
+
+*.log
+logs/
