@@ -1,6 +1,6 @@
 extends Control
 
-@onready var back_button: Button = $CenterContainer/VBoxContainer/BackButton
+@onready var back_button: Button = $Content/Credits/BackButton
 
 
 func _ready() -> void:

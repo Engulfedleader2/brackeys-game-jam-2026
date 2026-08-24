@@ -19,26 +19,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Settngs" type="VBoxContainer" parent="Content" unique_id=712356935]
+[node name="Settings" type="VBoxContainer" parent="Content" unique_id=712356935]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="TitleLabel" type="Label" parent="Content/Settngs" unique_id=475478476]
+[node name="TitleLabel" type="Label" parent="Content/Settings" unique_id=475478476]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="MusicToggle" type="CheckButton" parent="Content/Settngs" unique_id=801173332]
+[node name="MusicToggle" type="CheckButton" parent="Content/Settings" unique_id=801173332]
 layout_mode = 2
 button_pressed = true
 text = "Music"
 
-[node name="SfxToggle" type="CheckButton" parent="Content/Settngs" unique_id=1334705724]
+[node name="SfxToggle" type="CheckButton" parent="Content/Settings" unique_id=1334705724]
 layout_mode = 2
 button_pressed = true
 text = "SFX"
 
-[node name="BackButton" type="Button" parent="Content/Settngs" unique_id=524169493]
+[node name="BackButton" type="Button" parent="Content/Settings" unique_id=524169493]
 layout_mode = 2
 text = "Back"

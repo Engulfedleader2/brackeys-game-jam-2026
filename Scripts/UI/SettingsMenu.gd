@@ -1,8 +1,8 @@
 extends Control
 
-@onready var music_toggle: CheckButton = $CenterContainer/VBoxContainer/MusicToggle
-@onready var sfx_toggle: CheckButton = $CenterContainer/VBoxContainer/SfxToggle
-@onready var back_button: Button = $CenterContainer/VBoxContainer/BackButton
+@onready var music_toggle: CheckButton = $Content/Settings/MusicToggle
+@onready var sfx_toggle: CheckButton = $Content/Settings/SfxToggle
+@onready var back_button: Button = $Content/Settings/BackButton
 
 
 func _ready() -> void:
