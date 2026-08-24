@@ -1,11 +1,14 @@
-extends Node
+extends Node2D
 
+var resource: CardResource
+var instance_id: int
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var color_rect: ColorRect = $FrontFace/ColorRect
+@onready var label: Label = $FrontFace/ColorRect/Label
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func setup(data: CardResource, id: int) -> void:
+	resource = data
+	instance_id = id
+	
+	label.text = str(data.value)
+	

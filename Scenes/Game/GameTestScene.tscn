@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://by0ku407tlifk"]
 
+[ext_resource type="Script" uid="uid://dylp1pxcycfxf" path="res://Scripts/Cards/Deck.gd" id="1_0p3ti"]
+
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
+
+[node name="Deck" type="Node" parent="." unique_id=1330886512]
+script = ExtResource("1_0p3ti")
+metadata/_custom_type_script = "uid://dylp1pxcycfxf"
