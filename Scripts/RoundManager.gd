@@ -1,11 +1,13 @@
 extends Node
 
+func start_round() -> void:
+	print("Start Round")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func play_card() -> void:
+	print("Play Card")
 
+func check_bust() -> void:
+	print("Check if player Busted")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func end_round() -> void:
+	print("End Round")

@@ -1,11 +1,13 @@
 extends Node
 
+func start_game() -> void:
+    print("Start Game")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func setup_players() -> void:
+    print("Setting up players")
 
+func check_game_over() -> void:
+    print("Checking if game is over")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func end_game() -> void:
+    print("Ending game")
