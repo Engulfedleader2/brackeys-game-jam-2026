@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://duspptw3ao2y1"]
 
-[node name="CreditsMenu" type="Node2D" unique_id=984082566]
+[ext_resource type="Script" uid="uid://dmgg17wu5q185" path="res://Scripts/UI/CreditsMenu.gd" id="1_creditsmenu"]
+
+[node name="CreditsMenu" type="Control" unique_id=1512167178]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_creditsmenu")
+
+[node name="Content" type="CenterContainer" parent="." unique_id=1988083685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" type="VBoxContainer" parent="Content" unique_id=506166870]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="Content/Credits" unique_id=60723834]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Kevin Pls Fix"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Content/Credits" unique_id=1575765574]
+layout_mode = 2
+text = "Back"

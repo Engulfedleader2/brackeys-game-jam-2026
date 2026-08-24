@@ -1,3 +1,46 @@
 [gd_scene format=3 uid="uid://ns3tax1l1h50"]
 
-[node name="MainMenu" type="Node2D" unique_id=441484130]
+[ext_resource type="Script" uid="uid://bg7ane45jgyg" path="res://Scripts/UI/MainMenu.gd" id="1_mainmenu"]
+
+[node name="MainMenu" type="Control" unique_id=60566485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mainmenu")
+
+[node name="Content" type="CenterContainer" parent="." unique_id=2112824971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content" unique_id=1765826044]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="Content/VBoxContainer" unique_id=1697831495]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Brackeys GameJam 2026"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="Content/VBoxContainer" unique_id=1802765974]
+layout_mode = 2
+text = "Start Game"
+
+[node name="SettingsButton" type="Button" parent="Content/VBoxContainer" unique_id=1484322745]
+layout_mode = 2
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="Content/VBoxContainer" unique_id=1661910033]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="Content/VBoxContainer" unique_id=1588392501]
+layout_mode = 2
+text = "Quit"

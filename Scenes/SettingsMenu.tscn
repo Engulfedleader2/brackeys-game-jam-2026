@@ -1,3 +1,44 @@
 [gd_scene format=3 uid="uid://b1ewhe8x1375k"]
 
-[node name="SettingsMenu" type="Node2D" unique_id=1074251377]
+[ext_resource type="Script" uid="uid://r6chphqnqs02" path="res://Scripts/UI/SettingsMenu.gd" id="1_settingsmenu"]
+
+[node name="SettingsMenu" type="Control" unique_id=2138145686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settingsmenu")
+
+[node name="Content" type="CenterContainer" parent="." unique_id=1837380921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Settngs" type="VBoxContainer" parent="Content" unique_id=712356935]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="Content/Settngs" unique_id=475478476]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MusicToggle" type="CheckButton" parent="Content/Settngs" unique_id=801173332]
+layout_mode = 2
+button_pressed = true
+text = "Music"
+
+[node name="SfxToggle" type="CheckButton" parent="Content/Settngs" unique_id=1334705724]
+layout_mode = 2
+button_pressed = true
+text = "SFX"
+
+[node name="BackButton" type="Button" parent="Content/Settngs" unique_id=524169493]
+layout_mode = 2
+text = "Back"
