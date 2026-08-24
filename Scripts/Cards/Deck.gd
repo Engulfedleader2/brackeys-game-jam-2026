@@ -6,16 +6,21 @@ const CARD_RESOURCES_PATH := "res://Scripts/Cards/CardResources/"
 var cards: Array[CardInstance] = [] # entire deck of cards, loaded in once during game initialization
 var draw_pile: Array[CardInstance] = [] # deck of cards per round, reset each round
 var _next_instance_id := 0
+@onready var test_player_hand: Hand = $"../Hand"
 
 
 func _ready() -> void:
 	_load_cards()
 	setup_round()
-	var hands := deal(2, 2)
+	
+	# debug code, remove once we have hands
+	var hands := deal(2, 6)
 	for i in hands.size():
 			print("Player %d hand size: %d" % [i, hands[i].size()])
 			for instance in hands[i]:
 					print("  - id %d, value %d" % [instance.instance_id, instance.resource.value])
+	
+	test_player_hand.set_cards(hands[0])
 
 
 func _load_cards() -> void:
@@ -63,3 +68,7 @@ func deal(number_of_players: int, hand_size: int) -> Array[Array]:
 
 	print("[Deck] Finished dealing cards")
 	return hands
+
+
+func get_card_count() -> int:
+	return draw_pile.size()
