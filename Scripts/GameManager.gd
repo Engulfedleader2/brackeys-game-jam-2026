@@ -3,8 +3,7 @@ extends Node
 @export var round_manager: Node
 @export var turn_manager: Node
 var total_game_rounds = 3
-var players = ["Player 1", "Player 2", "Player 3", "Player 4"]
-var current_player_index: int = 0
+
 # Will run at the start of scene.
 func _ready() -> void:
 	start_game()

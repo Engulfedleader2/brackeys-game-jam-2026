@@ -10,12 +10,14 @@ func start_turn() -> void:
 func end_turn() -> void:
 	print("End Turn")
 
+# Function to move to the next player
 func next_player() -> void:
 	print("Next Player")
 	current_player_index += 1
 	if current_player_index >= temp_players.size():
 		current_player_index = 0
 
+# Function to get the current player
 func get_current_player() -> String:
 		print("Get Current Player")
 		return temp_players[current_player_index]
