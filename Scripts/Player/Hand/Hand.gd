@@ -2,6 +2,9 @@ class_name Hand
 extends Node2D
 
 
+signal card_played(instance: CardInstance, face_down: bool)
+
+
 const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn");
 @export var card_spacing := 200.0
 @export var hover_lift := 100.0
@@ -21,10 +24,21 @@ func get_card_count() -> int:
 	return cards.size()
 
 
+func set_interactive(enabled: bool) -> void:
+	for card in cards:
+		card.card_area.input_pickable = enabled
+
+
+func add_card(instance: CardInstance) -> void:
+	_add_card(instance)
+	_display_cards()
+
+
+# should only be used internally
 func _add_card(instance: CardInstance) -> void:
 	var card: Card = CARD_SCENE.instantiate()
 	add_child(card)
-	card.setup.call_deferred(instance.resource, instance.instance_id)
+	card.setup.call_deferred(instance)
 	cards.append(card)
 
 	card.hovered.connect(_on_card_hovered.bind(card))
@@ -42,8 +56,14 @@ func _on_card_unhovered(card: Card) -> void:
 	create_tween().tween_property(card, "position:y", 0.0, hover_tween_duration)
 
 
-func _on_card_played(_face_down: bool, card: Card) -> void:
-	print("[Hand] Card %d played" % [card.resource.value])
+func _on_card_played(face_down: bool, card: Card) -> void:
+	if face_down:
+		card.set_face_down()
+
+	cards.erase(card)
+	card_played.emit(card.instance, face_down)
+	card.queue_free()
+	_display_cards()
 
 
 func _display_cards() -> void:
