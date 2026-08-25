@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://c7edokbnxij20"]
 
+[ext_resource type="Script" uid="uid://g7i7mbc23l07" path="res://Scripts/Cards/SharedPile.gd" id="1_anpm6"]
+[ext_resource type="Resource" uid="uid://d3olbamivb2xx" path="res://Scripts/Pile/pile_rules_resource.tres" id="2_p3fdn"]
+
 [node name="SharedPile" type="Node2D" unique_id=1330341386]
+script = ExtResource("1_anpm6")
+rules = ExtResource("2_p3fdn")

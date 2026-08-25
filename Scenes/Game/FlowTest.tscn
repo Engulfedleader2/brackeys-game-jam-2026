@@ -10,7 +10,6 @@
 script = ExtResource("1_12wy6")
 round_manager = NodePath("../RoundManager")
 turn_manager = NodePath("../TurnManager")
-total_game_rounds = 3
 
 [node name="RoundManager" type="Node" parent="." unique_id=951560739]
 script = ExtResource("2_682s6")
