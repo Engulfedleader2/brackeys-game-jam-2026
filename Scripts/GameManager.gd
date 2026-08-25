@@ -1,6 +1,5 @@
 extends Node
 
-@export var round_manager: Node
 @export var turn_manager: Node
 var total_game_rounds = 3
 
@@ -13,20 +12,20 @@ func start_game() -> void:
 	setup_players()
 	for i in range(total_game_rounds):
 		print("Round %d" % (i + 1))
-		round_manager.start_round()
+		RoundManager.start_round()
 		var round_over = false
 		while not round_over:
 			turn_manager.start_turn()
 			var current_player = turn_manager.get_current_player()
 			print("Current Player: ", current_player)
-			round_manager.play_card()
-			if round_manager.check_bust():
+			RoundManager.play_card()
+			if RoundManager.check_bust():
 				print(current_player, " has busted!")
 				round_over = true
 			else:
 				turn_manager.end_turn()
 				turn_manager.next_player()
-		round_manager.end_round()
+		RoundManager.end_round()
 	end_game()
 
 # This function will be part of start up scene launch to setup players before the start of the round.
