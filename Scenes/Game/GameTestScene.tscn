@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://by0ku407tlifk"]
 
+[ext_resource type="PackedScene" uid="uid://cqgrnwchlujb6" path="res://Scripts/Player/Hand/Hand.tscn" id="1_0p3ti"]
+[ext_resource type="Script" uid="uid://dylp1pxcycfxf" path="res://Scripts/Cards/Deck.gd" id="1_empv6"]
+[ext_resource type="PackedScene" uid="uid://c7edokbnxij20" path="res://Scenes/Game/SharedPile.tscn" id="3_fq5w4"]
+
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
+
+[node name="Hand" parent="." instance=ExtResource("1_0p3ti")]
+position = Vector2(960, 850)
+
+[node name="Deck" type="Node" parent="."]
+script = ExtResource("1_empv6")
+
+[node name="SharedPile" parent="." instance=ExtResource("3_fq5w4")]
+position = Vector2(960, 500)
