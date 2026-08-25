@@ -17,6 +17,7 @@ func _ready() -> void:
 	if rules == null:
 		rules = PileRules.new()
 		push_warning("[SharedPile] No PilesRules assigned - using default")
+	print("[SharedPile] ready - bust over if greater than %d, legal face-down values %s" % [ rules.bust_threshold, rules.legal_face_down_values ])
 
 func play_card(instance: CardInstance, owner_id: int, face_down: bool) -> PileEntry:
 	if instance == null or instance.resource == null:
@@ -29,7 +30,7 @@ func play_card(instance: CardInstance, owner_id: int, face_down: bool) -> PileEn
 	var total := get_total()
 	card_added.emit(entry)
 	total_changed.emit(total)
-	
+	print("[SharedPile] Player %d plays %s" % [ owner_id, "face-down" if face_down else str(instance.resource.value)])
 	return entry
 
 func resolve_bluff_call(caller_id: int) -> BluffResult:
@@ -47,16 +48,19 @@ func resolve_bluff_call(caller_id: int) -> BluffResult:
 	result.was_lie = is_lie(entry)
 	result.loser_id = entry.owner_id if result.was_lie else caller_id
 	bluff_called.emit(result)
+	print(result.describe())
 	return result
 
 func collect_all(reason: ClearReason = ClearReason.BUST) -> Array[CardInstance]:
 	var collected: Array[CardInstance] = []
 	for entry in _entries:
 		collected.append(entry.instance)
+	print("[SharedPile] %s - %d cards handed back" % [ ClearReason.keys()[reason], collected.size()])
 	_clear(reason)
 	return collected
 	
 func reset_for_new_round() -> Array[CardInstance]:
+	print("[SharedPile] ====== new round ====== ")
 	return collect_all(ClearReason.ROUND_RESET)
 	
 func _contribution(entry: PileEntry) -> int:
@@ -107,6 +111,7 @@ func _reveal_entry(entry: PileEntry) -> void:
 	if entry.revealed:
 		return
 	entry.revealed = true
+	print("[SharedPile] revealed player %d: %d %s" % [entry.owner_id, entry.actual_value(), "LIE" if is_lie(entry) else "LEGAL"])
 	card_revealed.emit(entry)
 	
 func reveal_all() -> void:
