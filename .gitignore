@@ -15,6 +15,9 @@ export_credentials.cfg
 # Imported translations
 *.translation
 
+# Godot 4 import cache 
+AssetDump/**/*.import
+
 
 # ==============================
 # Godot Mono / C#
