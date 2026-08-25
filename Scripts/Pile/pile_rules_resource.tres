@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PileRules" format=3 uid="uid://d3olbamivb2xx"]
+
+[ext_resource type="Script" uid="uid://cn3aqi10mhqy7" path="res://Scripts/Pile/PileRules.gd" id="1_m0xyu"]
+
+[resource]
+script = ExtResource("1_m0xyu")
+metadata/_custom_type_script = "uid://cn3aqi10mhqy7"
