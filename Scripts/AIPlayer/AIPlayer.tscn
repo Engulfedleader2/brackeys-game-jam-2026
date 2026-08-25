@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cr7x834jgmql0"]
+
+[ext_resource type="PackedScene" uid="uid://dqdvsqgdhi7es" path="res://Scripts/Player/Player.tscn" id="1_rf4qc"]
+[ext_resource type="Script" uid="uid://c0magohg1htln" path="res://Scripts/AIPlayer/AIPlayer.gd" id="2_mkchb"]
+
+[node name="AIPlayer" unique_id=569748688 instance=ExtResource("1_rf4qc")]
+script = ExtResource("2_mkchb")
