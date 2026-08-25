@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dqdvsqgdhi7es"]
+
+[ext_resource type="Script" uid="uid://dgw3ofacpqv4p" path="res://Scripts/Player/Player.gd" id="1_7cvjj"]
+[ext_resource type="PackedScene" uid="uid://cqgrnwchlujb6" path="res://Scripts/Player/Hand/Hand.tscn" id="2_7cvjj"]
+
+[node name="Player" type="Node2D" unique_id=569748688]
+script = ExtResource("1_7cvjj")
+player_name = "naznsan"
+
+[node name="PlayerNameLabel" type="Label" parent="." unique_id=239930997]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Hand" parent="." unique_id=1584552490 instance=ExtResource("2_7cvjj")]

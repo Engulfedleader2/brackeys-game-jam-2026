@@ -6,12 +6,13 @@ signal hovered
 signal unhovered
 signal played(face_down: bool)
 
-var resource: CardResource
-var instance_id: int
+var instance: CardInstance
 
 @onready var color_rect: ColorRect = $FrontFace/ColorRect
 @onready var label: Label = $FrontFace/ColorRect/Label
 @onready var card_area: Area2D = $Area2D
+@onready var front_face: Node2D = $FrontFace
+@onready var back_face: Node2D = $BackFace
 
 
 func _ready() -> void:
@@ -36,7 +37,11 @@ func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 			played.emit(true)
 
 
-func setup(data: CardResource, id: int) -> void:
-	resource = data
-	instance_id = id
-	label.text = str(data.value)
+func setup(card_instance: CardInstance) -> void:
+	instance = card_instance
+	label.text = str(card_instance.resource.value)
+
+
+func set_face_down() -> void:
+	front_face.visible = false
+	back_face.visible = true
