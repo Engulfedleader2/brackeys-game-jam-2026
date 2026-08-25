@@ -4,7 +4,6 @@ extends Node2D
 enum ClearReason { BUST, BLUFF_CALL, ROUND_RESET }
 signal card_added(entry: PileEntry)
 signal total_changed(pile_total: int)
-signal pile_busted(owner_id: int, pile_total: int)
 signal card_revealed(entry: PileEntry)
 signal bluff_called(result: BluffResult)
 signal pile_cleared(reason: ClearReason, card_count: int)
@@ -31,9 +30,6 @@ func play_card(instance: CardInstance, owner_id: int, face_down: bool) -> PileEn
 	card_added.emit(entry)
 	total_changed.emit(total)
 	
-	if _is_bust(total):
-		pile_busted.emit(owner_id, total)
-		_reveal_all()
 	return entry
 
 func resolve_bluff_call(caller_id: int) -> BluffResult:
@@ -90,7 +86,7 @@ func can_call_bluff() -> bool:
 
 #Maybe needed for the AI
 func would_bust_play(card_value: int, face_down: bool) -> bool:
-	return false if face_down else _is_bust(get_total() + card_value)
+	return false if face_down else is_bust(get_total() + card_value)
 
 func total_after_play(card_value: int, face_down: bool) -> int:
 	return get_total() if face_down else get_total() + card_value
@@ -99,12 +95,12 @@ func safe_face_up_values() -> Array[int]:
 	var total := get_total()
 	var safe: Array[int]  = []
 	for v in range(rules.min_card_value, rules.max_card_value + 1):
-		if not _is_bust(total + v):
+		if not is_bust(total + v):
 			safe.append(v)
 	return safe
 #Internal stuff
 	
-func _is_bust(total: int) -> bool:
+func is_bust(total: int) -> bool:
 	return total > rules.bust_threshold
 
 func _reveal_entry(entry: PileEntry) -> void:
@@ -113,7 +109,7 @@ func _reveal_entry(entry: PileEntry) -> void:
 	entry.revealed = true
 	card_revealed.emit(entry)
 	
-func _reveal_all() -> void:
+func reveal_all() -> void:
 	for entry in _entries:
 		if entry.is_hidden():
 			entry.revealed = true
