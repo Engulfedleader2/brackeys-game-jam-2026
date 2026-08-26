@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ddqjycaidi0em"]
+
+[ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="1_lfmdx"]
+
+[node name="SqueakyBear" unique_id=569748688 instance=ExtResource("1_lfmdx")]
+player_name = "SqueakyBear"
+owner_id = 7

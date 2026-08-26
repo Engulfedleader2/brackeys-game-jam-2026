@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://la6nwq00878b"]
+
+[ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="1_b2eih"]
+
+[node name="FoxPlush" unique_id=569748688 instance=ExtResource("1_b2eih")]
+player_name = "FoxPlush"
+owner_id = 4
