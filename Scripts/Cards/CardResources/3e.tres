@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardResource" format=3]
+
+[ext_resource type="Script" uid="uid://deyr1gflpda4x" path="res://Scripts/Cards/CardResources/CardResource.gd" id="1_x04bb"]
+[ext_resource type="Texture2D" path="res://Scripts/Cards/CardResources/Art/YooGee3.png" id="2_3d5kv"]
+
+[resource]
+script = ExtResource("1_x04bb")
+value = 3
+card_texture = ExtResource("2_3d5kv")
+metadata/_custom_type_script = "uid://deyr1gflpda4x"
