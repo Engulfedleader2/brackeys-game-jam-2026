@@ -8,8 +8,7 @@ signal played(face_down: bool)
 
 var instance: CardInstance
 
-@onready var color_rect: ColorRect = $FrontFace/ColorRect
-@onready var label: Label = $FrontFace/ColorRect/Label
+@onready var texture_rect: TextureRect = $FrontFace/TextureRect
 @onready var card_area: Area2D = $Area2D
 @onready var front_face: Node2D = $FrontFace
 @onready var back_face: Node2D = $BackFace
@@ -39,7 +38,8 @@ func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 
 func setup(card_instance: CardInstance) -> void:
 	instance = card_instance
-	label.text = str(card_instance.resource.value)
+	if card_instance.resource.card_texture:
+		texture_rect.texture = card_instance.resource.card_texture
 
 
 func set_face_down() -> void:

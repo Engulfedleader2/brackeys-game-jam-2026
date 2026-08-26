@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://sw08faq6l5uj"]
 
 [ext_resource type="Script" uid="uid://deyr1gflpda4x" path="res://Scripts/Cards/CardResources/CardResource.gd" id="1_iraqe"]
+[ext_resource type="Texture2D" uid="uid://c6apgmrthgvnq" path="res://Scripts/Cards/CardResources/Art/Uno2.png" id="2_7x1wm"]
 
 [resource]
 script = ExtResource("1_iraqe")
 value = 2
+card_texture = ExtResource("2_7x1wm")
 metadata/_custom_type_script = "uid://deyr1gflpda4x"
