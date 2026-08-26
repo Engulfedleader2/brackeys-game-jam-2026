@@ -9,28 +9,27 @@
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 
-[node name="Deck" type="Node" parent="."]
+[node name="Deck" type="Node" parent="." unique_id=1447409975]
 script = ExtResource("1_empv6")
 
-[node name="SharedPile" parent="." instance=ExtResource("3_fq5w4")]
+[node name="SharedPile" parent="." unique_id=755290654 instance=ExtResource("3_fq5w4")]
 position = Vector2(960, 500)
 
-[node name="Player" parent="." instance=ExtResource("4_player")]
+[node name="Player" parent="." unique_id=845295021 instance=ExtResource("4_player")]
 position = Vector2(960, 850)
 player_name = "You"
-owner_id = 0
 
-[node name="AIPlayer" parent="." instance=ExtResource("5_aiplayer")]
+[node name="AIPlayer" parent="." unique_id=392891926 instance=ExtResource("5_aiplayer")]
 position = Vector2(960, 200)
 player_name = "Rival"
 owner_id = 1
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("turn_manager", "deck", "shared_pile")]
+[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile")]
 script = ExtResource("6_gamemanager")
 turn_manager = NodePath("../TurnManager")
 deck = NodePath("../Deck")
 shared_pile = NodePath("../SharedPile")
-player_paths = [NodePath("../Player"), NodePath("../AIPlayer")]
+player_paths = Array[NodePath]([NodePath("../Player"), NodePath("../AIPlayer")])
 
-[node name="TurnManager" type="Node" parent="."]
+[node name="TurnManager" type="Node" parent="." unique_id=676050292]
 script = ExtResource("7_turnmanager")

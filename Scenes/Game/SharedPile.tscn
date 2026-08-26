@@ -6,3 +6,5 @@
 [node name="SharedPile" type="Node2D" unique_id=1330341386]
 script = ExtResource("1_anpm6")
 rules = ExtResource("2_p3fdn")
+
+[node name="CardPile" type="Node2D" parent="." unique_id=2166093267]

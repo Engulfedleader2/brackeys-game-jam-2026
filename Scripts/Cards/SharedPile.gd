@@ -8,16 +8,25 @@ signal card_revealed(entry: PileEntry)
 signal bluff_called(result: BluffResult)
 signal pile_cleared(reason: ClearReason, card_count: int)
 
+const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn")
+
 @export var rules: PileRules
+@export var card_step := Vector2(70, 12)
+@export var card_scale := Vector2(0.45, 0.45)
 
 var _entries: Array[PileEntry] = []
 var _next_play_index: int = 0
+var _card_nodes: Dictionary = {}
 
 func _ready() -> void:
 	if rules == null:
 		rules = PileRules.new()
 		push_warning("[SharedPile] No PilesRules assigned - using default")
 	print("[SharedPile] ready - bust over if greater than %d, legal face-down values %s" % [ rules.bust_threshold, rules.legal_face_down_values ])
+
+	card_added.connect(_on_card_added)
+	card_revealed.connect(_on_card_revealed)
+	pile_cleared.connect(_on_pile_cleared)
 
 func play_card(instance: CardInstance, owner_id: int, face_down: bool) -> PileEntry:
 	if instance == null or instance.resource == null:
@@ -145,3 +154,30 @@ func _clear(reason: ClearReason) -> void:
 	_next_play_index = 0
 	pile_cleared.emit(reason, count)
 	total_changed.emit(0)
+
+func _on_card_added(entry: PileEntry) -> void:
+	var card: Card = CARD_SCENE.instantiate()
+	add_child(card)
+	card.setup(entry.instance)
+	card.scale = card_scale
+	card.position = card_step * float(entry.play_index)
+	card.z_index = entry.play_index
+	card.card_area.input_pickable = false
+
+	if entry.face_down:
+		card.set_face_down()
+	_card_nodes[entry] = card
+
+func _on_card_revealed(entry: PileEntry) -> void:
+	var card: Card = _card_nodes.get(entry)
+	if card == null:
+		return
+
+	card.front_face.visible = true
+	card.back_face.visible = false
+	card.modulate = Color("RED") if is_lie(entry) else Color("GREEN")
+
+func _on_pile_cleared(_reason: ClearReason, _count: int) -> void:
+	for card in _card_nodes.values():
+		card.queue_free()
+	_card_nodes.clear()
