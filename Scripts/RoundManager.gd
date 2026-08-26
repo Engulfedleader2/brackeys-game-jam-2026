@@ -12,7 +12,7 @@ func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck) ->
 	deck = p_deck
 
 	for i in players.size():
-		players[i].card_played.connect(_on_player_card_played.bind(i))
+		players[i].card_played.connect(_on_player_card_played.bind(players[i].owner_id))
 
 
 # This function marks the beginning of the round. Here you can setup whatever needs to be setup before players start taking turns.
