@@ -1,7 +1,7 @@
 class_name Deck
 extends Node
 
-const CARD_RESOURCES_PATH := "res://Scripts/Cards/CardResources/"
+@export var card_resources: Array[CardResource] = []
 
 var cards: Array[CardInstance] = [] # entire deck of cards, loaded in once during game initialization
 var draw_pile: Array[CardInstance] = [] # deck of cards per round, reset each round
@@ -14,20 +14,12 @@ func _ready() -> void:
 
 
 func _load_cards() -> void:
-	print("[Deck] Loading cards from " + CARD_RESOURCES_PATH)
+	print("[Deck] Loading %d card resources" % card_resources.size())
 
-	var dir := DirAccess.open(CARD_RESOURCES_PATH)
-	dir.list_dir_begin()
+	for resource in card_resources:
+		cards.append(CardInstance.new(resource, _next_instance_id))
+		_next_instance_id += 1
 
-	var file_name := dir.get_next()
-	while file_name != "":
-		if file_name.ends_with(".tres"):
-			var resource: CardResource = load(CARD_RESOURCES_PATH + file_name)
-			cards.append(CardInstance.new(resource, _next_instance_id))
-			_next_instance_id += 1
-		file_name = dir.get_next()
-
-	dir.list_dir_end()
 	print("[Deck] Loaded " + str(cards.size()))
 
 

@@ -12,10 +12,6 @@ signal card_played(instance: CardInstance, face_down: bool)
 
 
 func start_turn() -> void:
-	var new_card := RoundManager.deck.draw_card()
-	if new_card != null:
-		hand.add_card(new_card)
-	
 	hand.set_interactive(true)
 
 
