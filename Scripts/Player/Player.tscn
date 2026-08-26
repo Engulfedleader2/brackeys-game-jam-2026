@@ -5,7 +5,7 @@
 
 [node name="Player" type="Node2D" unique_id=569748688]
 script = ExtResource("1_7cvjj")
-player_name = "naznsan"
+player_name = "Player"
 
 [node name="PlayerNameLabel" type="Label" parent="." unique_id=239930997]
 offset_right = 40.0

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cjl4vbmkutsu8"]
+
+[ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="1_5tfed"]
+
+[node name="SoftChicken" unique_id=569748688 instance=ExtResource("1_5tfed")]
+player_name = "SoftChicken"
+owner_id = 6
