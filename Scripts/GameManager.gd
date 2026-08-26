@@ -13,23 +13,7 @@ func _ready() -> void:
 func start_game() -> void:
 	print("Start Game")
 	setup_players()
-	for i in range(total_game_rounds):
-		print("Round %d" % (i + 1))
-		RoundManager.start_round()
-		var round_over = false
-		while not round_over:
-			turn_manager.start_turn()
-			var current_player = turn_manager.get_current_player()
-			print("Current Player: ", current_player)
-			RoundManager.play_card()
-			if RoundManager.check_bust():
-				print(current_player, " has busted!")
-				round_over = true
-			else:
-				turn_manager.end_turn()
-				turn_manager.next_player()
-		RoundManager.end_round()
-	end_game()
+	RoundManager.start_round()
 
 # This function will be part of start up scene launch to setup players before the start of the round.
 func setup_players() -> void:
