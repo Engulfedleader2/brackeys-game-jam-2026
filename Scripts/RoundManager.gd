@@ -21,15 +21,12 @@ func start_round() -> void:
 	players[_current_player_index].start_turn()
 
 
-# This function is called for the current player to play a card.
-func play_card() -> void:
-	print("Play Card")
-
 # This function will check if the player has busted or not
 func check_bust() -> bool:
-	var temp_busted = true
-	print("Check if player Busted")
-	return temp_busted
+	var current_total = shared_pile.get_total()
+	var busted = shared_pile.is_bust(current_total)
+	print("Checking bust. Pile total: ", current_total, " Busted: ", busted)
+	return busted
 
 # This function marks the end of the round. Here you can do whatever needs to be done after players have taken their turns or someone busted.
 func end_round() -> void:
@@ -43,3 +40,8 @@ func _advance_turn() -> void:
 
 func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: int) -> void:
 	shared_pile.play_card(instance, owner_id, face_down)
+	if check_bust():
+		print("Player ", owner_id, " busted!")
+		end_round()
+		return
+	_advance_turn()

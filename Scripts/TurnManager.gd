@@ -1,5 +1,6 @@
 extends Node
 
+var players: Array[Player] = []
 var temp_players = ["Player 1", "Player 2", "Player 3", "Player 4"]
 var current_player_index: int = 0
 
