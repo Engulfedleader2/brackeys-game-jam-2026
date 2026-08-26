@@ -9,6 +9,7 @@ const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn");
 @export var card_spacing := 200.0
 @export var hover_lift := 100.0
 @export var hover_tween_duration := 0.25
+@export var reveal_cards := true # false for opponent hands, so their cards stay hidden
 
 var cards: Array[Card] = []
 
@@ -39,6 +40,8 @@ func _add_card(instance: CardInstance) -> void:
 	var card: Card = CARD_SCENE.instantiate()
 	add_child(card)
 	card.setup.call_deferred(instance)
+	if not reveal_cards:
+		card.set_face_down()
 	cards.append(card)
 
 	card.hovered.connect(_on_card_hovered.bind(card))

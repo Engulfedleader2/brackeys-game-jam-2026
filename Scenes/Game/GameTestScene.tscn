@@ -1,16 +1,43 @@
 [gd_scene format=3 uid="uid://by0ku407tlifk"]
 
 [ext_resource type="Script" uid="uid://dylp1pxcycfxf" path="res://Scripts/Cards/Deck.gd" id="1_empv6"]
+[ext_resource type="Script" uid="uid://deyr1gflpda4x" path="res://Scripts/Cards/CardResources/CardResource.gd" id="2_ptkv3"]
 [ext_resource type="PackedScene" uid="uid://c7edokbnxij20" path="res://Scenes/Game/SharedPile.tscn" id="3_fq5w4"]
 [ext_resource type="PackedScene" uid="uid://dqdvsqgdhi7es" path="res://Scripts/Player/Player.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="5_aiplayer"]
 [ext_resource type="Script" uid="uid://jjtpln836nxi" path="res://Scripts/GameManager.gd" id="6_gamemanager"]
 [ext_resource type="Script" uid="uid://d1mqil77e0884" path="res://Scripts/TurnManager.gd" id="7_turnmanager"]
+[ext_resource type="Resource" uid="uid://qw6tyqxkqwd7" path="res://Scripts/Cards/CardResources/1.tres" id="8_card1"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/1b.tres" id="8_card1b"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/1c.tres" id="8_card1c"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/1d.tres" id="8_card1d"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/1e.tres" id="8_card1e"]
+[ext_resource type="Resource" uid="uid://sw08faq6l5uj" path="res://Scripts/Cards/CardResources/2.tres" id="8_card2"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/2b.tres" id="8_card2b"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/2c.tres" id="8_card2c"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/2d.tres" id="8_card2d"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/2e.tres" id="8_card2e"]
+[ext_resource type="Resource" uid="uid://3hwwmiv8y0he" path="res://Scripts/Cards/CardResources/3.tres" id="8_card3"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/3b.tres" id="8_card3b"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/3c.tres" id="8_card3c"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/3d.tres" id="8_card3d"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/3e.tres" id="8_card3e"]
+[ext_resource type="Resource" uid="uid://b6xqu48574wg4" path="res://Scripts/Cards/CardResources/4.tres" id="8_card4"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/4b.tres" id="8_card4b"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/4c.tres" id="8_card4c"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/4d.tres" id="8_card4d"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/4e.tres" id="8_card4e"]
+[ext_resource type="Resource" uid="uid://gvwnnbjdqdwf" path="res://Scripts/Cards/CardResources/5.tres" id="8_card5"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5b.tres" id="8_card5b"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5c.tres" id="8_card5c"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5d.tres" id="8_card5d"]
+[ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5e.tres" id="8_card5e"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 
 [node name="Deck" type="Node" parent="." unique_id=1447409975]
 script = ExtResource("1_empv6")
+card_resources = Array[ExtResource("2_ptkv3")]([ExtResource("8_card1"), ExtResource("8_card1b"), ExtResource("8_card1c"), ExtResource("8_card1d"), ExtResource("8_card1e"), ExtResource("8_card2"), ExtResource("8_card2b"), ExtResource("8_card2c"), ExtResource("8_card2d"), ExtResource("8_card2e"), ExtResource("8_card3"), ExtResource("8_card3b"), ExtResource("8_card3c"), ExtResource("8_card3d"), ExtResource("8_card3e"), ExtResource("8_card4"), ExtResource("8_card4b"), ExtResource("8_card4c"), ExtResource("8_card4d"), ExtResource("8_card4e"), ExtResource("8_card5"), ExtResource("8_card5b"), ExtResource("8_card5c"), ExtResource("8_card5d"), ExtResource("8_card5e")])
 
 [node name="SharedPile" parent="." unique_id=755290654 instance=ExtResource("3_fq5w4")]
 position = Vector2(960, 500)

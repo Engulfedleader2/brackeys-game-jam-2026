@@ -5,3 +5,6 @@
 
 [node name="AIPlayer" unique_id=569748688 instance=ExtResource("1_rf4qc")]
 script = ExtResource("2_mkchb")
+
+[node name="Hand" parent="."]
+reveal_cards = false

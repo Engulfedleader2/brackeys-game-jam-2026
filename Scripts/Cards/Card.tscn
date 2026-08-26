@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cl4kqitdcnjlq"]
 
 [ext_resource type="Script" uid="uid://bggpl0wx1eaoc" path="res://Scripts/Cards/Card.gd" id="1_2h66o"]
+[ext_resource type="Texture2D" path="res://Scripts/Cards/CardResources/Art/BackCard.png" id="2_backcard"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl2kv"]
 size = Vector2(192, 272)
@@ -22,7 +23,7 @@ stretch_mode = 0
 [node name="BackFace" type="Node2D" parent="." unique_id=1237181632]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="BackFace" unique_id=98039985]
+[node name="TextureRect" type="TextureRect" parent="BackFace" unique_id=98039985]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -35,7 +36,9 @@ offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.28627452, 0.6313726, 1, 1)
+texture = ExtResource("2_backcard")
+expand_mode = 1
+stretch_mode = 0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1521004914]
 
