@@ -1,16 +1,36 @@
 [gd_scene format=3 uid="uid://by0ku407tlifk"]
 
-[ext_resource type="PackedScene" uid="uid://cqgrnwchlujb6" path="res://Scripts/Player/Hand/Hand.tscn" id="1_0p3ti"]
 [ext_resource type="Script" uid="uid://dylp1pxcycfxf" path="res://Scripts/Cards/Deck.gd" id="1_empv6"]
 [ext_resource type="PackedScene" uid="uid://c7edokbnxij20" path="res://Scenes/Game/SharedPile.tscn" id="3_fq5w4"]
+[ext_resource type="PackedScene" uid="uid://dqdvsqgdhi7es" path="res://Scripts/Player/Player.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="5_aiplayer"]
+[ext_resource type="Script" uid="uid://jjtpln836nxi" path="res://Scripts/GameManager.gd" id="6_gamemanager"]
+[ext_resource type="Script" uid="uid://d1mqil77e0884" path="res://Scripts/TurnManager.gd" id="7_turnmanager"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
-
-[node name="Hand" parent="." instance=ExtResource("1_0p3ti")]
-position = Vector2(960, 850)
 
 [node name="Deck" type="Node" parent="."]
 script = ExtResource("1_empv6")
 
 [node name="SharedPile" parent="." instance=ExtResource("3_fq5w4")]
 position = Vector2(960, 500)
+
+[node name="Player" parent="." instance=ExtResource("4_player")]
+position = Vector2(960, 850)
+player_name = "You"
+owner_id = 0
+
+[node name="AIPlayer" parent="." instance=ExtResource("5_aiplayer")]
+position = Vector2(960, 200)
+player_name = "Rival"
+owner_id = 1
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("turn_manager", "deck", "shared_pile")]
+script = ExtResource("6_gamemanager")
+turn_manager = NodePath("../TurnManager")
+deck = NodePath("../Deck")
+shared_pile = NodePath("../SharedPile")
+player_paths = [NodePath("../Player"), NodePath("../AIPlayer")]
+
+[node name="TurnManager" type="Node" parent="."]
+script = ExtResource("7_turnmanager")
