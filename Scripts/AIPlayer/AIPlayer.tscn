@@ -8,3 +8,9 @@ script = ExtResource("2_mkchb")
 
 [node name="Hand" parent="."]
 reveal_cards = false
+
+[node name="Portrait" type="TextureRect" parent="."]
+position = Vector2(-50, -180)
+size = Vector2(100, 100)
+expand_mode = 1
+stretch_mode = 5

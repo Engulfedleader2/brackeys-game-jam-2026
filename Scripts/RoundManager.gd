@@ -7,6 +7,7 @@ var _current_player_index: int = 0
 var call_bluff_prompt: CallBluffPrompt
 
 signal round_finished(winner_owner_id: int, loser_owner_id: int)
+signal turn_started(player: Player)
 
 func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck, p_prompt: CallBluffPrompt) -> void:
 	players = p_players
@@ -21,7 +22,9 @@ func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck, p_
 # This function marks the beginning of the round. Here you can setup whatever needs to be setup before players start taking turns.
 func start_round() -> void:
 	_current_player_index = 0
-	players[_current_player_index].start_turn()
+	var player := players[_current_player_index]
+	turn_started.emit(player)
+	player.start_turn()
 
 
 # This function will check if the player has busted or not
@@ -45,7 +48,9 @@ func end_round(winner_owner_id: int = -1) -> void:
 
 func _advance_turn() -> void:
 	_current_player_index = (_current_player_index + 1) % players.size()
-	players[_current_player_index].start_turn()
+	var player := players[_current_player_index]
+	turn_started.emit(player)
+	player.start_turn()
 
 
 func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: int) -> void:
@@ -83,10 +88,8 @@ func _give_pile_to(owner_id: int, reason: SharedPile.ClearReason) -> void:
 	
 	if _check_round_over():
 		return
-	
-	#set up for loser starts the next round remove if thats not what we want
-	_current_player_index = players.find(loser)
-	players[_current_player_index].start_turn.call_deferred()
+
+	_advance_turn.call_deferred()
 
 func _get_round_loser() -> Player:
 	var loser: Player = null
