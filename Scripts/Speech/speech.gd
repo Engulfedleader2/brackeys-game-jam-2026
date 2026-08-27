@@ -22,6 +22,7 @@ var random_range = randi_range(1,final)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomText()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,3 +50,13 @@ func randomText():
 
 func _on_test_speech_new_text_signal():
 	randomText()
+
+
+func _on_shared_pile_speech_signal() -> void:
+	show()
+	get_tree().create_tween().tween_property(self,"modulate:a", 1, .1)
+	randomText()
+
+
+func _leave():
+	get_tree().create_tween().tween_property(self,"modulate:a", 0, 1)
