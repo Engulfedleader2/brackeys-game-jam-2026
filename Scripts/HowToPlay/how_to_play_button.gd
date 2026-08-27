@@ -13,10 +13,12 @@ func _process(delta: float) -> void:
 
 
 func _on_mouse_entered() -> void:
+	get_tree().create_tween().tween_property(howtoplay_img,"modulate:a",1,.1)
 	get_tree().create_tween().tween_property(howtoplay_img,"scale",Vector2(.12,.12),.1)
 
 
 func _on_mouse_exited() -> void:
+	get_tree().create_tween().tween_property(howtoplay_img,"modulate:a",.5,.1)
 	get_tree().create_tween().tween_property(howtoplay_img,"scale",Vector2(.1,.1),.1)
 
 
