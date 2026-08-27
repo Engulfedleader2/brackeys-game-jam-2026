@@ -2,7 +2,7 @@ class_name CallBluffPrompt
 extends CanvasLayer
 
 signal closed(did_call: bool)
-@export var window_seconds := 15.0
+@export var window_seconds := 10.0
 
 @onready var root: Control = $Root
 @onready var prompt_label: Label = $Root/Panel/VBoxContainer/Label
