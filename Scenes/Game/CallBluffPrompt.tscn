@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cmu05d7eyxqpu"]
+
+[ext_resource type="Script" uid="uid://bfinknau1hxbu" path="res://Scripts/Pile/CallBluffPrompt.gd" id="1_061la"]
+
+[node name="CallBluffPrompt" type="CanvasLayer" unique_id=2146204010]
+script = ExtResource("1_061la")
+
+[node name="Root" type="Control" parent="." unique_id=1607928984]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root" unique_id=1906068958]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -33.0
+offset_right = 45.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Panel" unique_id=1054834699]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Panel/VBoxContainer" unique_id=260036028]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Root/Panel/VBoxContainer" unique_id=1486117100]
+layout_mode = 2
+show_percentage = false
+
+[node name="CallButton" type="Button" parent="Root/Panel/VBoxContainer" unique_id=368488804]
+layout_mode = 2
+text = "CALL BUFF"

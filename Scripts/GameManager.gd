@@ -4,6 +4,7 @@ extends Node
 @export var deck: Deck
 @export var shared_pile: SharedPile
 @export var player_paths: Array[NodePath] = []
+@export var call_bluff_prompt: CallBluffPrompt
 var total_game_rounds = 3
 const STARTING_HAND_SIZE := 5
 
@@ -22,7 +23,7 @@ func setup_players() -> void:
 	var players: Array[Player] = []
 	for path in player_paths:
 		players.append(get_node(path) as Player)
-	RoundManager.setup(players, shared_pile, deck)
+	RoundManager.setup(players, shared_pile, deck, call_bluff_prompt)
 
 	var hands := deck.deal(players.size(), STARTING_HAND_SIZE)
 	for i in players.size():
