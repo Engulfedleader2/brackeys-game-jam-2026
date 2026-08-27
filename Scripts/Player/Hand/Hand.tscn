@@ -4,3 +4,8 @@
 
 [node name="Hand" type="Node2D" unique_id=1584552490]
 script = ExtResource("1_7pcxw")
+
+[node name="Bluff" type="Button" parent="." unique_id=696362000]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "BLUFF"

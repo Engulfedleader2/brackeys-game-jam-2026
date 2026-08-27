@@ -33,6 +33,7 @@
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5c.tres" id="8_card5c"]
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5d.tres" id="8_card5d"]
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5e.tres" id="8_card5e"]
+[ext_resource type="PackedScene" uid="uid://cmu05d7eyxqpu" path="res://Scenes/Game/CallBluffPrompt.tscn" id="33_pdcst"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 script = ExtResource("1_3enmh")
@@ -50,15 +51,46 @@ player_name = "You"
 
 [node name="AIPlayer" parent="." unique_id=392891926 instance=ExtResource("5_aiplayer")]
 position = Vector2(960, 200)
+bluff_chance = 0.4
+vertical_layout = false
+portrait_offset = Vector2(-50, -180)
 player_name = "Rival"
 owner_id = 1
 
-[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile")]
+[node name="AIPlayer2" parent="." unique_id=541108089 instance=ExtResource("5_aiplayer")]
+position = Vector2(300, 525)
+bluff_chance = 0.4
+vertical_layout = true
+portrait_offset = Vector2(-180, -50)
+player_name = "Rival 2"
+owner_id = 2
+
+[node name="AIPlayer3" parent="." unique_id=1470739839 instance=ExtResource("5_aiplayer")]
+position = Vector2(1620, 525)
+bluff_chance = 0.4
+vertical_layout = true
+portrait_offset = Vector2(180, -50)
+player_name = "Rival 3"
+owner_id = 3
+
+[node name="TurnLabel" type="Label" parent="." unique_id=1105740206]
+offset_left = 860.0
+offset_top = 20.0
+offset_right = 1060.0
+offset_bottom = 46.0
+text = "..."
+horizontal_alignment = 1
+
+[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "turn_label")]
 script = ExtResource("6_gamemanager")
 turn_manager = NodePath("../TurnManager")
 deck = NodePath("../Deck")
 shared_pile = NodePath("../SharedPile")
-player_paths = Array[NodePath]([NodePath("../Player"), NodePath("../AIPlayer")])
+player_paths = Array[NodePath]([NodePath("../Player"), NodePath("../AIPlayer"), NodePath("../AIPlayer2"), NodePath("../AIPlayer3")])
+call_bluff_prompt = NodePath("../CallBluffPrompt")
+turn_label = NodePath("../TurnLabel")
 
 [node name="TurnManager" type="Node" parent="." unique_id=676050292]
 script = ExtResource("7_turnmanager")
+
+[node name="CallBluffPrompt" parent="." unique_id=2146204010 instance=ExtResource("33_pdcst")]
