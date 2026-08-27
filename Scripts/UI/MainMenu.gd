@@ -5,7 +5,7 @@ extends Control
 @onready var credits_button: Button = $Content/VBoxContainer/CreditsButton
 @onready var quit_button: Button = $Content/VBoxContainer/QuitButton
 
-signal start_game_signal
+
 
 func _ready() -> void:
 	await get_tree().create_timer(2).timeout
