@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duspptw3ao2y1"]
 
 [ext_resource type="Script" uid="uid://dmgg17wu5q185" path="res://Scripts/UI/CreditsMenu.gd" id="1_creditsmenu"]
+[ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="2_staik"]
 
 [node name="CreditsMenu" type="Control" unique_id=1512167178]
 layout_mode = 3
@@ -10,6 +11,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_creditsmenu")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=483923141]
+texture = ExtResource("2_staik")
+centered = false
 
 [node name="Content" type="CenterContainer" parent="." unique_id=1988083685]
 layout_mode = 1
