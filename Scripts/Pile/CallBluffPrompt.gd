@@ -5,9 +5,9 @@ signal closed(did_call: bool)
 @export var window_seconds := 7.0
 
 @onready var root: Control = $Root
-@onready var prompt_label: Label = $Root/Panel/VBoxContainer/Label
-@onready var timer_bar: ProgressBar = $Root/Panel/VBoxContainer/ProgressBar
-@onready var call_button : Button = $Root/Panel/VBoxContainer/CallButton
+@onready var prompt_label: Label = $Root/Group/Label
+@onready var timer_bar: TextureProgressBar = $Root/Group/ProgressBar
+@onready var call_button : Button = $Root/Group/CallButton
 
 var _time_left := 0.0
 var _active := false
