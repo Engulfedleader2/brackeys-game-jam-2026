@@ -1,0 +1,5 @@
+[gd_resource type="WwisePlatformInfo" format=3 uid="uid://tunvnb5dp0ip"]
+
+[resource]
+platform_name = "Linux"
+platform_path = "../../../../../Music/Wwise/Brackeys_Jam.Audio/GeneratedSoundBanks/Linux"

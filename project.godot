@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://Scripts/SceneManager.gd"
 RoundManager="*uid://blqu12edm6wx4"
+WwiseRuntimeManager="*uid://bywqlw5nlem7n"
 
 [display]
 
@@ -40,3 +41,11 @@ project/assembly_name="BrackeysGameJam"
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+
+[wwise]
+
+common_user_settings/root_output_path="res://Wwise/soundbanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
+project_settings/mac_platform_info="res://Wwise/resources/Mac.tres"
+project_settings/linux_platform_info="res://Wwise/resources/Linux.tres"
+project_settings/web_platform_info="res://Wwise/resources/Web.tres"

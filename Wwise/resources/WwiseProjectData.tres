@@ -1,0 +1,654 @@
+[gd_resource type="WwiseProjectData" format=3 uid="uid://hpe3ay5gnwgy"]
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dn5s6"]
+path = "\\SoundBanks\\Default Work Unit\\Game"
+type = 7
+name = "Game"
+guid = "{A9305128-50E8-402A-B527-C94B3E5D18A2}"
+id = 702482391
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_abdhx"]
+children = [SubResource("WwiseTreeObject_dn5s6")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_wbiwk"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\AMB"
+type = 2
+name = "AMB"
+guid = "{5A93D4E6-F1F4-4AD2-B909-6FE323DE1C22}"
+id = 1117531639
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_n4jq4"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\MX"
+type = 2
+name = "MX"
+guid = "{8C82B1CB-28A5-41DD-A609-1B120CBD08D1}"
+id = 1685527054
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2b7v5"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX"
+type = 2
+name = "SFX"
+guid = "{B84E5EAB-D603-4503-9EF1-957B7A6AC764}"
+id = 393239870
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_yty4k"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\STG"
+type = 2
+name = "STG"
+guid = "{845B0A13-0618-48DD-9089-E6EE737C70AD}"
+id = 628126519
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_rq3ka"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\VOX"
+type = 2
+name = "VOX"
+guid = "{3F2E40F9-5C1F-4CBB-9E7E-C1174C0479B9}"
+id = 543694036
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tfk2a"]
+children = [SubResource("WwiseTreeObject_wbiwk"), SubResource("WwiseTreeObject_n4jq4"), SubResource("WwiseTreeObject_2b7v5"), SubResource("WwiseTreeObject_yty4k"), SubResource("WwiseTreeObject_rq3ka")]
+name = "Main Audio Bus"
+id = 2246998526
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_e6o1r"]
+children = [SubResource("WwiseTreeObject_tfk2a")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_2v05p"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Gameplay\\Loss"
+type = 3
+name = "Loss"
+guid = "{ADDE652D-5523-4623-9D56-2BF3E8EA6950}"
+id = 221232704
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_tmxjl"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Gameplay\\Shop"
+type = 3
+name = "Shop"
+guid = "{E8286CA1-AFE7-4F16-9E55-EAA78505D1BC}"
+id = 251412225
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_im43k"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Gameplay\\Table"
+type = 3
+name = "Table"
+guid = "{5E1FB932-8BF2-41B1-9C09-A4BA541E08E2}"
+id = 2048817515
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_pgs3n"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Gameplay\\Try_Again"
+type = 3
+name = "Try_Again"
+guid = "{19024E7E-31EC-4767-81AC-DFD62E06E3EF}"
+id = 308470013
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_5ewln"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Gameplay\\Win"
+type = 3
+name = "Win"
+guid = "{94DE362B-556D-45F2-86F2-CD025CE37F30}"
+id = 979765101
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_oeww5"]
+children = [SubResource("WwiseTreeObjectEvent_2v05p"), SubResource("WwiseTreeObjectEvent_tmxjl"), SubResource("WwiseTreeObjectEvent_im43k"), SubResource("WwiseTreeObjectEvent_pgs3n"), SubResource("WwiseTreeObjectEvent_5ewln")]
+name = "Gameplay"
+id = 89505537
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_4djpx"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Menu\\Credits"
+type = 3
+name = "Credits"
+guid = "{0D39A233-5D0D-4D0B-B05B-39FF00B5FF98}"
+id = 2201105581
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_mqnyt"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Menu\\Settings"
+type = 3
+name = "Settings"
+guid = "{3F060950-A760-4398-B5E3-2AD7DB993332}"
+id = 2910527622
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_v560u"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Menu\\Title"
+type = 3
+name = "Title"
+guid = "{1C2908C3-91AD-4EFB-B4B7-062D71B07CD5}"
+id = 3705726509
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_yyrou"]
+children = [SubResource("WwiseTreeObjectEvent_4djpx"), SubResource("WwiseTreeObjectEvent_mqnyt"), SubResource("WwiseTreeObjectEvent_v560u")]
+name = "Menu"
+id = 2607556080
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_geu6g"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\ALL_OFF"
+type = 3
+name = "ALL_OFF"
+guid = "{FFE6DA20-777A-4878-84EF-0F25614F8A3E}"
+id = 2801173556
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_5n8hf"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\Ball_Off"
+type = 3
+name = "Ball_Off"
+guid = "{1728F136-0086-4FCF-9892-A7A04D4A94B1}"
+id = 1274241660
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_tnib1"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\Bear_Off"
+type = 3
+name = "Bear_Off"
+guid = "{495EBE11-242B-440D-A692-63ABDC387FF7}"
+id = 1342821817
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_o7sea"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\Carrot_Off"
+type = 3
+name = "Carrot_Off"
+guid = "{FA56324D-6B2A-47A6-9613-C211F999192E}"
+id = 559073066
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_lrto0"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\Chicken_Off"
+type = 3
+name = "Chicken_Off"
+guid = "{A048F53C-DFDF-4389-B28E-D3928ECA757B}"
+id = 3196734292
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_i5cxa"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\Dog_Off"
+type = 3
+name = "Dog_Off"
+guid = "{BF27408A-C6DE-4B8B-96DD-FA941B68FEB2}"
+id = 3677222191
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_ptp8y"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\Fox_Off"
+type = 3
+name = "Fox_Off"
+guid = "{6B3450B7-F510-4F1A-8F1A-BB3E9BFE450D}"
+id = 3892601754
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_26l8v"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\Off\\Lamb_Off"
+type = 3
+name = "Lamb_Off"
+guid = "{05C9330D-5B54-4932-ADD7-A618AF67C7D8}"
+id = 1452776751
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_hir8t"]
+children = [SubResource("WwiseTreeObjectEvent_geu6g"), SubResource("WwiseTreeObjectEvent_5n8hf"), SubResource("WwiseTreeObjectEvent_tnib1"), SubResource("WwiseTreeObjectEvent_o7sea"), SubResource("WwiseTreeObjectEvent_lrto0"), SubResource("WwiseTreeObjectEvent_i5cxa"), SubResource("WwiseTreeObjectEvent_ptp8y"), SubResource("WwiseTreeObjectEvent_26l8v")]
+name = "Off"
+id = 930712164
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_viedb"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\On\\Ball_On"
+type = 3
+name = "Ball_On"
+guid = "{F7CAAAB2-46EC-4C3E-8C2E-21C9BB9B82AE}"
+id = 3426962870
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_bq6kk"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\On\\Bear_On"
+type = 3
+name = "Bear_On"
+guid = "{453D25C2-3D5A-4F84-A141-FD695EC23640}"
+id = 2443688461
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hssb3"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\On\\Carrot_On"
+type = 3
+name = "Carrot_On"
+guid = "{DB619B4A-1B93-4C7A-B517-152A55BDDB3F}"
+id = 1482611468
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0g3k4"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\On\\Chicken_On"
+type = 3
+name = "Chicken_On"
+guid = "{ADC7035F-5E94-4E67-AD6D-FB4A8516E3C9}"
+id = 1177341774
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_5ppdk"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\On\\Dog_On"
+type = 3
+name = "Dog_On"
+guid = "{9865BDD4-B04A-4360-B959-E102A19ED7E0}"
+id = 2138498875
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_l65hi"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\On\\Fox_On"
+type = 3
+name = "Fox_On"
+guid = "{5823E49B-4552-4A39-909B-026E28E4E929}"
+id = 3200743836
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_63ewg"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Opponents\\On\\Lamb_On"
+type = 3
+name = "Lamb_On"
+guid = "{56B3CC7D-B330-4CE1-9D59-C3FD0BFA7D80}"
+id = 2836373307
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_myib7"]
+children = [SubResource("WwiseTreeObjectEvent_viedb"), SubResource("WwiseTreeObjectEvent_bq6kk"), SubResource("WwiseTreeObjectEvent_hssb3"), SubResource("WwiseTreeObjectEvent_0g3k4"), SubResource("WwiseTreeObjectEvent_5ppdk"), SubResource("WwiseTreeObjectEvent_l65hi"), SubResource("WwiseTreeObjectEvent_63ewg")]
+name = "On"
+id = 1651971902
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_gv40o"]
+children = [SubResource("WwiseTreeObject_hir8t"), SubResource("WwiseTreeObject_myib7")]
+name = "Opponents"
+id = 3227987485
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0hqp2"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Game_Open"
+type = 3
+name = "Game_Open"
+guid = "{E66E941E-B06F-4475-B4EE-B0878577C6B2}"
+id = 1365208458
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_h61g6"]
+children = [SubResource("WwiseTreeObject_oeww5"), SubResource("WwiseTreeObject_yyrou"), SubResource("WwiseTreeObject_gv40o"), SubResource("WwiseTreeObjectEvent_0hqp2")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_q407k"]
+path = "\\Game Parameters\\Default Work Unit\\Gameplay\\Loss"
+type = 13
+name = "Loss"
+guid = "{EB7D72F7-4CB7-43AF-B9E4-136FAF6E520A}"
+id = 221232704
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o561g"]
+path = "\\Game Parameters\\Default Work Unit\\Gameplay\\Stress"
+type = 13
+name = "Stress"
+guid = "{9C095284-1F1D-4804-A7C5-D6B047D998D4}"
+id = 3840192365
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dipfp"]
+path = "\\Game Parameters\\Default Work Unit\\Gameplay\\Table_Stage"
+type = 13
+name = "Table_Stage"
+guid = "{D0319880-48A0-4468-99A3-11EC40808E35}"
+id = 536018156
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_orwwv"]
+children = [SubResource("WwiseTreeObject_q407k"), SubResource("WwiseTreeObject_o561g"), SubResource("WwiseTreeObject_dipfp")]
+name = "Gameplay"
+id = 89505537
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_4owox"]
+path = "\\Game Parameters\\Default Work Unit\\Menus\\Credits"
+type = 13
+name = "Credits"
+guid = "{0801D18F-AEBA-4219-903D-58B7B85DE5F3}"
+id = 2201105581
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_d4u1n"]
+path = "\\Game Parameters\\Default Work Unit\\Menus\\Pause"
+type = 13
+name = "Pause"
+guid = "{7ED2BD8E-8860-4BF4-9899-076E1C3938DE}"
+id = 3092587493
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2m8v7"]
+path = "\\Game Parameters\\Default Work Unit\\Menus\\Settings"
+type = 13
+name = "Settings"
+guid = "{D4E06AEC-3742-4EA3-B814-9F900DC9A3B3}"
+id = 2910527622
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_wchpu"]
+path = "\\Game Parameters\\Default Work Unit\\Menus\\Title"
+type = 13
+name = "Title"
+guid = "{5BE4CFA2-5E04-46FC-BE10-5D722C2773EC}"
+id = 3705726509
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ujawv"]
+children = [SubResource("WwiseTreeObject_4owox"), SubResource("WwiseTreeObject_d4u1n"), SubResource("WwiseTreeObject_2m8v7"), SubResource("WwiseTreeObject_wchpu")]
+name = "Menus"
+id = 2604644515
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_8ttr2"]
+path = "\\Game Parameters\\Default Work Unit\\Opponents\\Ball"
+type = 13
+name = "Ball"
+guid = "{AA447B8A-6B7B-4D5C-83F6-988AD03BF69F}"
+id = 1777984502
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_85ijg"]
+path = "\\Game Parameters\\Default Work Unit\\Opponents\\Bear"
+type = 13
+name = "Bear"
+guid = "{38F9C56A-9516-4DB9-89DA-7D3E56B12E8B}"
+id = 1190179415
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_x2q8b"]
+path = "\\Game Parameters\\Default Work Unit\\Opponents\\Carrot"
+type = 13
+name = "Carrot"
+guid = "{2AF2FFAE-31E1-40DC-A667-06D72049D8C9}"
+id = 2043204404
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_t5yhp"]
+path = "\\Game Parameters\\Default Work Unit\\Opponents\\Chicken"
+type = 13
+name = "Chicken"
+guid = "{15B13D0B-76BD-446C-8C28-2BCF27ACAE2A}"
+id = 4251222990
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_3v8cc"]
+path = "\\Game Parameters\\Default Work Unit\\Opponents\\Dog"
+type = 13
+name = "Dog"
+guid = "{5CE4823B-072D-4080-96E4-BED0A6C1F398}"
+id = 546651181
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_7f6pv"]
+path = "\\Game Parameters\\Default Work Unit\\Opponents\\Fox"
+type = 13
+name = "Fox"
+guid = "{EAFAF965-B0FA-4345-9187-D7D77928CEAA}"
+id = 1083137540
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2bj2c"]
+path = "\\Game Parameters\\Default Work Unit\\Opponents\\Lamb"
+type = 13
+name = "Lamb"
+guid = "{C59F53C3-4917-43EF-9BD4-014644021A23}"
+id = 657744941
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_31b5r"]
+children = [SubResource("WwiseTreeObject_8ttr2"), SubResource("WwiseTreeObject_85ijg"), SubResource("WwiseTreeObject_x2q8b"), SubResource("WwiseTreeObject_t5yhp"), SubResource("WwiseTreeObject_3v8cc"), SubResource("WwiseTreeObject_7f6pv"), SubResource("WwiseTreeObject_2bj2c")]
+name = "Opponents"
+id = 3227987485
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o035g"]
+children = [SubResource("WwiseTreeObject_orwwv"), SubResource("WwiseTreeObject_ujawv"), SubResource("WwiseTreeObject_31b5r")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_eobpg"]
+path = "\\States\\Default Work Unit\\Game\\Loss"
+type = 8
+name = "Loss"
+guid = "{DFF81043-F772-4DB5-BC84-AB118E9CDC66}"
+id = 221232704
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ypbh6"]
+path = "\\States\\Default Work Unit\\Game\\Menu"
+type = 8
+name = "Menu"
+guid = "{3716CFA0-4D58-4367-AC7D-515B950C4594}"
+id = 2607556080
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ltcrj"]
+path = "\\States\\Default Work Unit\\Game\\None"
+type = 8
+name = "None"
+guid = "{EDFC154B-8E67-4782-B268-6A597F807FFA}"
+id = 748895195
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_gbajr"]
+path = "\\States\\Default Work Unit\\Game\\Shop"
+type = 8
+name = "Shop"
+guid = "{90EAD496-DBAE-4706-B97C-FFCE259F1BA5}"
+id = 251412225
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_gsda7"]
+path = "\\States\\Default Work Unit\\Game\\Table"
+type = 8
+name = "Table"
+guid = "{8A5C6456-DB09-4D62-AB31-E6060C6E4A6B}"
+id = 2048817515
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_orhua"]
+path = "\\States\\Default Work Unit\\Game\\Win"
+type = 8
+name = "Win"
+guid = "{DF951068-FFC0-4882-98D3-40BEC2E0A871}"
+id = 979765101
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_gdusb"]
+path = "\\States\\Default Work Unit\\Game"
+children = [SubResource("WwiseTreeObject_eobpg"), SubResource("WwiseTreeObject_ypbh6"), SubResource("WwiseTreeObject_ltcrj"), SubResource("WwiseTreeObject_gbajr"), SubResource("WwiseTreeObject_gsda7"), SubResource("WwiseTreeObject_orhua")]
+type = 9
+name = "Game"
+guid = "{9B2A62E2-9C39-49CD-B052-F9AA8143810C}"
+id = 702482391
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_v46i2"]
+path = "\\States\\Default Work Unit\\Opponent\\Ball"
+type = 8
+name = "Ball"
+guid = "{0B425168-A549-4EDD-90ED-FDAF71426FE5}"
+id = 1777984502
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_uy1yx"]
+path = "\\States\\Default Work Unit\\Opponent\\Bear"
+type = 8
+name = "Bear"
+guid = "{A9BECF1F-0E6F-4A89-8BFB-6970120BAAE0}"
+id = 1190179415
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_n8fvt"]
+path = "\\States\\Default Work Unit\\Opponent\\Carrot"
+type = 8
+name = "Carrot"
+guid = "{EE8D1AF6-E76B-4DD0-8205-3AFB3F66316D}"
+id = 2043204404
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dw1g5"]
+path = "\\States\\Default Work Unit\\Opponent\\Chicken"
+type = 8
+name = "Chicken"
+guid = "{D6AE338A-B7CF-4090-A77A-35F8157DCE88}"
+id = 4251222990
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_f4oxd"]
+path = "\\States\\Default Work Unit\\Opponent\\Dog"
+type = 8
+name = "Dog"
+guid = "{AC285732-B4AB-4EFF-B44D-A038B59B12D7}"
+id = 546651181
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_44i7c"]
+path = "\\States\\Default Work Unit\\Opponent\\Fox"
+type = 8
+name = "Fox"
+guid = "{52D51316-21CE-4269-BCC5-C263393956B4}"
+id = 1083137540
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_rq0og"]
+path = "\\States\\Default Work Unit\\Opponent\\Lamb"
+type = 8
+name = "Lamb"
+guid = "{A4D7F236-1E95-4427-81C5-26E596C73A68}"
+id = 657744941
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_daq1u"]
+path = "\\States\\Default Work Unit\\Opponent\\None"
+type = 8
+name = "None"
+guid = "{530BC7F4-869E-4CF5-9454-09F893C79785}"
+id = 748895195
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_32x57"]
+path = "\\States\\Default Work Unit\\Opponent"
+children = [SubResource("WwiseTreeObject_v46i2"), SubResource("WwiseTreeObject_uy1yx"), SubResource("WwiseTreeObject_n8fvt"), SubResource("WwiseTreeObject_dw1g5"), SubResource("WwiseTreeObject_f4oxd"), SubResource("WwiseTreeObject_44i7c"), SubResource("WwiseTreeObject_rq0og"), SubResource("WwiseTreeObject_daq1u")]
+type = 9
+name = "Opponent"
+guid = "{8E15A181-BB14-4C4E-847B-CFA193B8D48B}"
+id = 4158018714
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_6w8b0"]
+path = "\\States\\Default Work Unit\\Stage\\None"
+type = 8
+name = "None"
+guid = "{115D3836-A63B-4541-BDE7-2467DBE886AB}"
+id = 748895195
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_cdp8j"]
+path = "\\States\\Default Work Unit\\Stage\\Stage_01"
+type = 8
+name = "Stage_01"
+guid = "{43E83300-B094-4A51-85F8-E9BF7686D7A5}"
+id = 344719509
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_341ig"]
+path = "\\States\\Default Work Unit\\Stage\\Stage_02"
+type = 8
+name = "Stage_02"
+guid = "{385344DA-F446-4E8E-BBC2-7C76D77DDDBA}"
+id = 344719510
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_i2a87"]
+path = "\\States\\Default Work Unit\\Stage\\Stage_03"
+type = 8
+name = "Stage_03"
+guid = "{C37602B3-186D-4D25-B961-7D89F276E355}"
+id = 344719511
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_f15cs"]
+path = "\\States\\Default Work Unit\\Stage\\Stage_04"
+type = 8
+name = "Stage_04"
+guid = "{D71070F8-5EAF-452F-B59E-AD14D0875366}"
+id = 344719504
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5urve"]
+path = "\\States\\Default Work Unit\\Stage"
+children = [SubResource("WwiseTreeObject_6w8b0"), SubResource("WwiseTreeObject_cdp8j"), SubResource("WwiseTreeObject_341ig"), SubResource("WwiseTreeObject_i2a87"), SubResource("WwiseTreeObject_f15cs")]
+type = 9
+name = "Stage"
+guid = "{4D5384EF-7250-4548-AFA9-8A5215E9D9AA}"
+id = 1063701865
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_rms2w"]
+children = [SubResource("WwiseTreeObject_gdusb"), SubResource("WwiseTreeObject_32x57"), SubResource("WwiseTreeObject_5urve")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_20pdq"]
+path = "\\Switches\\Default Work Unit\\Opponents\\Ball"
+type = 10
+name = "Ball"
+guid = "{131AF2AD-3AE7-42D7-9871-C90F3DB9BD0D}"
+id = 1777984502
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_wm4gr"]
+path = "\\Switches\\Default Work Unit\\Opponents\\Bear"
+type = 10
+name = "Bear"
+guid = "{FA8AF2C1-08E0-4425-B602-2D380FEF1C97}"
+id = 1190179415
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_hxqoe"]
+path = "\\Switches\\Default Work Unit\\Opponents\\Carrot"
+type = 10
+name = "Carrot"
+guid = "{40E3843C-EBCC-438B-97F1-0BD7DCE17C6C}"
+id = 2043204404
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_rs5m0"]
+path = "\\Switches\\Default Work Unit\\Opponents\\Chicken"
+type = 10
+name = "Chicken"
+guid = "{AC1E180B-04EF-4C2A-8230-C75D207A6E75}"
+id = 4251222990
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_rgqpf"]
+path = "\\Switches\\Default Work Unit\\Opponents\\Dog"
+type = 10
+name = "Dog"
+guid = "{30D24FD8-BA2A-4EA1-9B55-CC7ECE8B3DD3}"
+id = 546651181
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_nf113"]
+path = "\\Switches\\Default Work Unit\\Opponents\\Fox"
+type = 10
+name = "Fox"
+guid = "{95CA0E8C-91D0-46F6-97CF-5F6A5368575B}"
+id = 1083137540
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_8d6dh"]
+path = "\\Switches\\Default Work Unit\\Opponents\\Lamb"
+type = 10
+name = "Lamb"
+guid = "{DAC0A711-EDD8-49E5-BC38-6C3C8C70B74C}"
+id = 657744941
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_jih80"]
+path = "\\Switches\\Default Work Unit\\Opponents"
+children = [SubResource("WwiseTreeObject_20pdq"), SubResource("WwiseTreeObject_wm4gr"), SubResource("WwiseTreeObject_hxqoe"), SubResource("WwiseTreeObject_rs5m0"), SubResource("WwiseTreeObject_rgqpf"), SubResource("WwiseTreeObject_nf113"), SubResource("WwiseTreeObject_8d6dh")]
+type = 11
+name = "Opponents"
+guid = "{BB75A92A-F820-4EAE-B824-8815AA44E700}"
+id = 3227987485
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_4m7c0"]
+children = [SubResource("WwiseTreeObject_jih80")]
+name = "Default Work Unit"
+id = 125608783
+
+[resource]
+bus_root = [SubResource("WwiseTreeObject_e6o1r")]
+bank_root = [SubResource("WwiseTreeObject_abdhx")]
+event_root = [SubResource("WwiseTreeObject_h61g6")]
+game_parameter_root = [SubResource("WwiseTreeObject_o035g")]
+state_root = [SubResource("WwiseTreeObject_rms2w")]
+switch_root = [SubResource("WwiseTreeObject_4m7c0")]
