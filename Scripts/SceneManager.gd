@@ -13,6 +13,10 @@ func change_scene(scene_path: String) -> void:
 
 	print("[SceneManager] Changing scene to ", scene_path)
 
+	# Fade out music if AudioManager exists
+	if AudioManager and AudioManager.music_player.playing:
+		await AudioManager.stop_music(0.3)
+
 	var error := get_tree().change_scene_to_file(scene_path)
 	if error != OK:
 		push_error("[SceneManager] Failed to change scene to %s (error %d)" % [scene_path, error])
