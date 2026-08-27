@@ -2,44 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg7ane45jgyg" path="res://Scripts/UI/MainMenu.gd" id="1_mainmenu"]
 [ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="2_853f1"]
-[ext_resource type="Texture2D" uid="uid://bcih0bgn5g3v8" path="res://AssetDump/Enviroment/CurtainBgs_.png" id="3_8saeu"]
-
-[sub_resource type="Animation" id="Animation_8saeu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Curtain:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ghw46"]
-resource_name = "Reveal"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Curtain:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 52), Vector2(0, -1253)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_df05h"]
-_data = {
-&"RESET": SubResource("Animation_8saeu"),
-&"Reveal": SubResource("Animation_ghw46")
-}
+[ext_resource type="PackedScene" uid="uid://d1b63gmaxteg2" path="res://Scenes/Transition/curtain.tscn" id="3_8saeu"]
 
 [node name="MainMenu" type="Control" unique_id=60566485]
 layout_mode = 3
@@ -89,25 +52,6 @@ visible = false
 layout_mode = 2
 text = "Quit"
 
-[node name="Curtain" type="Control" parent="." unique_id=1306789660]
-modulate = Color(0.66267854, 0.66267854, 0.66267854, 1)
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Curtain" parent="." unique_id=1696909853 instance=ExtResource("3_8saeu")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Curtain" unique_id=1705271556]
-position = Vector2(368.02997, 431)
-scale = Vector2(2.58, 2.58)
-texture = ExtResource("3_8saeu")
-region_enabled = true
-region_rect = Rect2(1112.3726, 91.118164, 507.48413, 642.1226)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Curtain" unique_id=1226277604]
-position = Vector2(1415.03, 431)
-scale = Vector2(2.58, 2.58)
-texture = ExtResource("3_8saeu")
-region_enabled = true
-region_rect = Rect2(1112.3726, 91.118164, 507.48413, 642.1226)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=261852291]
-libraries/ = SubResource("AnimationLibrary_df05h")
+[connection signal="start_game_signal" from="." to="Curtain" method="_on_main_menu_start_game_signal"]

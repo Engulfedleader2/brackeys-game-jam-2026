@@ -4,12 +4,12 @@ extends Control
 @onready var settings_button: Button = $Content/VBoxContainer/SettingsButton
 @onready var credits_button: Button = $Content/VBoxContainer/CreditsButton
 @onready var quit_button: Button = $Content/VBoxContainer/QuitButton
-@onready var animation: AnimationPlayer = $AnimationPlayer
 
+signal start_game_signal
 
 func _ready() -> void:
 	await get_tree().create_timer(2).timeout
-	animation.play("Reveal")
+	$Curtain._reveal()
 	start_button.pressed.connect(_on_start_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
@@ -17,7 +17,8 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	SceneManager.go_to_game()
+	start_game_signal.emit()
+	#SceneManager.go_to_game()
 
 
 func _on_settings_button_pressed() -> void:
