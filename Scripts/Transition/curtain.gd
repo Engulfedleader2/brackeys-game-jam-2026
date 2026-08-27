@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var animation: AnimationPlayer = $AnimationPlayer
 
 
+
 func _reveal():
 	animation.play("Reveal")
 

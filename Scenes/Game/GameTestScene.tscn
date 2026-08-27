@@ -33,7 +33,6 @@
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5c.tres" id="8_card5c"]
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5d.tres" id="8_card5d"]
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5e.tres" id="8_card5e"]
-[ext_resource type="PackedScene" uid="uid://d1b63gmaxteg2" path="res://Scenes/Transition/curtain.tscn" id="33_pdcst"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 script = ExtResource("1_3enmh")
@@ -63,5 +62,3 @@ player_paths = Array[NodePath]([NodePath("../Player"), NodePath("../AIPlayer")])
 
 [node name="TurnManager" type="Node" parent="." unique_id=676050292]
 script = ExtResource("7_turnmanager")
-
-[node name="Curtain" parent="." unique_id=1218752143 instance=ExtResource("33_pdcst")]

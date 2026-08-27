@@ -9,7 +9,7 @@ signal start_game_signal
 
 func _ready() -> void:
 	await get_tree().create_timer(2).timeout
-	$Curtain._reveal()
+	Curtain._reveal()
 	start_button.pressed.connect(_on_start_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	start_game_signal.emit()
+	Curtain._on_main_menu_start_game_signal()
 	#SceneManager.go_to_game()
 
 

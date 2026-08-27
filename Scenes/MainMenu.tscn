@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bg7ane45jgyg" path="res://Scripts/UI/MainMenu.gd" id="1_mainmenu"]
 [ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="2_853f1"]
-[ext_resource type="PackedScene" uid="uid://d1b63gmaxteg2" path="res://Scenes/Transition/curtain.tscn" id="3_8saeu"]
 
 [node name="MainMenu" type="Control" unique_id=60566485]
 layout_mode = 3
@@ -51,7 +50,3 @@ text = "Credits"
 visible = false
 layout_mode = 2
 text = "Quit"
-
-[node name="Curtain" parent="." unique_id=1696909853 instance=ExtResource("3_8saeu")]
-
-[connection signal="start_game_signal" from="." to="Curtain" method="_on_main_menu_start_game_signal"]
