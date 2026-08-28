@@ -18,6 +18,11 @@ func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck, p_
 	for i in players.size():
 		players[i].card_played.connect(_on_player_card_played.bind(players[i].owner_id))
 
+func eliminate_player(player: Player) -> void:
+	if player in players:
+		players.erase(player)
+		print("[RoundManager] Player %s removed from active players" % player.player_name)
+
 
 # This function marks the beginning of the round. Here you can setup whatever needs to be setup before players start taking turns.
 func start_round() -> void:
@@ -35,13 +40,14 @@ func check_bust() -> bool:
 	return busted
 
 # This function marks the end of the round. Here you can do whatever needs to be done after players have taken their turns or someone busted.
+# winner_owner_id: the player who emptied their hand first (or -1 if round ended by bust)
 func end_round(winner_owner_id: int = -1) -> void:
 	print("End Round")
-	var loser := _get_round_loser()
+	var player_at_risk := _get_round_loser()
 	var loser_id := -1
-	if loser != null:
-		loser_id = loser.owner_id
-		print("[RoundManager] Player %d has the most cards (%d) at end of round - will be eaten" % [loser_id, loser.hand.get_card_count()])
+	if player_at_risk != null:
+		loser_id = player_at_risk.owner_id
+		print("[RoundManager] Player %s (%d) has the most cards (%d) - watch out!" % [player_at_risk.player_name, loser_id, player_at_risk.hand.get_card_count()])
 	shared_pile.reset_for_new_round()
 	round_finished.emit(winner_owner_id, loser_id)
 
@@ -54,42 +60,54 @@ func _advance_turn() -> void:
 
 
 func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: int) -> void:
+	var playing_player = _player_for(owner_id)
+
 	shared_pile.play_card(instance, owner_id, face_down)
-	
+
+	# Check immediately if this player emptied their hand
+	if playing_player and playing_player.hand.get_card_count() == 0:
+		print("[RoundManager] Player %s emptied their hand on play!" % playing_player.player_name)
+		end_round(owner_id)
+		return
+
 	if check_bust():
 		#print("Player ", owner_id, " busted!")
 		#end_round()
 		_resolve_bust.call_deferred(owner_id)
 		return
-	
+
 	if face_down and _human_can_call(owner_id):
 		if await _run_call_window(owner_id):
 			return
-	
+
 	if _check_round_over():
 		return
-	
+
 	_advance_turn()
 
 func _resolve_bust(owner_id: int) -> void:
-	print("[RoundManager] Player %d busted at %d" % [owner_id, shared_pile.get_total()])
+	print("[RoundManager] Player %d BUSTED at %d - ELIMINATED!" % [owner_id, shared_pile.get_total()])
 	shared_pile.reveal_all()
 	_give_pile_to(owner_id, SharedPile.ClearReason.BUST)
+	# Busted player is immediately eliminated (no winner for this round)
+	end_round(-1)
 	
 func _give_pile_to(owner_id: int, reason: SharedPile.ClearReason) -> void:
 	var loser := _player_for(owner_id)
 	if loser == null:
 		push_error("[Round] No player with owner_id %d" % owner_id)
 		return
-	
+
 	var picked_up := shared_pile.collect_all(reason)
 	loser.hand.set_cards(picked_up)
 	print("[RoundManager] Player %d picks up %d cards (hand: %d)" % [owner_id, picked_up.size(), loser.hand.get_card_count()])
-	
+
 	if _check_round_over():
 		return
 
-	_advance_turn.call_deferred()
+	# Don't advance turn if this was a bust - round will end after
+	if reason != SharedPile.ClearReason.BUST:
+		_advance_turn.call_deferred()
 
 func _get_round_loser() -> Player:
 	var loser: Player = null
@@ -141,7 +159,7 @@ func _human_player() -> Player:
 func _check_round_over() -> bool:
 	for player in players:
 		if player.hand.get_card_count() == 0:
-			print("[RoundManager] Player %d is out of cards - round is over " % player.owner_id)
+			print("[RoundManager] Player %s (%d) wins the round - emptied their hand!" % [player.player_name, player.owner_id])
 			end_round(player.owner_id)
 			return true
 	return false

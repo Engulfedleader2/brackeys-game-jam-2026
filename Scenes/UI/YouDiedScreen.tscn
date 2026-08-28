@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b8xnb42yam8gy"]
+
+[ext_resource type="Texture2D" uid="uid://q4c7vexrdvrp" path="res://AssetDump/Spooky/You_Died.png" id="1_g3q2f"]
+
+[node name="YouDiedScreen" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2000.0
+offset_top = -1600.0
+offset_right = 2000.0
+offset_bottom = 1600.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g3q2f")
+expand_mode = 1
