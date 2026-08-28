@@ -37,13 +37,6 @@ grow_horizontal = 2
 rotation = 0.15707964
 offset_transform_scale = Vector2(0.5, 0.5)
 
-[node name="Label" type="Label" parent="Root/Group" unique_id=260036028]
-layout_mode = 0
-offset_left = 840.0
-offset_top = 319.5
-offset_right = 1080.0
-offset_bottom = 342.5
-
 [node name="ProgressBar" type="TextureProgressBar" parent="Root/Group" unique_id=1104775270]
 custom_minimum_size = Vector2(60, 750)
 layout_mode = 0
