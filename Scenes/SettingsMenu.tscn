@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1ewhe8x1375k"]
 
 [ext_resource type="Script" uid="uid://r6chphqnqs02" path="res://Scripts/UI/SettingsMenu.gd" id="1_settingsmenu"]
+[ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="2_bxjf0"]
 
 [node name="SettingsMenu" type="Control" unique_id=2138145686]
 layout_mode = 3
@@ -10,6 +11,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_settingsmenu")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1111148647]
+texture = ExtResource("2_bxjf0")
+centered = false
 
 [node name="Content" type="CenterContainer" parent="." unique_id=1837380921]
 layout_mode = 1

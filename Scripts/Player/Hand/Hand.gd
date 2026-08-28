@@ -14,6 +14,7 @@ const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn");
 @export var hover_tween_duration := 0.25
 @export var reveal_cards := true # false for opponent hands, so their cards stay hidden
 @export var vertical_layout := false # true for side-seated players, so the hand spreads up/down
+@export var card_skew = Vector2(1,1)
 
 var cards: Array[Card] = []
 var _bluff_target: Card = null

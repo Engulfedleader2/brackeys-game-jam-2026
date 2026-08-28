@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dm1g5ig7m8w13"]
+
+[ext_resource type="Texture2D" uid="uid://cuq63ol8irwc7" path="res://Scripts/Cards/CardResources/Art/BackCard.png" id="1_rh7ph"]
+
+[node name="TestHandScale" type="Node2D" unique_id=108846399]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=120578269]
+position = Vector2(1070, 586)
+rotation = -1.5707964
+scale = Vector2(1, 0.12)
+texture = ExtResource("1_rh7ph")

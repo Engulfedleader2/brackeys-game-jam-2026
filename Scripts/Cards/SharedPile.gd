@@ -8,6 +8,8 @@ signal card_revealed(entry: PileEntry)
 signal bluff_called(result: BluffResult)
 signal pile_cleared(reason: ClearReason, card_count: int)
 
+signal speech_signal
+
 const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn")
 
 @export var rules: PileRules
@@ -159,6 +161,7 @@ func _clear(reason: ClearReason) -> void:
 	_next_play_index = 0
 	pile_cleared.emit(reason, count)
 	total_changed.emit(0)
+	speech_signal.emit()
 
 func _on_card_added(entry: PileEntry) -> void:
 	var card: Card = CARD_SCENE.instantiate()

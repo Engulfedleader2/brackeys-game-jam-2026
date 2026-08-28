@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d1b63gmaxteg2"]
+
+[ext_resource type="Script" uid="uid://bpn1phd0jncxn" path="res://Scripts/Transition/curtain.gd" id="1_km32r"]
+[ext_resource type="Texture2D" uid="uid://bcih0bgn5g3v8" path="res://AssetDump/Enviroment/CurtainBgs_.png" id="2_hf3og"]
+
+[sub_resource type="Animation" id="Animation_8saeu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ghw46"]
+resource_name = "Reveal"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 59), Vector2(0, -1271)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_km32r"]
+_data = {
+&"RESET": SubResource("Animation_8saeu"),
+&"Reveal": SubResource("Animation_ghw46")
+}
+
+[node name="Curtain" type="CanvasLayer" unique_id=1218752143]
+script = ExtResource("1_km32r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=274990988]
+libraries/ = SubResource("AnimationLibrary_km32r")
+
+[node name="Control" type="Control" parent="." unique_id=1238348104]
+modulate = Color(0.56028485, 0.56028485, 0.56028485, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=898331775]
+position = Vector2(368.02997, 431)
+scale = Vector2(2.58, 2.58)
+texture = ExtResource("2_hf3og")
+region_enabled = true
+region_rect = Rect2(1112.3726, 91.118164, 507.48413, 642.1226)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control" unique_id=2082853628]
+position = Vector2(1415.03, 431)
+scale = Vector2(2.58, 2.58)
+texture = ExtResource("2_hf3og")
+region_enabled = true
+region_rect = Rect2(1112.3726, 91.118164, 507.48413, 642.1226)
