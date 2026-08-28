@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0egfb2xunmaf"]
 
 [ext_resource type="Texture2D" uid="uid://vfmssiyxt2n8" path="res://AssetDump/Cards/BackCard.png" id="1_3k4v4"]
+[ext_resource type="Script" uid="uid://2ye5ohyh0k2d" path="res://Scenes/Test/card_reveal.gd" id="1_iby7k"]
 [ext_resource type="Texture2D" uid="uid://3et1dbclb8y5" path="res://AssetDump/Spooky/example_table.png" id="1_ilspr"]
 [ext_resource type="AudioStream" uid="uid://bah2rqirg6pxr" path="res://AssetDump/SFX/784658__music_is_wiggly_air__heartbeat-sub-kick-softer.wav" id="1_ub3fg"]
 [ext_resource type="Texture2D" uid="uid://d0vm0wuh17gbd" path="res://AssetDump/Cards/Uno Cards/Uno1.png" id="2_ub3fg"]
@@ -175,8 +176,10 @@ _data = {
 }
 
 [node name="CardReveal" type="Node2D" unique_id=18024946]
+script = ExtResource("1_iby7k")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1431675102]
+visible = false
 texture = ExtResource("1_ilspr")
 centered = false
 
