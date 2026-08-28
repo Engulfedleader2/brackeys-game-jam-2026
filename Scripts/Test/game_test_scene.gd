@@ -7,9 +7,9 @@ func _ready() -> void:
 	Curtain._reveal()
 
 
-func _on_shared_pile_speech_signal() -> void:
-	$AnimationPlayer.play("Reveal")
-	show_signal.emit()
+#func _on_shared_pile_speech_signal() -> void:
+	#$AnimationPlayer.play("Reveal")
+	#show_signal.emit()
 
 
 func _leave():

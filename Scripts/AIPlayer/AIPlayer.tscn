@@ -5,12 +5,19 @@
 
 [node name="AIPlayer" unique_id=569748688 instance=ExtResource("1_rf4qc")]
 script = ExtResource("2_mkchb")
+bluff_chance = 0.4
+vertical_layout = false
+portrait_offset = Vector2(-50, -180)
+portrait_size = 1
 
-[node name="Hand" parent="."]
+[node name="Hand" parent="." index="1" unique_id=1584552490]
+position = Vector2(0, 114)
 reveal_cards = false
 
-[node name="Portrait" type="TextureRect" parent="."]
-position = Vector2(-50, -180)
-size = Vector2(100, 100)
+[node name="Portrait" type="TextureRect" parent="." index="2" unique_id=2018215739]
+offset_left = -126.0
+offset_top = -256.0
+offset_right = 126.0
+offset_bottom = -4.0
 expand_mode = 1
 stretch_mode = 5

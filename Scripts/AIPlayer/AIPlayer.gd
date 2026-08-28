@@ -7,6 +7,7 @@ extends Player
 @export_range(0.0, 1.0) var bluff_chance := 0.4
 @export var vertical_layout := false # true for side-seated players
 @export var portrait_offset := Vector2(-50, -180)
+@export var portrait_size := Vector2(2,2)
 
 # Random portrait only for now - not tied to personality/decision logic yet.
 const PORTRAITS: Array[Texture2D] = [
@@ -24,6 +25,7 @@ func _ready() -> void:
 	portrait.texture = PORTRAITS.pick_random()
 	portrait.position = portrait_offset
 	hand.vertical_layout = vertical_layout
+	portrait.scale = portrait_size
 
 
 func start_turn() -> void:
