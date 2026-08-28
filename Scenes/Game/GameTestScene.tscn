@@ -36,7 +36,6 @@
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5d.tres" id="8_card5d"]
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5e.tres" id="8_card5e"]
 [ext_resource type="PackedScene" uid="uid://cmu05d7eyxqpu" path="res://Scenes/Game/CallBluffPrompt.tscn" id="33_pdcst"]
-[ext_resource type="PackedScene" uid="uid://cgq1dqn5xfq52" path="res://Scenes/UI/RoundSurvivedScreen.tscn" id="34_rsrvd"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 
@@ -119,7 +118,7 @@ offset_bottom = 46.0
 text = "..."
 horizontal_alignment = 1
 
-[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "turn_label", "round_survived_screen")]
+[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "turn_label")]
 script = ExtResource("6_gamemanager")
 turn_manager = NodePath("../TurnManager")
 deck = NodePath("../Deck")
@@ -127,12 +126,8 @@ shared_pile = NodePath("../SharedPile")
 player_paths = Array[NodePath]([NodePath("../Player"), NodePath("../AIPlayer"), NodePath("../AIPlayer2"), NodePath("../AIPlayer3")])
 call_bluff_prompt = NodePath("../CallBluffPrompt")
 turn_label = NodePath("../TurnLabel")
-round_survived_screen = NodePath("../RoundSurvivedScreen")
 
 [node name="TurnManager" type="Node" parent="." unique_id=676050292]
 script = ExtResource("7_turnmanager")
 
 [node name="CallBluffPrompt" parent="." unique_id=2146204010 instance=ExtResource("33_pdcst")]
-
-[node name="RoundSurvivedScreen" parent="." unique_id=3957028261 instance=ExtResource("34_rsrvd")]
-visible = false
