@@ -7,6 +7,7 @@ extends Node
 @export var call_bluff_prompt: CallBluffPrompt
 @export var turn_label: Label
 @export var round_survived_screen: CanvasLayer
+@export var you_died_screen: CanvasLayer
 var total_game_rounds = 3
 const STARTING_HAND_SIZE := 6
 const LOSE_HAND_SIZE := 15
@@ -29,12 +30,6 @@ func _on_turn_started(player: Player) -> void:
 func _on_round_finished(winner_owner_id: int, loser_owner_id: int) -> void:
 	print("[GameManager] Round %d finished - Winner: %d, Loser: %d" % [current_round_number, winner_owner_id, loser_owner_id])
 
-	# Show round survived screen
-	if round_survived_screen:
-		round_survived_screen.visible = true
-		await get_tree().create_timer(2.0).timeout
-		round_survived_screen.visible = false
-
 	# Award round win to the winner
 	if winner_owner_id != -1 and round_wins.has(winner_owner_id):
 		round_wins[winner_owner_id] += 1
@@ -49,6 +44,11 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int) -> void:
 		var buster := _get_round_loser()
 		if buster != null:
 			print("[GameManager] Player %s BUSTED and is EATEN! (%d cards)" % [buster.player_name, buster.hand.get_card_count()])
+			# Show "You Died" screen if the player (owner_id 0) busted
+			if buster.owner_id == 0 and you_died_screen:
+				you_died_screen.visible = true
+				await get_tree().create_timer(3.0).timeout
+				you_died_screen.visible = false
 			eliminated_players.append(buster)
 
 	# Also check for players who reached 15+ cards
@@ -58,6 +58,21 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int) -> void:
 			print("[GameManager] Player %s EATEN! Eliminated with %d cards" % [player.player_name, player.hand.get_card_count()])
 			if player not in eliminated_players:
 				eliminated_players.append(player)
+
+	# Check if player 0 survived
+	var player_survived = true
+	for eliminated in eliminated_players:
+		if eliminated.owner_id == 0:
+			player_survived = false
+			break
+
+	# Show appropriate screen for player 0
+	if player_survived:
+		# Show round survived screen only if player survived
+		if round_survived_screen:
+			round_survived_screen.visible = true
+			await get_tree().create_timer(2.0).timeout
+			round_survived_screen.visible = false
 
 	# Remove eliminated players from active play
 	for player in eliminated_players:
@@ -158,6 +173,12 @@ func check_game_over() -> void:
 
 func _end_game_with_winner(winner_owner_id: int) -> void:
 	print("[GameManager] Game Over! Eliminating all other players...")
+	# Show "You Died" if player 0 lost
+	if winner_owner_id != 0 and you_died_screen:
+		you_died_screen.visible = true
+		await get_tree().create_timer(3.0).timeout
+		you_died_screen.visible = false
+
 	# Eliminate all players except the winner
 	for path in player_paths:
 		var player = get_node(path) as Player
