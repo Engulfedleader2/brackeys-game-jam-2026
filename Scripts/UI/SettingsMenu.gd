@@ -20,4 +20,5 @@ func _on_sfx_toggled(enabled: bool) -> void:
 
 
 func _on_back_button_pressed() -> void:
+	Curtain._hide()
 	SceneManager.go_to_main_menu()

@@ -7,4 +7,4 @@
 script = ExtResource("1_anpm6")
 rules = ExtResource("2_p3fdn")
 
-[node name="CardPile" type="Node2D" parent="." unique_id=2166093267]
+[node name="CardPile" type="Node2D" parent="." unique_id=-2128874029]

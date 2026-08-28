@@ -13,11 +13,11 @@ var instance: CardInstance
 @onready var front_face: Node2D = $FrontFace
 @onready var back_face: Node2D = $BackFace
 
-
 func _ready() -> void:
 	card_area.mouse_entered.connect(_on_mouse_entered)
 	card_area.mouse_exited.connect(_on_mouse_exited)
 	card_area.input_event.connect(_on_area_input_event)
+	
 
 
 func _on_mouse_entered() -> void:

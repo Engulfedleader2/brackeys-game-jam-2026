@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://cqgrnwchlujb6"]
 
 [ext_resource type="Script" uid="uid://udxqdqmyde7g" path="res://Scripts/Player/Hand/Hand.gd" id="1_7pcxw"]
+[ext_resource type="Texture2D" uid="uid://cnjtsu6e6v72o" path="res://AssetDump/UI/BLUFF.png" id="2_fgkcf"]
 
 [node name="Hand" type="Node2D" unique_id=1584552490]
 script = ExtResource("1_7pcxw")
+
+[node name="Bluff" type="Button" parent="." unique_id=696362000]
+custom_minimum_size = Vector2(120, 44)
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("2_fgkcf")
+flat = true
+icon_alignment = 1
+expand_icon = true
