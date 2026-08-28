@@ -115,7 +115,8 @@ position = Vector2(276, 599)
 vertical_layout = true
 portrait_offset = Vector2(-350, -600)
 portrait_size = Vector2(5, 5)
-hand_card_scale = Vector2(-1, -1)
+hand_skew = 0.5
+hand_card_scale = Vector2(-0.2, -0.2)
 player_name = "Rival 2"
 owner_id = 2
 
