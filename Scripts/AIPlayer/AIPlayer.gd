@@ -8,7 +8,12 @@ extends Player
 @export var vertical_layout := false # true for side-seated players
 @export var portrait_offset := Vector2(-50, -180)
 
+enum Facing { FRONT, LEFT, RIGHT }
 # Random portrait only for now - not tied to personality/decision logic yet.
+@export var facing: Facing = Facing.FRONT
+@export var art_faces_right := true
+@export var table_center_x := 960.0
+
 const PORTRAITS: Array[Texture2D] = [
 	preload("res://Scripts/AIPlayer/Portraits/Bear.png"),
 	preload("res://Scripts/AIPlayer/Portraits/Dachshund.png"),
@@ -22,6 +27,7 @@ const PORTRAITS: Array[Texture2D] = [
 func _ready() -> void:
 	super._ready()
 	portrait.texture = PORTRAITS.pick_random()
+	_apply_facing()
 	portrait.position = portrait_offset
 	hand.vertical_layout = vertical_layout
 
@@ -37,4 +43,19 @@ func start_turn() -> void:
 	
 	face_down = randf() < bluff_chance
 	card.played.emit(face_down)
+
+func _apply_facing() -> void:
+	var wants_left := false
 	
+	match facing:
+		Facing.LEFT:
+			wants_left = true
+		Facing.RIGHT:
+			wants_left = false
+		Facing.FRONT:
+			var dx := global_position.x - table_center_x
+			if absf(dx) < 1.0:
+				return
+			wants_left = dx > 0.0
+	
+	portrait.flip_h = wants_left == art_faces_right

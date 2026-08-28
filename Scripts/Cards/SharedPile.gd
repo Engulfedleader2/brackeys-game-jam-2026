@@ -11,8 +11,13 @@ signal pile_cleared(reason: ClearReason, card_count: int)
 const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn")
 
 @export var rules: PileRules
-@export var card_step := Vector2(70, 12)
+@export var card_step := Vector2(4, 3)
 @export var card_scale := Vector2(0.45, 0.45)
+@export var pile_jitter := 15.0
+@export var pile_rotation := 0.14
+@export var drop_duration := 0.22
+
+@onready var card_pile: Node2D = $CardPile
 
 var _entries: Array[PileEntry] = []
 var _next_play_index: int = 0
@@ -157,15 +162,24 @@ func _clear(reason: ClearReason) -> void:
 
 func _on_card_added(entry: PileEntry) -> void:
 	var card: Card = CARD_SCENE.instantiate()
-	add_child(card)
+	card_pile.add_child(card)
 	card.setup(entry.instance)
 	card.scale = card_scale
-	card.position = card_step * float(entry.play_index)
+	#card.position = card_step * float(entry.play_index)
 	card.z_index = entry.play_index
 	card.card_area.input_pickable = false
 
 	if entry.face_down:
 		card.set_face_down()
+		
+	#testing some stuff to make it look like an actual pile
+	var rng := RandomNumberGenerator.new()
+	rng.seed = entry.instance.instance_id
+	var target := card_step * float(entry.play_index) + Vector2(rng.randf_range(-pile_jitter, pile_jitter), rng.randf_range(-pile_jitter, pile_jitter))
+	card.rotation = rng.randf_range(-pile_rotation, pile_rotation)
+	card.position = target + Vector2(0, -280)
+	var tween := create_tween()
+	tween.tween_property(card, "position", target, drop_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)	
 	_card_nodes[entry] = card
 
 func _on_card_revealed(entry: PileEntry) -> void:

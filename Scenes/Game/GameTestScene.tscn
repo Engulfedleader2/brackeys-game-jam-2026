@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://by0ku407tlifk"]
 
+[ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="1_2hm42"]
 [ext_resource type="Script" uid="uid://dylp1pxcycfxf" path="res://Scripts/Cards/Deck.gd" id="1_empv6"]
+[ext_resource type="Texture2D" uid="uid://xwvj8todr20h" path="res://AssetDump/Spooky/Blanket_BG.png" id="2_1re6w"]
 [ext_resource type="Script" uid="uid://deyr1gflpda4x" path="res://Scripts/Cards/CardResources/CardResource.gd" id="2_ptkv3"]
+[ext_resource type="Texture2D" uid="uid://s8e2k615snur" path="res://AssetDump/Spooky/Box_BG.png" id="3_1osuu"]
 [ext_resource type="PackedScene" uid="uid://c7edokbnxij20" path="res://Scenes/Game/SharedPile.tscn" id="3_fq5w4"]
 [ext_resource type="PackedScene" uid="uid://dqdvsqgdhi7es" path="res://Scripts/Player/Player.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="5_aiplayer"]
@@ -36,38 +39,62 @@
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 
+[node name="Background" type="CanvasLayer" parent="." unique_id=380697040]
+layer = -1
+
+[node name="BG" type="TextureRect" parent="Background" unique_id=1819456868]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2hm42")
+stretch_mode = 5
+
+[node name="Blanket" type="TextureRect" parent="Background" unique_id=1529169596]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1re6w")
+
+[node name="Table" type="TextureRect" parent="Background" unique_id=560025992]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_1osuu")
+
 [node name="Deck" type="Node" parent="." unique_id=1447409975]
 script = ExtResource("1_empv6")
 card_resources = Array[ExtResource("2_ptkv3")]([ExtResource("8_card1"), ExtResource("8_card1b"), ExtResource("8_card1c"), ExtResource("8_card1d"), ExtResource("8_card1e"), ExtResource("8_card2"), ExtResource("8_card2b"), ExtResource("8_card2c"), ExtResource("8_card2d"), ExtResource("8_card2e"), ExtResource("8_card3"), ExtResource("8_card3b"), ExtResource("8_card3c"), ExtResource("8_card3d"), ExtResource("8_card3e"), ExtResource("8_card4"), ExtResource("8_card4b"), ExtResource("8_card4c"), ExtResource("8_card4d"), ExtResource("8_card4e"), ExtResource("8_card5"), ExtResource("8_card5b"), ExtResource("8_card5c"), ExtResource("8_card5d"), ExtResource("8_card5e")])
 
 [node name="SharedPile" parent="." unique_id=755290654 instance=ExtResource("3_fq5w4")]
-position = Vector2(960, 500)
+position = Vector2(960, 650)
 
 [node name="Player" parent="." unique_id=845295021 instance=ExtResource("4_player")]
 position = Vector2(960, 850)
 player_name = "You"
 
 [node name="AIPlayer" parent="." unique_id=392891926 instance=ExtResource("5_aiplayer")]
-position = Vector2(960, 200)
-bluff_chance = 0.4
-vertical_layout = false
-portrait_offset = Vector2(-50, -180)
+position = Vector2(960, 400)
+portrait_offset = Vector2(-50, -350)
+facing = 0
+art_faces_right = true
+table_center_x = 960.0
 player_name = "Rival"
 owner_id = 1
 
 [node name="AIPlayer2" parent="." unique_id=541108089 instance=ExtResource("5_aiplayer")]
 position = Vector2(300, 525)
-bluff_chance = 0.4
 vertical_layout = true
 portrait_offset = Vector2(-180, -50)
+facing = 0
+art_faces_right = true
+table_center_x = 960.0
 player_name = "Rival 2"
 owner_id = 2
 
 [node name="AIPlayer3" parent="." unique_id=1470739839 instance=ExtResource("5_aiplayer")]
 position = Vector2(1620, 525)
-bluff_chance = 0.4
 vertical_layout = true
-portrait_offset = Vector2(180, -50)
+portrait_offset = Vector2(-160, -200)
+facing = 0
+art_faces_right = true
+table_center_x = 960.0
 player_name = "Rival 3"
 owner_id = 3
 

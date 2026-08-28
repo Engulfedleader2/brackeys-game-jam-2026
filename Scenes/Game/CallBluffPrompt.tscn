@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://cmu05d7eyxqpu"]
 
 [ext_resource type="Script" uid="uid://bfinknau1hxbu" path="res://Scripts/Pile/CallBluffPrompt.gd" id="1_061la"]
+[ext_resource type="Texture2D" uid="uid://jb2jkp2jww7a" path="res://AssetDump/UI/CALL.png" id="2_esxfw"]
+[ext_resource type="Texture2D" uid="uid://cwpk3sdubw1x3" path="res://AssetDump/UI/BluffTimer1.png" id="2_pgbwm"]
+[ext_resource type="Texture2D" uid="uid://dgs2o0l70sgpp" path="res://AssetDump/UI/BluffTimer2.png" id="3_7hso1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esxfw"]
+atlas = ExtResource("2_pgbwm")
+region = Rect2(77, 65, 118, 612)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycp26"]
+atlas = ExtResource("3_7hso1")
+region = Rect2(84, 77, 100, 592)
 
 [node name="CallBluffPrompt" type="CanvasLayer" unique_id=2146204010]
 script = ExtResource("1_061la")
@@ -14,30 +25,44 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="PanelContainer" parent="Root" unique_id=1906068958]
+[node name="Group" type="Control" parent="Root" unique_id=849824152]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = -33.0
-offset_right = 45.0
-offset_bottom = 33.0
+offset_left = -460.0
+offset_right = -420.0
+offset_bottom = 40.0
 grow_horizontal = 2
-grow_vertical = 2
+rotation = 0.15707964
+offset_transform_scale = Vector2(0.5, 0.5)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Root/Panel" unique_id=1054834699]
-layout_mode = 2
+[node name="ProgressBar" type="TextureProgressBar" parent="Root/Group" unique_id=1104775270]
+custom_minimum_size = Vector2(60, 750)
+layout_mode = 0
+offset_left = 870.0
+offset_top = 520.0
+offset_right = 1110.0
+offset_bottom = 1270.0
+scale = Vector2(0.25, 0.25)
+fill_mode = 3
+nine_patch_stretch = true
+stretch_margin_top = 60
+stretch_margin_bottom = 60
+texture_under = SubResource("AtlasTexture_esxfw")
+texture_progress = SubResource("AtlasTexture_ycp26")
 
-[node name="Label" type="Label" parent="Root/Panel/VBoxContainer" unique_id=260036028]
-layout_mode = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="Root/Panel/VBoxContainer" unique_id=1486117100]
-layout_mode = 2
-show_percentage = false
-
-[node name="CallButton" type="Button" parent="Root/Panel/VBoxContainer" unique_id=368488804]
-layout_mode = 2
-text = "CALL BUFF"
+[node name="CallButton" type="Button" parent="Root/Group" unique_id=368488804]
+custom_minimum_size = Vector2(120, 44)
+layout_mode = 0
+offset_left = 840.0
+offset_top = 670.5
+offset_right = 1080.0
+offset_bottom = 760.5
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 0.5)
+icon = ExtResource("2_esxfw")
+flat = true
+icon_alignment = 1
+expand_icon = true

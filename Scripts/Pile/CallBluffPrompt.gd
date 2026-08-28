@@ -5,9 +5,8 @@ signal closed(did_call: bool)
 @export var window_seconds := 7.0
 
 @onready var root: Control = $Root
-@onready var prompt_label: Label = $Root/Panel/VBoxContainer/Label
-@onready var timer_bar: ProgressBar = $Root/Panel/VBoxContainer/ProgressBar
-@onready var call_button : Button = $Root/Panel/VBoxContainer/CallButton
+@onready var timer_bar: TextureProgressBar = $Root/Group/ProgressBar
+@onready var call_button : Button = $Root/Group/CallButton
 
 var _time_left := 0.0
 var _active := false
@@ -21,7 +20,7 @@ func _ready() -> void:
 
 func open(accused_name: String, duration := -1.0) -> void:
 	_time_left = duration if duration > 0.0 else window_seconds
-	prompt_label.text = "%s played a card face down" % accused_name
+	#prompt_label.text = "%s played a card face down" % accused_name
 	timer_bar.max_value = _time_left
 	timer_bar.value = _time_left
 	root.visible = true

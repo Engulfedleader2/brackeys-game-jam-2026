@@ -7,7 +7,7 @@ signal card_played(instance: CardInstance, face_down: bool)
 
 const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn");
 @onready var bluff_button: Button = $Bluff
-@export var bluff_button_lift := 200.0
+@export var bluff_button_lift := 150.0
 @export var card_spacing := 120.0
 @export var card_scale := 0.6
 @export var hover_lift := 100.0
