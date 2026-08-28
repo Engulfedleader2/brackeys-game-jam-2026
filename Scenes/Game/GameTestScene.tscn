@@ -38,7 +38,7 @@
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5e.tres" id="8_card5e"]
 [ext_resource type="PackedScene" uid="uid://cmu05d7eyxqpu" path="res://Scenes/Game/CallBluffPrompt.tscn" id="33_pdcst"]
 [ext_resource type="PackedScene" uid="uid://cgq1dqn5xfq52" path="res://Scenes/UI/RoundSurvivedScreen.tscn" id="34_rsrvd"]
-[ext_resource type="PackedScene" uid="uid://b8xnb42x9m8gy" path="res://Scenes/UI/YouDiedScreen.tscn" id="35_ydied"]
+[ext_resource type="PackedScene" uid="uid://b8xnb42yam8gy" path="res://Scenes/UI/YouDiedScreen.tscn" id="35_ydied"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 script = ExtResource("1_1re6w")
@@ -137,7 +137,7 @@ script = ExtResource("7_turnmanager")
 
 [node name="CallBluffPrompt" parent="." unique_id=2146204010 instance=ExtResource("33_pdcst")]
 
-[node name="RoundSurvivedScreen" parent="." unique_id=3957028261 instance=ExtResource("34_rsrvd")]
+[node name="RoundSurvivedScreen" parent="." unique_id=-337939035 instance=ExtResource("34_rsrvd")]
 visible = false
 
 [node name="YouDiedScreen" parent="." unique_id=1847364002 instance=ExtResource("35_ydied")]

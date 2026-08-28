@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID TABLE = 2048817515U;
         static const AkUniqueID TITLE = 3705726509U;
         static const AkUniqueID TRY_AGAIN = 308470013U;
+        static const AkUniqueID TUTORIAL = 3762955427U;
         static const AkUniqueID WIN = 979765101U;
     } // namespace EVENTS
 

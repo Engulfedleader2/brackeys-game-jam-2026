@@ -21,6 +21,7 @@ SceneManager="*res://Scripts/SceneManager.gd"
 RoundManager="*uid://blqu12edm6wx4"
 WwiseRuntimeManager="*uid://bywqlw5nlem7n"
 Curtain="*uid://d1b63gmaxteg2"
+SoundManager="*uid://dg7ujnvlwh5w2"
 
 [display]
 
