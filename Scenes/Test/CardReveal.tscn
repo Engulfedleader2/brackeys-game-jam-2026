@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3et1dbclb8y5" path="res://AssetDump/Spooky/example_table.png" id="1_ilspr"]
 [ext_resource type="AudioStream" uid="uid://bah2rqirg6pxr" path="res://AssetDump/SFX/784658__music_is_wiggly_air__heartbeat-sub-kick-softer.wav" id="1_ub3fg"]
 [ext_resource type="Texture2D" uid="uid://d0vm0wuh17gbd" path="res://AssetDump/Cards/Uno Cards/Uno1.png" id="2_ub3fg"]
+[ext_resource type="Texture2D" uid="uid://davd8ckv0fahp" path="res://AssetDump/Characters/Carrot_Bluff.png" id="6_m00uc"]
 
 [sub_resource type="Animation" id="Animation_ilspr"]
 length = 0.001
@@ -203,3 +204,8 @@ scale = Vector2(1e-05, 2.75)
 texture = ExtResource("2_ub3fg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1556036002]
+
+[node name="Accused" type="Sprite2D" parent="." unique_id=639734224]
+position = Vector2(-480, 230)
+texture = ExtResource("6_m00uc")
+centered = false
