@@ -1,0 +1,5 @@
+[gd_resource type="WwisePlatformInfo" format=3 uid="uid://m47n2d8cax21"]
+
+[resource]
+platform_name = "Mac"
+platform_path = "../../../../../Music/Wwise/Brackeys_Jam.Audio/GeneratedSoundBanks/Mac"
