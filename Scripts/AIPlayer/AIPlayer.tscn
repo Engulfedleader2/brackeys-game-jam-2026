@@ -7,17 +7,20 @@
 script = ExtResource("2_mkchb")
 bluff_chance = 0.4
 vertical_layout = false
+right_side_player = false
 portrait_offset = Vector2(-50, -180)
-portrait_size = 1
+portrait_size = Vector2(2, 2)
+hand_skew = 0.0
+hand_card_scale = Vector2(1, 1)
 
-[node name="Hand" parent="." index="1" unique_id=1584552490]
-position = Vector2(0, 114)
-reveal_cards = false
-
-[node name="Portrait" type="TextureRect" parent="." index="2" unique_id=2018215739]
+[node name="Portrait" type="TextureRect" parent="." index="1" unique_id=2018215739]
 offset_left = -126.0
 offset_top = -256.0
 offset_right = 126.0
 offset_bottom = -4.0
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Hand" parent="." index="2" unique_id=1584552490]
+position = Vector2(0, 114)
+reveal_cards = false

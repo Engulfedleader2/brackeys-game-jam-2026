@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://dbnswb8htjer3" path="res://Scripts/Test/game_test_scene.gd" id="1_3enmh"]
 [ext_resource type="Script" uid="uid://dylp1pxcycfxf" path="res://Scripts/Cards/Deck.gd" id="1_empv6"]
 [ext_resource type="Script" uid="uid://deyr1gflpda4x" path="res://Scripts/Cards/CardResources/CardResource.gd" id="2_ptkv3"]
+[ext_resource type="Texture2D" uid="uid://xwvj8todr20h" path="res://AssetDump/Spooky/Blanket_BG.png" id="3_1osuu"]
 [ext_resource type="PackedScene" uid="uid://c7edokbnxij20" path="res://Scenes/Game/SharedPile.tscn" id="3_fq5w4"]
+[ext_resource type="Texture2D" uid="uid://s8e2k615snur" path="res://AssetDump/Spooky/Box_BG.png" id="4_7x1gv"]
 [ext_resource type="PackedScene" uid="uid://dqdvsqgdhi7es" path="res://Scripts/Player/Player.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="5_aiplayer"]
 [ext_resource type="Script" uid="uid://jjtpln836nxi" path="res://Scripts/GameManager.gd" id="6_gamemanager"]
@@ -96,39 +98,54 @@ script = ExtResource("1_3enmh")
 texture = ExtResource("36_2hm42")
 centered = false
 
-[node name="Deck" type="Node" parent="." unique_id=1447409975]
-script = ExtResource("1_empv6")
-card_resources = Array[ExtResource("2_ptkv3")]([ExtResource("8_card1"), ExtResource("8_card1b"), ExtResource("8_card1c"), ExtResource("8_card1d"), ExtResource("8_card1e"), ExtResource("8_card2"), ExtResource("8_card2b"), ExtResource("8_card2c"), ExtResource("8_card2d"), ExtResource("8_card2e"), ExtResource("8_card3"), ExtResource("8_card3b"), ExtResource("8_card3c"), ExtResource("8_card3d"), ExtResource("8_card3e"), ExtResource("8_card4"), ExtResource("8_card4b"), ExtResource("8_card4c"), ExtResource("8_card4d"), ExtResource("8_card4e"), ExtResource("8_card5"), ExtResource("8_card5b"), ExtResource("8_card5c"), ExtResource("8_card5d"), ExtResource("8_card5e")])
-
-[node name="SharedPile" parent="." unique_id=755290654 instance=ExtResource("3_fq5w4")]
-position = Vector2(960, 500)
-
-[node name="Player" parent="." unique_id=845295021 instance=ExtResource("4_player")]
-position = Vector2(960, 850)
-player_name = "You"
+[node name="Blanket" type="Sprite2D" parent="." unique_id=750245272]
+texture = ExtResource("3_1osuu")
+centered = false
 
 [node name="AIPlayer" parent="." unique_id=392891926 instance=ExtResource("5_aiplayer")]
-position = Vector2(960, 200)
-portrait_offset = Vector2(-50, -350)
-portrait_size = Vector2(2, 2)
+position = Vector2(788, 344)
+portrait_offset = Vector2(-400, -500)
+portrait_size = Vector2(5, 5)
+hand_card_scale = Vector2(0.5, 0.5)
 player_name = "Rival"
 owner_id = 1
 
 [node name="AIPlayer2" parent="." unique_id=541108089 instance=ExtResource("5_aiplayer")]
-position = Vector2(300, 525)
+position = Vector2(276, 599)
 vertical_layout = true
-portrait_offset = Vector2(-300, -50)
-portrait_size = Vector2(2, 2)
+portrait_offset = Vector2(-350, -600)
+portrait_size = Vector2(5, 5)
+hand_card_scale = Vector2(-1, -1)
 player_name = "Rival 2"
 owner_id = 2
 
 [node name="AIPlayer3" parent="." unique_id=1470739839 instance=ExtResource("5_aiplayer")]
-position = Vector2(1620, 525)
+position = Vector2(1547, 598)
 vertical_layout = true
-portrait_offset = Vector2(100, -50)
-portrait_size = Vector2(2, 2)
+right_side_player = true
+portrait_offset = Vector2(-800, -600)
+portrait_size = Vector2(5, 5)
+hand_skew = -0.5
+hand_card_scale = Vector2(0.2, 0.2)
 player_name = "Rival 3"
 owner_id = 3
+
+[node name="SharedPile" parent="." unique_id=755290654 instance=ExtResource("3_fq5w4")]
+position = Vector2(809, 620)
+card_step = Vector2(35, 1)
+card_scale = Vector2(0.3, 0.3)
+
+[node name="Box" type="Sprite2D" parent="." unique_id=59673613]
+texture = ExtResource("4_7x1gv")
+centered = false
+
+[node name="Deck" type="Node" parent="." unique_id=1447409975]
+script = ExtResource("1_empv6")
+card_resources = Array[ExtResource("2_ptkv3")]([ExtResource("8_card1"), ExtResource("8_card1b"), ExtResource("8_card1c"), ExtResource("8_card1d"), ExtResource("8_card1e"), ExtResource("8_card2"), ExtResource("8_card2b"), ExtResource("8_card2c"), ExtResource("8_card2d"), ExtResource("8_card2e"), ExtResource("8_card3"), ExtResource("8_card3b"), ExtResource("8_card3c"), ExtResource("8_card3d"), ExtResource("8_card3e"), ExtResource("8_card4"), ExtResource("8_card4b"), ExtResource("8_card4c"), ExtResource("8_card4d"), ExtResource("8_card4e"), ExtResource("8_card5"), ExtResource("8_card5b"), ExtResource("8_card5c"), ExtResource("8_card5d"), ExtResource("8_card5e")])
+
+[node name="Player" parent="." unique_id=845295021 instance=ExtResource("4_player")]
+position = Vector2(759, 967)
+player_name = "You"
 
 [node name="TurnLabel" type="Label" parent="." unique_id=1105740206]
 offset_left = 860.0
