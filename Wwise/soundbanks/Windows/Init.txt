@@ -1,0 +1,38 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	702482391	Game			\Default Work Unit\Game	
+	1063701865	Stage			\Default Work Unit\Stage	
+	4158018714	Opponent			\Default Work Unit\Opponent	
+
+State	ID	Name	State Group			Notes
+	221232704	Loss	Game			
+	251412225	Shop	Game			
+	748895195	None	Game			
+	979765101	Win	Game			
+	2048817515	Table	Game			
+	2607556080	Menu	Game			
+	344719504	Stage_04	Stage			
+	344719509	Stage_01	Stage			
+	344719510	Stage_02	Stage			
+	344719511	Stage_03	Stage			
+	748895195	None	Stage			
+	546651181	Dog	Opponent			
+	657744941	Lamb	Opponent			
+	748895195	None	Opponent			
+	1083137540	Fox	Opponent			
+	1190179415	Bear	Opponent			
+	1777984502	Ball	Opponent			
+	2043204404	Carrot	Opponent			
+	4251222990	Chicken	Opponent			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Main Audio Bus\SFX	
+	543694036	VOX			\Default Work Unit\Main Audio Bus\VOX	
+	628126519	STG			\Default Work Unit\Main Audio Bus\STG	
+	1117531639	AMB			\Default Work Unit\Main Audio Bus\AMB	
+	1685527054	MX			\Default Work Unit\Main Audio Bus\MX	
+	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

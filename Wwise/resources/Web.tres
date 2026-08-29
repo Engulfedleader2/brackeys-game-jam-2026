@@ -2,4 +2,4 @@
 
 [resource]
 platform_name = "Web"
-platform_path = "../../../../../Music/Wwise/Brackeys_Jam.Audio/GeneratedSoundBanks/Web"
+platform_path = "Web"
