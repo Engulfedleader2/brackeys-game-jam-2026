@@ -16,7 +16,6 @@ grow_vertical = 2
 script = ExtResource("1_mainmenu")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1449897982]
-modulate = Color(0.743848, 0.743848, 0.743848, 1)
 position = Vector2(-3, 0)
 scale = Vector2(1.0015625, 1.0629921)
 texture = ExtResource("2_df05h")
