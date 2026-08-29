@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{4A159F42-502F-CD91-B5E6-813990F980E9}",
+    "Hash": "{2802E846-D20F-BD44-1D44-7EBAF446F86D}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -97,6 +97,12 @@
       "GUID": "{5CE4823B-072D-4080-96E4-BED0A6C1F398}"
      },
      {
+      "Id": "563208321",
+      "Name": "VOX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\VOX_Volume",
+      "GUID": "{C28D5EAD-4839-4D3B-B5FD-4CE1844B53CC}"
+     },
+     {
       "Id": "657744941",
       "Name": "Lamb",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Lamb",
@@ -115,10 +121,28 @@
       "GUID": "{38F9C56A-9516-4DB9-89DA-7D3E56B12E8B}"
      },
      {
+      "Id": "1441253587",
+      "Name": "MX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\MX_Volume",
+      "GUID": "{F808ED88-8DC0-4A4D-9CCF-D83D59E7CD28}"
+     },
+     {
+      "Id": "1564184899",
+      "Name": "SFX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\SFX_Volume",
+      "GUID": "{57E4FB61-D52F-43F9-AA77-73BADB87361F}"
+     },
+     {
       "Id": "1777984502",
       "Name": "Ball",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Ball",
       "GUID": "{AA447B8A-6B7B-4D5C-83F6-988AD03BF69F}"
+     },
+     {
+      "Id": "1893153281",
+      "Name": "MTR_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\MTR_Volume",
+      "GUID": "{E6042AC7-37F6-441C-BD7E-9814823CDBA5}"
      },
      {
       "Id": "2043204404",
@@ -357,6 +381,6 @@
     ]
    }
   ],
-  "FileHash": "{D824BAF0-BD33-95C8-BBEE-B4E6198789DC}"
+  "FileHash": "{70915788-A448-5A28-E1AF-508792ACBF3F}"
  }
 }

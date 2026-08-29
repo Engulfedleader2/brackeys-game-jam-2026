@@ -127,6 +127,7 @@ namespace AK
         static const AkUniqueID FOX = 1083137540U;
         static const AkUniqueID LAMB = 657744941U;
         static const AkUniqueID LOSS = 221232704U;
+        static const AkUniqueID MTR_VOLUME = 1893153281U;
         static const AkUniqueID MX_VOLUME = 1441253587U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID SETTINGS = 2910527622U;
