@@ -24,6 +24,7 @@ const LAMB_CHOP_CALL = preload("uid://bc53lxyq5d2tc")
 func _ready():
 	Curtain._hide()
 	$AnimationPlayer.play("Shake")
+	$Accused_AnimationPlayer.play("zoom")
 
 
 
