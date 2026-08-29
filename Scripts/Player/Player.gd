@@ -9,6 +9,7 @@ signal card_played(instance: CardInstance, face_down: bool)
 
 @onready var hand: Hand = $Hand
 @onready var player_name_label: Label = $PlayerNameLabel
+@onready var card_count_label: Label = $CardCountLabel
 
 #variables for items
 var buttons: int = 0
@@ -23,6 +24,11 @@ func _ready() -> void:
 	hand.card_played.connect(_on_hand_card_played)
 
 	player_name_label.text = player_name
+	update_card_count()
+
+func update_card_count() -> void:
+	var count = hand.get_card_count()
+	card_count_label.text = "Cards: %d" % count
 
 
 func _on_hand_card_played(instance: CardInstance, face_down: bool) -> void:
