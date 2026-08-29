@@ -238,7 +238,7 @@ _data = {
 &"zoom": SubResource("Animation_hopbu")
 }
 
-[node name="CardReveal" type="Node2D" unique_id=18024946]
+[node name="CardReveal" type="CanvasLayer" unique_id=1361101499]
 script = ExtResource("1_iby7k")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1431675102]

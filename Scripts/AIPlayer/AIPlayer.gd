@@ -11,6 +11,7 @@ extends Player
 @export var portrait_size := Vector2(2,2)
 @export var hand_skew: float = 0
 @export var hand_card_scale = Vector2 (1,1)
+@export var player_name_placement = Vector2(0,0)
 
 enum Facing { FRONT, LEFT, RIGHT }
 # Random portrait only for now - not tied to personality/decision logic yet.
@@ -28,6 +29,7 @@ const PORTRAITS: Array[Texture2D] = [
 @onready var portrait: TextureRect = $Portrait
 
 
+
 func _ready() -> void:
 	super._ready()
 	portrait.texture = PORTRAITS.pick_random()
@@ -37,6 +39,7 @@ func _ready() -> void:
 	portrait.scale = portrait_size
 	hand.skew = hand_skew
 	hand.scale = hand_card_scale
+	player_name_label.position = player_name_placement
 
 func _process(_delta):
 	if right_side_player == true:

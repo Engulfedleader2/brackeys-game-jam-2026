@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://cmu05d7eyxqpu" path="res://Scenes/Game/CallBluffPrompt.tscn" id="33_pdcst"]
 [ext_resource type="PackedScene" uid="uid://cgq1dqn5xfq52" path="res://Scenes/UI/RoundSurvivedScreen.tscn" id="34_rsrvd"]
 [ext_resource type="PackedScene" uid="uid://b8xnb42yam8gy" path="res://Scenes/UI/YouDiedScreen.tscn" id="35_ydied"]
+[ext_resource type="PackedScene" uid="uid://0egfb2xunmaf" path="res://Scenes/Test/CardReveal.tscn" id="40_n3hua"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 script = ExtResource("1_1re6w")
@@ -62,24 +63,29 @@ position = Vector2(960, 474)
 portrait_offset = Vector2(-250, -850)
 portrait_size = Vector2(4, 4)
 hand_card_scale = Vector2(0.7, 0.7)
+player_name_placement = Vector2(0, -300)
 player_name = "Rival"
 owner_id = 1
 
 [node name="AIPlayer2" parent="." unique_id=541108089 instance=ExtResource("5_aiplayer")]
-position = Vector2(404, 525)
+position = Vector2(331, 681)
 vertical_layout = true
-portrait_offset = Vector2(-500, -700)
+portrait_offset = Vector2(-500, -800)
 portrait_size = Vector2(4, 4)
-hand_card_scale = Vector2(0.7, 0.7)
+hand_skew = 0.5
+hand_card_scale = Vector2(0.5, 0.5)
+player_name_placement = Vector2(-200, -226)
 player_name = "Rival 2"
 owner_id = 2
 
 [node name="AIPlayer3" parent="." unique_id=1470739839 instance=ExtResource("5_aiplayer")]
-position = Vector2(1620, 524)
+position = Vector2(1577, 663)
 vertical_layout = true
-portrait_offset = Vector2(-850, -700)
+portrait_offset = Vector2(-850, -800)
 portrait_size = Vector2(4, 4)
-hand_card_scale = Vector2(0.7, 0.7)
+hand_skew = -0.5
+hand_card_scale = Vector2(0.5, 0.5)
+player_name_placement = Vector2(150, -226)
 player_name = "Rival 3"
 owner_id = 3
 
@@ -128,3 +134,8 @@ visible = false
 
 [node name="YouDiedScreen" parent="." unique_id=1847364002 instance=ExtResource("35_ydied")]
 visible = false
+
+[node name="CardReveal" parent="." unique_id=18024946 instance=ExtResource("40_n3hua")]
+visible = false
+
+[connection signal="closed" from="CallBluffPrompt" to="CardReveal" method="_on_call_bluff_prompt_closed"]
