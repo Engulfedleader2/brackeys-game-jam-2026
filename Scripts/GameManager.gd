@@ -5,6 +5,7 @@ extends Node
 @export var shared_pile: SharedPile
 @export var player_paths: Array[NodePath] = []
 @export var call_bluff_prompt: CallBluffPrompt
+@export var declaration_prompt: DeclarationPrompt
 @export var turn_label: Label
 @export var round_survived_screen: RoundSurvivedScreen
 @export var you_died_screen: CanvasLayer
@@ -178,7 +179,7 @@ func setup_players() -> void:
 	var players: Array[Player] = []
 	for path in player_paths:
 		players.append(get_node(path) as Player)
-	RoundManager.setup(players, shared_pile, deck, call_bluff_prompt)
+	RoundManager.setup(players, shared_pile, deck, call_bluff_prompt, declaration_prompt)
 
 	var hands := deck.deal(players.size(), STARTING_HAND_SIZE)
 	for i in players.size():
