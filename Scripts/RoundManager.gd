@@ -11,6 +11,7 @@ var _pending_face_down_declaration: int = -1  # Stores declared value (1 or 5) f
 
 signal round_finished(winner_owner_id: int, loser_owner_id: int, human_place: int)
 signal turn_started(player: Player)
+signal pile_picked_up(player_name: String, card_count: int)
 
 func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck, p_prompt: CallBluffPrompt, p_declaration_prompt: DeclarationPrompt = null) -> void:
 	players = p_players
@@ -30,7 +31,10 @@ func eliminate_player(player: Player) -> void:
 
 # This function marks the beginning of the round. Here you can setup whatever needs to be setup before players start taking turns.
 func start_round() -> void:
-	_current_player_index = 0
+	# Randomize starting player
+	_current_player_index = randi() % players.size()
+	print("[RoundManager] Random starting player: %s (index %d)" % [players[_current_player_index].player_name, _current_player_index])
+
 	for p in players:
 		p.skip_next_turn = false
 	var player := players[_current_player_index]
@@ -123,6 +127,9 @@ func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: i
 	if entry and declared_value != -1:
 		entry.declared_value = declared_value
 
+	# Wait for card animation to complete
+	await get_tree().create_timer(0.4).timeout
+
 	# Check immediately if this player emptied their hand
 	if playing_player and playing_player.hand.get_card_count() == 0:
 		print("[RoundManager] Player %s emptied their hand on play!" % playing_player.player_name)
@@ -139,9 +146,16 @@ func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: i
 		if await _run_call_window(owner_id):
 			return
 
+	# Check if any AI wants to call
+	if face_down:
+		if await _check_ai_calls(owner_id):
+			return
+
 	if _check_round_over():
 		return
 
+	# Brief pause before next player's turn
+	await get_tree().create_timer(0.3).timeout
 	_advance_turn()
 
 func _resolve_bust(owner_id: int) -> void:
@@ -158,8 +172,12 @@ func _give_pile_to(owner_id: int, reason: SharedPile.ClearReason) -> void:
 		return
 
 	var picked_up := shared_pile.collect_all(reason)
-	loser.hand.set_cards(picked_up)
+	# Add picked-up cards to existing hand instead of replacing
+	for card in picked_up:
+		loser.hand.add_card(card)
+
 	print("[RoundManager] Player %d picks up %d cards (hand: %d)" % [owner_id, picked_up.size(), loser.hand.get_card_count()])
+	pile_picked_up.emit(loser.player_name, picked_up.size())
 
 	if _check_round_over():
 		return
@@ -189,19 +207,78 @@ func _run_call_window(accused_owner_id: int) -> bool:
 	var accused := _player_for(accused_owner_id)
 	if accused == null:
 		return false
-	
+
 	call_bluff_prompt.open(accused.player_name)
 	var did_call: bool = await call_bluff_prompt.closed
 	if not did_call:
 		return false
-	
+
 	var result := shared_pile.resolve_bluff_call(_human_player().owner_id)
 	if result == null:
 		return false
-	
+
 	print("[RoundManager] ", result.describe())
 	_give_pile_to(result.loser_id, SharedPile.ClearReason.BLUFF_CALL)
 	return true
+
+func _check_ai_calls(accused_owner_id: int) -> bool:
+	if not shared_pile.can_call_bluff():
+		return false
+
+	var pile_state := _build_pile_state()
+
+	# Check each AI player in order (after the accused player)
+	var accused_idx := -1
+	for i in players.size():
+		if players[i].owner_id == accused_owner_id:
+			accused_idx = i
+			break
+
+	if accused_idx == -1:
+		return false
+
+	# Start checking from next player after accused
+	for i in range(players.size()):
+		var check_idx := (accused_idx + 1 + i) % players.size()
+		var checking_player := players[check_idx]
+
+		# Skip if it's the accused player or not an AI
+		if checking_player.owner_id == accused_owner_id or not (checking_player is AIPlayer):
+			continue
+
+		var ai_player := checking_player as AIPlayer
+		if ai_player.toy == null:
+			continue
+
+		if ai_player.toy.should_call(pile_state):
+			print("[RoundManager] %s (with %s) CALLS the bluff!" % [ai_player.player_name, ai_player.toy.display_name])
+			var result := shared_pile.resolve_bluff_call(ai_player.owner_id)
+			if result != null:
+				print("[RoundManager] ", result.describe())
+				_give_pile_to(result.loser_id, SharedPile.ClearReason.BLUFF_CALL)
+				return true
+
+	return false
+
+func _build_pile_state() -> Dictionary:
+	var top_entry := shared_pile.peek_top()
+	var face_down_count := 0
+	var last_was_face_down := false
+
+	var entries := shared_pile.get_public_entries()
+	for entry in entries:
+		if entry.get("face_down", false):
+			face_down_count += 1
+
+	if entries.size() >= 2:
+		last_was_face_down = entries[-2].get("face_down", false)
+
+	return {
+		"pile_total": shared_pile.get_total(),
+		"face_down_count": face_down_count,
+		"last_was_face_down": last_was_face_down,
+		"top_value": top_entry.actual_value() if top_entry and top_entry.revealed else -1,
+	}
 
 func _player_for(owner_id: int) -> Player:
 	for player in players:

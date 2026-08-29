@@ -28,10 +28,20 @@ func _ready() -> void:
 	bluff_button.mouse_exited.connect(_release_bluff_target)
 
 func set_cards(instances: Array[CardInstance]) -> void:
+	# Clear existing cards
+	for card in cards:
+		card.queue_free()
+	cards.clear()
+
+	# Add new cards
 	for i in instances:
 		_add_card(i)
-	
+
+	# Wait for deferred setup calls to complete before displaying
+	await get_tree().process_frame
 	_display_cards()
+	# Update parent player's card count display
+	get_parent().update_card_count()
 
 
 func get_card_count() -> int:
@@ -48,6 +58,7 @@ func set_interactive(enabled: bool) -> void:
 func add_card(instance: CardInstance) -> void:
 	_add_card(instance)
 	_display_cards()
+	get_parent().update_card_count()
 
 
 # should only be used internally
@@ -82,6 +93,7 @@ func discard_card(card: Card) -> void:
 	cards.erase(card)
 	card.queue_free()
 	_display_cards()
+	get_parent().update_card_count()
 
 
 func _on_card_hovered(card: Card) -> void:

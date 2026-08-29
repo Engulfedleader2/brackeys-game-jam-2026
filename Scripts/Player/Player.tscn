@@ -11,4 +11,10 @@ player_name = "Player"
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="CardCountLabel" type="Label" parent="." unique_id=3819405088]
+offset_right = 40.0
+offset_top = 24.0
+offset_bottom = 47.0
+text = "Cards: 0"
+
 [node name="Hand" parent="." unique_id=1584552490 instance=ExtResource("2_7cvjj")]
