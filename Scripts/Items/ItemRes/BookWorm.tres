@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dgm2xxb1fp74d"]
+
+[ext_resource type="Script" uid="uid://bkabjofxitu66" path="res://Scripts/Items/ItemResource.gd" id="1_sft1b"]
+[ext_resource type="Texture2D" uid="uid://bj6f163hlus5t" path="res://AssetDump/Shop/ItemBookworm.png" id="1_x82aq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sft1b"]
+atlas = ExtResource("1_x82aq")
+region = Rect2(1504, 168, 264, 208)
+
+[resource]
+script = ExtResource("1_sft1b")
+id = &"bookworm"
+display_name = "BookWorm"
+description = "Delete one card  from your hand. Single Use."
+icon = SubResource("AtlasTexture_sft1b")
+target = 1
+metadata/_custom_type_script = "uid://bkabjofxitu66"

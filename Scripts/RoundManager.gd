@@ -6,7 +6,7 @@ var deck: Deck
 var _current_player_index: int = 0
 var call_bluff_prompt: CallBluffPrompt
 
-signal round_finished(winner_owner_id: int, loser_owner_id: int)
+signal round_finished(winner_owner_id: int, loser_owner_id: int, human_place: int)
 signal turn_started(player: Player)
 
 func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck, p_prompt: CallBluffPrompt) -> void:
@@ -27,6 +27,8 @@ func eliminate_player(player: Player) -> void:
 # This function marks the beginning of the round. Here you can setup whatever needs to be setup before players start taking turns.
 func start_round() -> void:
 	_current_player_index = 0
+	for p in players:
+		p.skip_next_turn = false
 	var player := players[_current_player_index]
 	turn_started.emit(player)
 	player.start_turn()
@@ -41,19 +43,56 @@ func check_bust() -> bool:
 
 # This function marks the end of the round. Here you can do whatever needs to be done after players have taken their turns or someone busted.
 # winner_owner_id: the player who emptied their hand first (or -1 if round ended by bust)
-func end_round(winner_owner_id: int = -1) -> void:
+func end_round(winner_owner_id: int = -1, buster_owner_id: int = -1) -> void:
 	print("End Round")
+	var human_place := get_human_place(buster_owner_id)
 	var player_at_risk := _get_round_loser()
 	var loser_id := -1
 	if player_at_risk != null:
 		loser_id = player_at_risk.owner_id
 		print("[RoundManager] Player %s (%d) has the most cards (%d) - watch out!" % [player_at_risk.player_name, loser_id, player_at_risk.hand.get_card_count()])
 	shared_pile.reset_for_new_round()
-	round_finished.emit(winner_owner_id, loser_id)
+	round_finished.emit(winner_owner_id, loser_id, human_place)
 
+func get_human_place(buster_owner_id: int) -> int:
+	var human := _human_player()
+	if human == null:
+		return -1
+	if human.owner_id == buster_owner_id:
+		return players.size()
+	
+	var human_cards := human.hand.get_card_count()
+	var ahead := 0
+	for player in players:
+		if player == human or player.owner_id == buster_owner_id:
+			continue
+		if player.hand.get_card_count() < human_cards:
+			ahead += 1
+	return ahead + 1
 
+func is_current_player(player: Player) -> bool:
+	return not players.is_empty() and players[_current_player_index] == player
+
+func pass_current_turn() -> void:
+	if players.is_empty():
+		return
+	var player := players[_current_player_index]
+	print("[RoundManager] %s passes their turn" % player.player_name)
+	player.hand.set_interactive(false)
+	_advance_turn()
+#updating this to handle the skip turn item
 func _advance_turn() -> void:
-	_current_player_index = (_current_player_index + 1) % players.size()
+	if players.is_empty():
+		return
+	var attempts := players.size()
+	while attempts > 0:
+		_current_player_index = (_current_player_index + 1) % players.size()
+		var candidate := players[_current_player_index]
+		if not candidate.consume_skip_turn():
+			break
+		print("[RoundManager] Skipping player %s's turn (hall pass)" % candidate.player_name)
+		attempts -= 1
+		
 	var player := players[_current_player_index]
 	turn_started.emit(player)
 	player.start_turn()
@@ -90,7 +129,7 @@ func _resolve_bust(owner_id: int) -> void:
 	shared_pile.reveal_all()
 	_give_pile_to(owner_id, SharedPile.ClearReason.BUST)
 	# Busted player is immediately eliminated (no winner for this round)
-	end_round(-1)
+	end_round(-1, owner_id)
 	
 func _give_pile_to(owner_id: int, reason: SharedPile.ClearReason) -> void:
 	var loser := _player_for(owner_id)
@@ -163,4 +202,7 @@ func _check_round_over() -> bool:
 			end_round(player.owner_id)
 			return true
 	return false
-	
+
+#public check round over for items
+func check_round_over() -> bool:
+	return _check_round_over()

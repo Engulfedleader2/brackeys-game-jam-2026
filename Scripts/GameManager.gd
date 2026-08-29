@@ -6,12 +6,20 @@ extends Node
 @export var player_paths: Array[NodePath] = []
 @export var call_bluff_prompt: CallBluffPrompt
 @export var turn_label: Label
-@export var round_survived_screen: CanvasLayer
+@export var round_survived_screen: RoundSurvivedScreen
 @export var you_died_screen: CanvasLayer
+@export var pile_total: Label
+@export var shop_screen: ShopScreen
+
+@export_group("Economy")
+@export var placement_payouts: Array[int] = [15, 10, 5, 0]
+@export var starting_buttons: int = 0
+
 var total_game_rounds = 3
 const STARTING_HAND_SIZE := 6
 const LOSE_HAND_SIZE := 15
 const ROUNDS_TO_WIN := 2
+const HUMAN_OWNER_ID := 0
 
 var current_round_number := 0
 var round_wins: Dictionary = {}  # owner_id -> wins
@@ -26,10 +34,14 @@ func _ready() -> void:
 func _on_turn_started(player: Player) -> void:
 	if turn_label != null:
 		turn_label.text = "%s is playing" % player.player_name
+	
+	if pile_total != null:
+		pile_total.text = "Pile Total: %d" % shared_pile.get_total()
 
-func _on_round_finished(winner_owner_id: int, loser_owner_id: int) -> void:
+func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: int) -> void:
 	print("[GameManager] Round %d finished - Winner: %d, Loser: %d" % [current_round_number, winner_owner_id, loser_owner_id])
-
+	
+	_award_buttons(human_place)
 	# Award round win to the winner
 	if winner_owner_id != -1 and round_wins.has(winner_owner_id):
 		round_wins[winner_owner_id] += 1
@@ -67,12 +79,12 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int) -> void:
 			break
 
 	# Show appropriate screen for player 0
-	if player_survived:
+	#if player_survived:
 		# Show round survived screen only if player survived
-		if round_survived_screen:
-			round_survived_screen.visible = true
-			await get_tree().create_timer(2.0).timeout
-			round_survived_screen.visible = false
+		#if round_survived_screen:
+		#	round_survived_screen.visible = true
+		#	await get_tree().create_timer(2.0).timeout
+		#	round_survived_screen.visible = false
 
 	# Remove eliminated players from active play
 	for player in eliminated_players:
@@ -89,6 +101,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int) -> void:
 	if not eliminated_players.is_empty():
 		print("[GameManager] Players eliminated! Restarting round with remaining players...")
 		await get_tree().create_timer(1.0).timeout
+		await _show_round_survived(player_survived)
 		_redeal_and_start_new_round()
 		return
 
@@ -104,8 +117,31 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int) -> void:
 		return
 
 	await get_tree().create_timer(1.0).timeout
+	await _show_round_survived(player_survived)
 	_start_next_round()
+func _show_round_survived(player_survived: bool) -> void:
+	if round_survived_screen == null or not player_survived:
+		return
+	while await round_survived_screen.prompt():
+		await _maybe_open_shop(true)
+		
+func _award_buttons(human_place: int) -> void:
+	var human := _get_player_by_id(HUMAN_OWNER_ID)
+	if human == null or human_place < 1:
+		return
+	var payout: int = placement_payouts[human_place - 1] if human_place <= placement_payouts.size() else 0
+	human.buttons += payout
+	print("[GameManager] Placed %d - earned %d buttons (total %d)" % [human_place, payout, human.buttons])
 
+func _maybe_open_shop(player_survived: bool) -> void:
+	if shop_screen == null or not player_survived:
+		return
+	var human := _get_player_by_id(HUMAN_OWNER_ID)
+	if human == null:
+		return
+	shop_screen.open(human)
+	await shop_screen.closed
+	
 func start_game() -> void:
 	print("Start Game")
 	setup_players()
@@ -147,6 +183,10 @@ func setup_players() -> void:
 	var hands := deck.deal(players.size(), STARTING_HAND_SIZE)
 	for i in players.size():
 		players[i].hand.set_cards(hands[i])
+	
+	var human := _get_player_by_id(HUMAN_OWNER_ID)
+	if human != null:
+		human.buttons = starting_buttons
 
 
 func _get_player_by_id(owner_id: int) -> Player:
@@ -174,7 +214,7 @@ func check_game_over() -> void:
 func _end_game_with_winner(winner_owner_id: int) -> void:
 	print("[GameManager] Game Over! Eliminating all other players...")
 	# Show "You Died" if player 0 lost
-	if winner_owner_id != 0 and you_died_screen:
+	if winner_owner_id != HUMAN_OWNER_ID and you_died_screen:
 		you_died_screen.visible = true
 		await get_tree().create_timer(3.0).timeout
 		you_died_screen.visible = false

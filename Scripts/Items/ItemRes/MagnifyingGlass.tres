@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://ftkls0p8bopg"]
+
+[ext_resource type="Texture2D" uid="uid://vgyp5dnlpmjo" path="res://AssetDump/Shop/ItemMagnifyingGlass.png" id="1_aihdl"]
+[ext_resource type="Script" uid="uid://bkabjofxitu66" path="res://Scripts/Items/ItemResource.gd" id="1_rba74"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aihdl"]
+atlas = ExtResource("1_aihdl")
+region = Rect2(1184, 176, 264, 208)
+
+[resource]
+script = ExtResource("1_rba74")
+id = &"magnifying_glass"
+display_name = "MagnifyingGlass"
+description = "Check if a faced down card is a legal face down card. Single Use"
+icon = SubResource("AtlasTexture_aihdl")
+target = 3
+metadata/_custom_type_script = "uid://bkabjofxitu66"

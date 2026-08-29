@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://cjxccko3qbcbg"]
+
+[ext_resource type="Script" uid="uid://bkabjofxitu66" path="res://Scripts/Items/ItemResource.gd" id="1_7nvos"]
+[ext_resource type="Texture2D" uid="uid://fja0knc3hu2d" path="res://AssetDump/Shop/ItemNegativeSticker.png" id="1_8x2p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nvos"]
+atlas = ExtResource("1_8x2p4")
+region = Rect2(872, 168, 264, 208)
+
+[resource]
+script = ExtResource("1_7nvos")
+id = &"negative_sticker"
+display_name = "Sticker"
+description = "Turn a card into a negative card. Value is subtracted from pile value. Single Use."
+icon = SubResource("AtlasTexture_7nvos")
+target = 1
+metadata/_custom_type_script = "uid://bkabjofxitu66"
