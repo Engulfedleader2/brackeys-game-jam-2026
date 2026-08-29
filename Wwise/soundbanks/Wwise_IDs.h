@@ -31,12 +31,18 @@ namespace AK
         static const AkUniqueID LAMB_OFF = 1452776751U;
         static const AkUniqueID LAMB_ON = 2836373307U;
         static const AkUniqueID LOSS = 221232704U;
+        static const AkUniqueID MX_OFF = 4007373972U;
+        static const AkUniqueID MX_ON = 1986657934U;
         static const AkUniqueID SETTINGS = 2910527622U;
+        static const AkUniqueID SFX_OFF = 429466468U;
+        static const AkUniqueID SFX_ON = 3963402814U;
         static const AkUniqueID SHOP = 251412225U;
         static const AkUniqueID TABLE = 2048817515U;
         static const AkUniqueID TITLE = 3705726509U;
         static const AkUniqueID TRY_AGAIN = 308470013U;
         static const AkUniqueID TUTORIAL = 3762955427U;
+        static const AkUniqueID VOX_OFF = 3208725514U;
+        static const AkUniqueID VOX_ON = 813768044U;
         static const AkUniqueID WIN = 979765101U;
     } // namespace EVENTS
 
@@ -121,11 +127,14 @@ namespace AK
         static const AkUniqueID FOX = 1083137540U;
         static const AkUniqueID LAMB = 657744941U;
         static const AkUniqueID LOSS = 221232704U;
+        static const AkUniqueID MX_VOLUME = 1441253587U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID SETTINGS = 2910527622U;
+        static const AkUniqueID SFX_VOLUME = 1564184899U;
         static const AkUniqueID STRESS = 3840192365U;
         static const AkUniqueID TABLE_STAGE = 536018156U;
         static const AkUniqueID TITLE = 3705726509U;
+        static const AkUniqueID VOX_VOLUME = 563208321U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{B7E18CAB-C3C1-574F-A56C-CADDFDEA91C6}",
+    "Hash": "{91ECD532-53D8-8F7D-ABB0-36D5C4808C42}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -97,6 +97,12 @@
       "GUID": "{5CE4823B-072D-4080-96E4-BED0A6C1F398}"
      },
      {
+      "Id": "563208321",
+      "Name": "VOX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\VOX_Volume",
+      "GUID": "{C28D5EAD-4839-4D3B-B5FD-4CE1844B53CC}"
+     },
+     {
       "Id": "657744941",
       "Name": "Lamb",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Lamb",
@@ -113,6 +119,18 @@
       "Name": "Bear",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Bear",
       "GUID": "{38F9C56A-9516-4DB9-89DA-7D3E56B12E8B}"
+     },
+     {
+      "Id": "1441253587",
+      "Name": "MX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\MX_Volume",
+      "GUID": "{F808ED88-8DC0-4A4D-9CCF-D83D59E7CD28}"
+     },
+     {
+      "Id": "1564184899",
+      "Name": "SFX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\SFX_Volume",
+      "GUID": "{57E4FB61-D52F-43F9-AA77-73BADB87361F}"
      },
      {
       "Id": "1777984502",
@@ -357,6 +375,6 @@
     ]
    }
   ],
-  "FileHash": "{0423FAD4-3DD3-6B41-3C19-002264108F07}"
+  "FileHash": "{67E53FA6-907B-8472-2E96-9B63BC945BE4}"
  }
 }
