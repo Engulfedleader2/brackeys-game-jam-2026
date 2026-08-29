@@ -58,42 +58,28 @@ offset_bottom = 40.0
 texture = ExtResource("2_1re6w")
 
 [node name="AIPlayer" parent="." unique_id=392891926 instance=ExtResource("5_aiplayer")]
-position = Vector2(960, 451)
-right_side_player = false
-portrait_offset = Vector2(-250, -1100)
-portrait_size = Vector2(5, 5)
-hand_skew = 0.0
-hand_card_scale = Vector2(1, 1)
-facing = 0
-art_faces_right = true
-table_center_x = 960.0
+position = Vector2(960, 474)
+portrait_offset = Vector2(-250, -850)
+portrait_size = Vector2(4, 4)
+hand_card_scale = Vector2(0.7, 0.7)
 player_name = "Rival"
 owner_id = 1
 
 [node name="AIPlayer2" parent="." unique_id=541108089 instance=ExtResource("5_aiplayer")]
 position = Vector2(404, 525)
 vertical_layout = true
-right_side_player = false
-portrait_offset = Vector2(-600, -1000)
-portrait_size = Vector2(5, 5)
-hand_skew = 0.0
-hand_card_scale = Vector2(1, 1)
-facing = 0
-art_faces_right = true
-table_center_x = 960.0
+portrait_offset = Vector2(-500, -700)
+portrait_size = Vector2(4, 4)
+hand_card_scale = Vector2(0.7, 0.7)
 player_name = "Rival 2"
 owner_id = 2
 
 [node name="AIPlayer3" parent="." unique_id=1470739839 instance=ExtResource("5_aiplayer")]
 position = Vector2(1620, 524)
 vertical_layout = true
-right_side_player = false
-portrait_size = Vector2(5, 5)
-hand_skew = 0.0
-hand_card_scale = Vector2(1, 1)
-facing = 0
-art_faces_right = true
-table_center_x = 960.0
+portrait_offset = Vector2(-850, -700)
+portrait_size = Vector2(4, 4)
+hand_card_scale = Vector2(0.7, 0.7)
 player_name = "Rival 3"
 owner_id = 3
 
