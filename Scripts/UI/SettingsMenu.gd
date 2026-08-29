@@ -9,6 +9,10 @@ func _ready() -> void:
 	music_toggle.toggled.connect(_on_music_toggled)
 	sfx_toggle.toggled.connect(_on_sfx_toggled)
 	back_button.pressed.connect(_on_back_button_pressed)
+	Wwise.register_game_obj(self,self.name)
+	Wwise.add_default_listener(SoundManager)
+	Wwise.post_event("Settings",SoundManager)
+
 
 
 func _on_music_toggled(enabled: bool) -> void:
@@ -22,3 +26,4 @@ func _on_sfx_toggled(enabled: bool) -> void:
 func _on_back_button_pressed() -> void:
 	Curtain._hide()
 	SceneManager.go_to_main_menu()
+	Wwise.post_event("Title",SoundManager)
