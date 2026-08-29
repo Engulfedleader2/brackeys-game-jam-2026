@@ -10,6 +10,7 @@ extends Node
 @export var round_survived_screen: RoundSurvivedScreen
 @export var you_died_screen: CanvasLayer
 @export var pile_total: Label
+@export var action_message: Label
 @export var shop_screen: ShopScreen
 
 @export_group("Economy")
@@ -29,15 +30,20 @@ var round_wins: Dictionary = {}  # owner_id -> wins
 func _ready() -> void:
 	RoundManager.turn_started.connect(_on_turn_started)
 	RoundManager.round_finished.connect(_on_round_finished)
+	RoundManager.pile_picked_up.connect(_on_pile_picked_up)
 	start_game()
 
 
 func _on_turn_started(player: Player) -> void:
 	if turn_label != null:
 		turn_label.text = "%s is playing" % player.player_name
-	
+
 	if pile_total != null:
 		pile_total.text = "Pile Total: %d" % shared_pile.get_total()
+
+func _on_pile_picked_up(player_name: String, card_count: int) -> void:
+	var message = "%s picked up %d card%s!" % [player_name, card_count, "s" if card_count != 1 else ""]
+	show_message(message, 2.5)
 
 func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: int) -> void:
 	print("[GameManager] Round %d finished - Winner: %d, Loser: %d" % [current_round_number, winner_owner_id, loser_owner_id])
@@ -93,12 +99,30 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 		RoundManager.eliminate_player(player)
 		player.visible = false
 
-	# Check if game is over (only 1 player left or someone won 2 rounds)
-	if player_paths.size() <= 1:
-		end_game()
+	# Check if only 1 or 0 players left - round is over
+	if RoundManager.players.size() <= 1:
+		print("[GameManager] Round %d over - only %d player(s) left" % [current_round_number, RoundManager.players.size()])
+		# Award win to last remaining player
+		if RoundManager.players.size() == 1:
+			var winner = RoundManager.players[0]
+			if winner.owner_id in round_wins:
+				round_wins[winner.owner_id] += 1
+				print("[GameManager] Player %s wins round %d! (Record: %d wins)" % [winner.player_name, current_round_number, round_wins[winner.owner_id]])
+
+		# Check if someone has won the game (2 rounds)
+		for owner_id in round_wins:
+			if round_wins[owner_id] >= ROUNDS_TO_WIN:
+				var game_winner = _get_player_by_id(owner_id)
+				if game_winner:
+					print("[GameManager] Player %s WINS THE GAME! (2 rounds won)" % [game_winner.player_name])
+					_end_game_with_winner(owner_id)
+					return
+
+		# Move to next round
+		_start_next_round()
 		return
 
-	# If any players were eliminated, restart the round with remaining players
+	# If any players were eliminated during the round, restart with remaining players
 	if not eliminated_players.is_empty():
 		print("[GameManager] Players eliminated! Restarting round with remaining players...")
 		await get_tree().create_timer(1.0).timeout
@@ -159,16 +183,42 @@ func _initialize_round_tracking() -> void:
 func _start_next_round() -> void:
 	current_round_number += 1
 	print("[GameManager] Starting round %d of %d" % [current_round_number, total_game_rounds])
+
+	# Clear the pile from previous round
+	shared_pile.reset_for_new_round()
+
+	# Reshuffle the deck for the new round
+	print("[GameManager] Deck before setup: %d cards in draw_pile" % deck.get_card_count())
+	deck.setup_round()
+	print("[GameManager] Deck after setup: %d cards in draw_pile" % deck.get_card_count())
+
+	# Get all remaining players and deal new hands
+	var players: Array[Player] = []
+	for player in RoundManager.players:
+		players.append(player)
+
+	print("[GameManager] About to deal %d cards to %d players" % [STARTING_HAND_SIZE, players.size()])
+	var hands := deck.deal(players.size(), STARTING_HAND_SIZE)
+
+	for i in players.size():
+		print("[GameManager] Player %s getting %d cards" % [players[i].player_name, hands[i].size()])
+		await players[i].hand.set_cards(hands[i])
+		players[i].skip_next_turn = false
+
+	print("[GameManager] Cards dealt to %d players. Round %d starting..." % [players.size(), current_round_number])
 	RoundManager.start_round()
 
 func _redeal_and_start_new_round() -> void:
+	# Reshuffle the deck
+	deck.setup_round()
+
 	var players: Array[Player] = []
 	for path in player_paths:
 		players.append(get_node(path) as Player)
 
 	var hands := deck.deal(players.size(), STARTING_HAND_SIZE)
 	for i in players.size():
-		players[i].hand.set_cards(hands[i])
+		await players[i].hand.set_cards(hands[i])
 
 	print("[GameManager] Cards redealt to %d remaining players. Starting new round..." % players.size())
 	RoundManager.start_round()
@@ -181,13 +231,41 @@ func setup_players() -> void:
 		players.append(get_node(path) as Player)
 	RoundManager.setup(players, shared_pile, deck, call_bluff_prompt, declaration_prompt)
 
+	# Assign random toys to AI players
+	_assign_toys(players)
+
 	var hands := deck.deal(players.size(), STARTING_HAND_SIZE)
 	for i in players.size():
-		players[i].hand.set_cards(hands[i])
-	
+		await players[i].hand.set_cards(hands[i])
+
 	var human := _get_player_by_id(HUMAN_OWNER_ID)
 	if human != null:
 		human.buttons = starting_buttons
+
+func _assign_toys(players: Array[Player]) -> void:
+	var toy_classes: Array[Variant] = [
+		SoftChicken,
+		ClothCarrot,
+		BallChicken,
+		LambChop,
+		DachshundDogPlush,
+		FoxPlush,
+		SqueakyBear,
+	]
+
+	var toy_pool := toy_classes.duplicate()
+	toy_pool.shuffle()
+
+	for player in players:
+		if player is AIPlayer:
+			if toy_pool.is_empty():
+				toy_pool = toy_classes.duplicate()
+				toy_pool.shuffle()
+
+			var toy_class = toy_pool.pop_front()
+			var ai_player := player as AIPlayer
+			ai_player.toy = toy_class.new()
+			print("[GameManager] %s assigned toy: %s" % [ai_player.player_name, ai_player.toy.display_name])
 
 
 func _get_player_by_id(owner_id: int) -> Player:
@@ -227,6 +305,16 @@ func _end_game_with_winner(winner_owner_id: int) -> void:
 			print("[GameManager] Player %s EATEN by Wuffles!" % player.player_name)
 			player.visible = false
 	end_game()
+
+func show_message(text: String, duration: float = 2.0) -> void:
+	if action_message == null:
+		return
+	action_message.text = text
+	action_message.modulate = Color.WHITE
+
+	var tween := create_tween()
+	await get_tree().create_timer(duration - 0.3).timeout
+	tween.tween_property(action_message, "modulate", Color.TRANSPARENT, 0.3)
 
 # Function to end the game and display the winner.
 func end_game() -> void:

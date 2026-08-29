@@ -182,7 +182,10 @@ func _on_card_added(entry: PileEntry) -> void:
 
 	if entry.face_down:
 		card.set_face_down()
-		
+		# Show declared value as a temporary label
+		if entry.declared_value != -1:
+			_add_declared_label(card, entry.declared_value)
+
 	#testing some stuff to make it look like an actual pile
 	var rng := RandomNumberGenerator.new()
 	rng.seed = entry.instance.instance_id
@@ -190,7 +193,7 @@ func _on_card_added(entry: PileEntry) -> void:
 	card.rotation = rng.randf_range(-pile_rotation, pile_rotation)
 	card.position = target + Vector2(0, -280)
 	var tween := create_tween()
-	tween.tween_property(card, "position", target, drop_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)	
+	tween.tween_property(card, "position", target, drop_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	_card_nodes[entry] = card
 
 func _on_card_revealed(entry: PileEntry) -> void:
@@ -206,3 +209,17 @@ func _on_pile_cleared(_reason: ClearReason, _count: int) -> void:
 	for card in _card_nodes.values():
 		card.queue_free()
 	_card_nodes.clear()
+
+func _add_declared_label(card: Card, declared_value: int) -> void:
+	var label = Label.new()
+	label.text = str(declared_value)
+	label.add_theme_font_size_override("font_size", 24)
+	label.position = Vector2(40, -40)
+	card.add_child(label)
+
+	# Fade out and remove after 2 seconds
+	var tween := create_tween()
+	await get_tree().create_timer(1.5).timeout
+	tween.tween_property(label, "modulate", Color.TRANSPARENT, 0.5)
+	await tween.finished
+	label.queue_free()
