@@ -11,6 +11,8 @@ extends Player
 @export var portrait_size := Vector2(2,2)
 @export var hand_skew: float = 0
 @export var hand_card_scale = Vector2 (1,1)
+@export var think_min := 0.6
+@export var think_max := 1.5
 
 enum Facing { FRONT, LEFT, RIGHT }
 # Random portrait only for now - not tied to personality/decision logic yet.

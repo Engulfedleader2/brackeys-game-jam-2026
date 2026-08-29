@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dntttxbycjuhx"]
+
+[ext_resource type="Texture2D" uid="uid://c15t02842qrbs" path="res://AssetDump/Shop/ItemHallPass.png" id="1_gfppc"]
+[ext_resource type="Script" uid="uid://bkabjofxitu66" path="res://Scripts/Items/ItemResource.gd" id="1_v8umm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfppc"]
+atlas = ExtResource("1_gfppc")
+region = Rect2(880, 456, 264, 208)
+
+[resource]
+script = ExtResource("1_v8umm")
+id = &"hall_pass"
+display_name = "HallPass"
+description = "Make a player skip their next turn. Single use."
+icon = SubResource("AtlasTexture_gfppc")
+target = 2
+metadata/_custom_type_script = "uid://bkabjofxitu66"

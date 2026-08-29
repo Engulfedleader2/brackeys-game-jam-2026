@@ -19,3 +19,9 @@ func actual_value() -> int:
 
 func is_hidden() -> bool:
 	return face_down and not revealed
+
+func base_value() -> int:
+	return instance.base_value()
+
+func effective_value() -> int:
+	return instance.effective_value()

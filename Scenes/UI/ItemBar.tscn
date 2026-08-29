@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://gki1gbofmbym"]
+
+[ext_resource type="Script" uid="uid://cmqylry13ntfs" path="res://Scripts/Items/ItemBar.gd" id="1_u7m6r"]
+[ext_resource type="Texture2D" uid="uid://ct0si83ri1mg6" path="res://AssetDump/UI/ITEMS.png" id="2_mtycn"]
+
+[node name="ItemBar" type="CanvasLayer" unique_id=242711091]
+layer = 3
+script = ExtResource("1_u7m6r")
+
+[node name="Root" type="Control" parent="." unique_id=623126881]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Box" type="VBoxContainer" parent="Root" unique_id=141731601]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -131.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-75, -50)
+offset_transform_visual_only = false
+
+[node name="Panel" type="PanelContainer" parent="Root/Box" unique_id=1035751114]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Root/Box/Panel" unique_id=809987458]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="Root/Box/Panel/Margin" unique_id=1836349934]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="EmptyLabel" type="Label" parent="Root/Box/Panel/Margin/Column" unique_id=1205942519]
+layout_mode = 2
+text = "No items. Visit the shop."
+
+[node name="Slots" type="VBoxContainer" parent="Root/Box/Panel/Margin/Column" unique_id=214369470]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ItemsButton" type="Button" parent="Root/Box" unique_id=905070389]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+icon = ExtResource("2_mtycn")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PromptBar" type="VBoxContainer" parent="Root" unique_id=299445980]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.5
+offset_right = 35.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Prompt" type="Label" parent="Root/PromptBar" unique_id=1313702878]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="Root/PromptBar" unique_id=1419989622]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "CANCEL"
+
+[node name="PlayerPicker" type="PanelContainer" parent="Root" unique_id=693135737]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Margin" type="MarginContainer" parent="Root/PlayerPicker" unique_id=737156475]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="List" type="VBoxContainer" parent="Root/PlayerPicker/Margin" unique_id=2081481098]
+layout_mode = 2
+theme_override_constants/separation = 10
