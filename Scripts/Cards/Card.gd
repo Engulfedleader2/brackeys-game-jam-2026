@@ -12,6 +12,7 @@ var instance: CardInstance
 @onready var card_area: Area2D = $Area2D
 @onready var front_face: Node2D = $FrontFace
 @onready var back_face: Node2D = $BackFace
+@onready var sticker: Node2D = get_node_or_null("Sticker")
 
 func _ready() -> void:
 	card_area.mouse_entered.connect(_on_mouse_entered)
@@ -45,3 +46,8 @@ func setup(card_instance: CardInstance) -> void:
 func set_face_down() -> void:
 	front_face.visible = false
 	back_face.visible = true
+
+func refresh_sticker() -> void:
+	if sticker == null or instance == null:
+		return
+	sticker.visible = instance.negated

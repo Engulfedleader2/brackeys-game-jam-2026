@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{A9305128-50E8-402A-B527-C94B3E5D18A2}",
     "Language": "SFX",
-    "Hash": "{004F657B-2683-C8E5-AB70-B41231609D96}",
+    "Hash": "{C7BFF409-3F88-9AC9-4E4B-BE9B1BDC44B6}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Game",
     "ShortName": "Game",
     "Path": "Game.bnk",
@@ -496,50 +496,10 @@
       "DurationMax": "0"
      },
      {
-      "Id": "4007373972",
-      "Name": "MX_Off",
-      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\MX_Off",
-      "GUID": "{081CB84C-1EB4-4360-A879-A17686DACFF6}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "1986657934",
-      "Name": "MX_On",
-      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\MX_On",
-      "GUID": "{ADC6688D-9A2D-4D4E-B314-7434B21D88B6}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
       "Id": "2910527622",
       "Name": "Settings",
       "ObjectPath": "\\Events\\Default Work Unit\\Menu\\Settings",
       "GUID": "{3F060950-A760-4398-B5E3-2AD7DB993332}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "429466468",
-      "Name": "SFX_Off",
-      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\SFX_Off",
-      "GUID": "{03DD4440-39C9-4911-BCD2-80C4A9E39C4B}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "3963402814",
-      "Name": "SFX_On",
-      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\SFX_On",
-      "GUID": "{17E15C82-44FC-4076-8534-4D2787CBB9A4}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -623,26 +583,6 @@
       "DurationMax": "0"
      },
      {
-      "Id": "3208725514",
-      "Name": "VOX_Off",
-      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\VOX_Off",
-      "GUID": "{FE8355DF-5593-41D0-B4C3-C0B84676B162}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "813768044",
-      "Name": "VOX_On",
-      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\VOX_On",
-      "GUID": "{975FE651-D2DE-4799-B48A-124755BDFC39}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
       "Id": "979765101",
       "Name": "Win",
       "ObjectPath": "\\Events\\Default Work Unit\\Gameplay\\Win",
@@ -719,12 +659,6 @@
       "GUID": "{5CE4823B-072D-4080-96E4-BED0A6C1F398}"
      },
      {
-      "Id": "563208321",
-      "Name": "VOX_Volume",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\VOX_Volume",
-      "GUID": "{C28D5EAD-4839-4D3B-B5FD-4CE1844B53CC}"
-     },
-     {
       "Id": "657744941",
       "Name": "Lamb",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Lamb",
@@ -741,18 +675,6 @@
       "Name": "Bear",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Bear",
       "GUID": "{38F9C56A-9516-4DB9-89DA-7D3E56B12E8B}"
-     },
-     {
-      "Id": "1441253587",
-      "Name": "MX_Volume",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\MX_Volume",
-      "GUID": "{F808ED88-8DC0-4A4D-9CCF-D83D59E7CD28}"
-     },
-     {
-      "Id": "1564184899",
-      "Name": "SFX_Volume",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\SFX_Volume",
-      "GUID": "{57E4FB61-D52F-43F9-AA77-73BADB87361F}"
      },
      {
       "Id": "1777984502",
@@ -845,6 +767,6 @@
     ]
    }
   ],
-  "FileHash": "{496991DC-98A3-56E2-75EF-BE8CDFF33473}"
+  "FileHash": "{EB2C878D-6A50-18A7-AA35-94B6563A5890}"
  }
 }

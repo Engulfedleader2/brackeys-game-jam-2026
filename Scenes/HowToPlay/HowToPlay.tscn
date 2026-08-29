@@ -19,6 +19,7 @@ texture = ExtResource("1_1piny")
 centered = false
 
 [node name="Back_IMG" type="Sprite2D" parent="." unique_id=1814308300]
+modulate = Color(1, 1, 1, 0.5)
 position = Vector2(179, 121)
 texture = ExtResource("3_l4hwy")
 

@@ -70,6 +70,7 @@ func resolve_bluff_call(caller_id: int) -> BluffResult:
 func collect_all(reason: ClearReason = ClearReason.BUST) -> Array[CardInstance]:
 	var collected: Array[CardInstance] = []
 	for entry in _entries:
+		entry.instance.negated = false
 		collected.append(entry.instance)
 	print("[SharedPile] %s - %d cards handed back" % [ ClearReason.keys()[reason], collected.size()])
 	_clear(reason)
@@ -80,10 +81,16 @@ func reset_for_new_round() -> Array[CardInstance]:
 	return collect_all(ClearReason.ROUND_RESET)
 	
 func _contribution(entry: PileEntry) -> int:
-	return 0 if entry.face_down else entry.actual_value()
+	return 0 if entry.face_down else entry.effective_value()
 
 func is_lie(entry: PileEntry) -> bool:
-	return entry.face_down and not rules.legal_face_down_values.has(entry.actual_value())
+	if not entry.face_down:
+		return false
+	# If declared value exists, check if it matches actual value (declared lie)
+	if entry.declared_value != -1:
+		return entry.is_declared_lie()
+	# Fallback: check if actual value is legal
+	return not rules.legal_face_down_values.has(entry.actual_value())
 	
 func get_total() -> int:
 	var total := 0
@@ -167,6 +174,7 @@ func _on_card_added(entry: PileEntry) -> void:
 	var card: Card = CARD_SCENE.instantiate()
 	card_pile.add_child(card)
 	card.setup(entry.instance)
+	card.refresh_sticker()
 	card.scale = card_scale
 	#card.position = card_step * float(entry.play_index)
 	card.z_index = entry.play_index

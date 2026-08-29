@@ -2,9 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	221232704	Loss			\Default Work Unit\Gameplay\Loss	
 	251412225	Shop			\Default Work Unit\Gameplay\Shop	
 	308470013	Try_Again			\Default Work Unit\Gameplay\Try_Again	
-	429466468	SFX_Off			\Default Work Unit\Settings\SFX_Off	
 	559073066	Carrot_Off			\Default Work Unit\Opponents\Off\Carrot_Off	
-	813768044	VOX_On			\Default Work Unit\Settings\VOX_On	
 	979765101	Win			\Default Work Unit\Gameplay\Win	
 	1177341774	Chicken_On			\Default Work Unit\Opponents\On\Chicken_On	
 	1274241660	Ball_Off			\Default Work Unit\Opponents\Off\Ball_Off	
@@ -12,7 +10,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1365208458	Game_Open			\Default Work Unit\Game_Open	
 	1452776751	Lamb_Off			\Default Work Unit\Opponents\Off\Lamb_Off	
 	1482611468	Carrot_On			\Default Work Unit\Opponents\On\Carrot_On	
-	1986657934	MX_On			\Default Work Unit\Settings\MX_On	
 	2048817515	Table			\Default Work Unit\Gameplay\Table	
 	2138498875	Dog_On			\Default Work Unit\Opponents\On\Dog_On	
 	2201105581	Credits			\Default Work Unit\Menu\Credits	
@@ -22,14 +19,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	2910527622	Settings			\Default Work Unit\Menu\Settings	
 	3196734292	Chicken_Off			\Default Work Unit\Opponents\Off\Chicken_Off	
 	3200743836	Fox_On			\Default Work Unit\Opponents\On\Fox_On	
-	3208725514	VOX_Off			\Default Work Unit\Settings\VOX_Off	
 	3426962870	Ball_On			\Default Work Unit\Opponents\On\Ball_On	
 	3677222191	Dog_Off			\Default Work Unit\Opponents\Off\Dog_Off	
 	3705726509	Title			\Default Work Unit\Menu\Title	
 	3762955427	Tutorial			\Default Work Unit\Menu\Tutorial	
 	3892601754	Fox_Off			\Default Work Unit\Opponents\Off\Fox_Off	
-	3963402814	SFX_On			\Default Work Unit\Settings\SFX_On	
-	4007373972	MX_Off			\Default Work Unit\Settings\MX_Off	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	702482391	Game			\Default Work Unit\Game	
@@ -45,12 +39,9 @@ State	ID	Name	State Group			Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	221232704	Loss			\Default Work Unit\Gameplay\Loss	
 	546651181	Dog			\Default Work Unit\Opponents\Dog	
-	563208321	VOX_Volume			\Default Work Unit\Settings\VOX_Volume	
 	657744941	Lamb			\Default Work Unit\Opponents\Lamb	
 	1083137540	Fox			\Default Work Unit\Opponents\Fox	
 	1190179415	Bear			\Default Work Unit\Opponents\Bear	
-	1441253587	MX_Volume			\Default Work Unit\Settings\MX_Volume	
-	1564184899	SFX_Volume			\Default Work Unit\Settings\SFX_Volume	
 	1777984502	Ball			\Default Work Unit\Opponents\Ball	
 	2043204404	Carrot			\Default Work Unit\Opponents\Carrot	
 	2201105581	Credits			\Default Work Unit\Menus\Credits	

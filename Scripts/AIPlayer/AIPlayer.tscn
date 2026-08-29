@@ -12,9 +12,14 @@ portrait_offset = Vector2(-50, -180)
 portrait_size = Vector2(2, 2)
 hand_skew = 0.0
 hand_card_scale = Vector2(1, 1)
+player_name_placement = Vector2(0, 0)
 facing = 0
 art_faces_right = true
 table_center_x = 960.0
+
+[node name="PlayerNameLabel" parent="." index="0" unique_id=239930997]
+offset_top = -226.0
+offset_bottom = -203.0
 
 [node name="Portrait" type="TextureRect" parent="." index="1" unique_id=1356194408]
 offset_left = -50.0
@@ -25,4 +30,5 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Hand" parent="." index="2" unique_id=1584552490]
+z_index = 2
 reveal_cards = false

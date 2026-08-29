@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://jb2jkp2jww7a" path="res://AssetDump/UI/CALL.png" id="2_esxfw"]
 [ext_resource type="Texture2D" uid="uid://cwpk3sdubw1x3" path="res://AssetDump/UI/BluffTimer1.png" id="2_pgbwm"]
 [ext_resource type="Texture2D" uid="uid://dgs2o0l70sgpp" path="res://AssetDump/UI/BluffTimer2.png" id="3_7hso1"]
+[ext_resource type="Texture2D" uid="uid://cq4a7pqowrbo" path="res://AssetDump/UI/Peek.png" id="5_s8gxw"]
+[ext_resource type="Texture2D" uid="uid://dny5vnmlvpiyk" path="res://AssetDump/UI/Skip.png" id="6_54bkf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esxfw"]
 atlas = ExtResource("2_pgbwm")
@@ -30,8 +32,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -460.0
-offset_right = -420.0
+offset_left = -360.0
+offset_right = -320.0
 offset_bottom = 40.0
 grow_horizontal = 2
 rotation = 0.15707964
@@ -65,4 +67,34 @@ offset_transform_scale = Vector2(0.5, 0.5)
 icon = ExtResource("2_esxfw")
 flat = true
 icon_alignment = 1
+expand_icon = true
+
+[node name="Peek" type="Button" parent="Root/Group" unique_id=1127389497]
+custom_minimum_size = Vector2(120, 44)
+layout_mode = 0
+offset_left = 917.3933
+offset_top = 588.7364
+offset_right = 1037.3933
+offset_bottom = 632.7364
+icon = ExtResource("5_s8gxw")
+flat = true
+expand_icon = true
+
+[node name="PeekLabel" type="Label" parent="Root/Group" unique_id=1692570962]
+layout_mode = 0
+offset_left = 879.2386
+offset_top = 488.47064
+offset_right = 919.2386
+offset_bottom = 511.47064
+horizontal_alignment = 1
+
+[node name="Skip" type="Button" parent="Root/Group" unique_id=999243600]
+custom_minimum_size = Vector2(120, 44)
+layout_mode = 0
+offset_left = 783.05536
+offset_top = 693.0355
+offset_right = 903.0554
+offset_bottom = 737.0355
+icon = ExtResource("6_54bkf")
+flat = true
 expand_icon = true

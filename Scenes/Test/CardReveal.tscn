@@ -176,7 +176,69 @@ _data = {
 &"Shake": SubResource("Animation_iby7k")
 }
 
-[node name="CardReveal" type="Node2D" unique_id=18024946]
+[sub_resource type="Animation" id="Animation_m00uc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Accused:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Accused:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hopbu"]
+resource_name = "zoom"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Accused:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 4),
+"transitions": PackedFloat32Array(1, 14.928512),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Accused:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fj7qk"]
+_data = {
+&"RESET": SubResource("Animation_m00uc"),
+&"zoom": SubResource("Animation_hopbu")
+}
+
+[node name="CardReveal" type="CanvasLayer" unique_id=1361101499]
 script = ExtResource("1_iby7k")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1431675102]
@@ -206,6 +268,11 @@ texture = ExtResource("2_ub3fg")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1556036002]
 
 [node name="Accused" type="Sprite2D" parent="." unique_id=639734224]
-position = Vector2(-480, 230)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(227, 794)
 texture = ExtResource("6_m00uc")
 centered = false
+offset = Vector2(-707, -564)
+
+[node name="Accused_AnimationPlayer" type="AnimationPlayer" parent="." unique_id=328688647]
+libraries/ = SubResource("AnimationLibrary_fj7qk")

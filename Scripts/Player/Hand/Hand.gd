@@ -3,7 +3,7 @@ extends Node2D
 
 
 signal card_played(instance: CardInstance, face_down: bool)
-
+signal card_targeted(card: Card)
 
 const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn");
 @onready var bluff_button: Button = $Bluff
@@ -18,6 +18,9 @@ const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn");
 
 var cards: Array[Card] = []
 var _bluff_target: Card = null
+
+#for item stuff
+var targeting := false
 
 func _ready() -> void:
 	bluff_button.visible = false
@@ -69,6 +72,17 @@ func _add_card(instance: CardInstance) -> void:
 func _hover_prop() -> String:
 	return "position:x" if vertical_layout else "position:y"
 
+#for item usage
+func discard_card(card: Card) -> void:
+	if card == null or card not in cards:
+		return
+	if _bluff_target == card:
+		_bluff_target = null
+		bluff_button.visible = false
+	cards.erase(card)
+	card.queue_free()
+	_display_cards()
+
 
 func _on_card_hovered(card: Card) -> void:
 	if _bluff_target != null and _bluff_target != card:
@@ -76,7 +90,10 @@ func _on_card_hovered(card: Card) -> void:
 
 	create_tween().tween_property(card, _hover_prop(), -hover_lift, hover_tween_duration)
 	_bluff_target = card
-
+	if targeting: 
+		bluff_button.visible = false
+		return
+		
 	if vertical_layout:
 		bluff_button.position = Vector2(
 			-hover_lift - bluff_button_lift, card.position.y - bluff_button.size.y * 0.5
@@ -95,6 +112,10 @@ func _on_card_unhovered(card: Card) -> void:
 
 
 func _on_card_played(face_down: bool, card: Card) -> void:
+	if targeting:
+		card_targeted.emit(card)
+		return
+	
 	if face_down:
 		card.set_face_down()
 

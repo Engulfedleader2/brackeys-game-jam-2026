@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://cl4kqitdcnjlq"]
 
 [ext_resource type="Script" uid="uid://bggpl0wx1eaoc" path="res://Scripts/Cards/Card.gd" id="1_2h66o"]
-[ext_resource type="Texture2D" uid="uid://cuq63ol8irwc7" path="res://Scripts/Cards/CardResources/Art/BackCard.png" id="2_backcard"]
+[ext_resource type="Texture2D" uid="uid://b2bjxd07cr32" path="res://AssetDump/CardBack.png" id="2_mljol"]
+[ext_resource type="Texture2D" uid="uid://fja0knc3hu2d" path="res://AssetDump/Shop/ItemNegativeSticker.png" id="3_mljol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl2kv"]
 size = Vector2(192, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slunx"]
+atlas = ExtResource("3_mljol")
+region = Rect2(944, 232, 128, 72)
 
 [node name="Card" type="Node2D" unique_id=819957958]
 script = ExtResource("1_2h66o")
@@ -35,10 +40,18 @@ offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_backcard")
+texture = ExtResource("2_mljol")
 expand_mode = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1521004914]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=612543329]
 shape = SubResource("RectangleShape2D_tl2kv")
+
+[node name="Sticker" type="Node2D" parent="." unique_id=242434604]
+visible = false
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sticker" unique_id=1509878383]
+position = Vector2(-126, 10)
+texture = SubResource("AtlasTexture_slunx")

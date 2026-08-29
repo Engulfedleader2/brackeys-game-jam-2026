@@ -8,8 +8,6 @@ extends Control
 
 
 func _ready() -> void:
-	await get_tree().create_timer(2).timeout
-	Curtain._reveal()
 	start_button.pressed.connect(_on_start_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
@@ -17,6 +15,10 @@ func _ready() -> void:
 	Wwise.register_game_obj(self,self.name)
 	Wwise.add_default_listener(SoundManager)
 	Wwise.post_event("Title",SoundManager)
+	if Curtain.can_play == true:
+		await get_tree().create_timer(2).timeout
+		Curtain._reveal()
+		Curtain.can_play = false
 
 
 func _on_start_button_pressed() -> void:
