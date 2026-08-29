@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://bw2omay8i6hl6"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Credits"
+id = 2201105581
+guid = "{0D39A233-5D0D-4D0B-B05B-39FF00B5FF98}"
+dummy = true
