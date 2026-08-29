@@ -1,0 +1,76 @@
+Event	ID	Name			Wwise Object Path	Notes
+	221232704	Loss			\Default Work Unit\Gameplay\Loss	
+	251412225	Shop			\Default Work Unit\Gameplay\Shop	
+	308470013	Try_Again			\Default Work Unit\Gameplay\Try_Again	
+	559073066	Carrot_Off			\Default Work Unit\Opponents\Off\Carrot_Off	
+	979765101	Win			\Default Work Unit\Gameplay\Win	
+	1177341774	Chicken_On			\Default Work Unit\Opponents\On\Chicken_On	
+	1274241660	Ball_Off			\Default Work Unit\Opponents\Off\Ball_Off	
+	1342821817	Bear_Off			\Default Work Unit\Opponents\Off\Bear_Off	
+	1365208458	Game_Open			\Default Work Unit\Game_Open	
+	1452776751	Lamb_Off			\Default Work Unit\Opponents\Off\Lamb_Off	
+	1482611468	Carrot_On			\Default Work Unit\Opponents\On\Carrot_On	
+	2048817515	Table			\Default Work Unit\Gameplay\Table	
+	2138498875	Dog_On			\Default Work Unit\Opponents\On\Dog_On	
+	2201105581	Credits			\Default Work Unit\Menu\Credits	
+	2443688461	Bear_On			\Default Work Unit\Opponents\On\Bear_On	
+	2801173556	ALL_OFF			\Default Work Unit\Opponents\Off\ALL_OFF	
+	2836373307	Lamb_On			\Default Work Unit\Opponents\On\Lamb_On	
+	2910527622	Settings			\Default Work Unit\Menu\Settings	
+	3196734292	Chicken_Off			\Default Work Unit\Opponents\Off\Chicken_Off	
+	3200743836	Fox_On			\Default Work Unit\Opponents\On\Fox_On	
+	3426962870	Ball_On			\Default Work Unit\Opponents\On\Ball_On	
+	3677222191	Dog_Off			\Default Work Unit\Opponents\Off\Dog_Off	
+	3705726509	Title			\Default Work Unit\Menu\Title	
+	3762955427	Tutorial			\Default Work Unit\Menu\Tutorial	
+	3892601754	Fox_Off			\Default Work Unit\Opponents\Off\Fox_Off	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	702482391	Game			\Default Work Unit\Game	
+
+State	ID	Name	State Group			Notes
+	221232704	Loss	Game			
+	251412225	Shop	Game			
+	748895195	None	Game			
+	979765101	Win	Game			
+	2048817515	Table	Game			
+	2607556080	Menu	Game			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	221232704	Loss			\Default Work Unit\Gameplay\Loss	
+	546651181	Dog			\Default Work Unit\Opponents\Dog	
+	657744941	Lamb			\Default Work Unit\Opponents\Lamb	
+	1083137540	Fox			\Default Work Unit\Opponents\Fox	
+	1190179415	Bear			\Default Work Unit\Opponents\Bear	
+	1777984502	Ball			\Default Work Unit\Opponents\Ball	
+	2043204404	Carrot			\Default Work Unit\Opponents\Carrot	
+	2201105581	Credits			\Default Work Unit\Menus\Credits	
+	2910527622	Settings			\Default Work Unit\Menus\Settings	
+	3705726509	Title			\Default Work Unit\Menus\Title	
+	3840192365	Stress			\Default Work Unit\Gameplay\Stress	
+	4251222990	Chicken			\Default Work Unit\Opponents\Chicken	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Main Audio Bus\SFX	
+	543694036	VOX			\Default Work Unit\Main Audio Bus\VOX	
+	628126519	STG			\Default Work Unit\Main Audio Bus\STG	
+	1117531639	AMB			\Default Work Unit\Main Audio Bus\AMB	
+	1685527054	MX			\Default Work Unit\Main Audio Bus\MX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	124661238	Stress	.cache\C6\{C6970CB2-EC88-564C-6883-0AD1E760E9A6}.wem		\Containers\MX\Game\Table_Loop\Table\Stress		133953
+	190151592	Carrot	.cache\E9\{E9BC1426-3AE6-6A46-1305-CDF045C2D99A}.wem		\Containers\MX\Game\Table_Loop\Table\Carrot		176885
+	199129574	Settings	.cache\2A\{2AF20800-11DF-8EAB-4578-7CA6796DCEDA}.wem		\Containers\MX\Game\Menu_Loop\Menu\Settings		653877
+	280986201	Chicken	.cache\B7\{B73DD8E3-BD15-B953-0C9D-58B2FFFCD621}.wem		\Containers\MX\Game\Table_Loop\Table\Chicken		119720
+	326476565	Base	.cache\94\{94B3CBDB-1F45-3D09-BE00-713A62DD35D8}.wem		\Containers\MX\Game\Menu_Loop\Menu\Base		709156
+	366179833	Fox	.cache\44\{4480D943-FD30-3042-04C6-75A94987363C}.wem		\Containers\MX\Game\Table_Loop\Table\Fox		123646
+	413668921	Ball	.cache\A8\{A80EE627-561B-BE23-5371-4E55A4972357}.wem		\Containers\MX\Game\Table_Loop\Table\Ball		90874
+	422104676	Bear	.cache\83\{83ED0C62-509C-3903-0596-DC7A7576691D}.wem		\Containers\MX\Game\Table_Loop\Table\Bear		104339
+	574803436	Title	.cache\59\{595B9142-D3CA-F54D-4DF8-24E20BABE0A0}.wem		\Containers\MX\Game\Menu_Loop\Menu\Title		307015
+	631558340	Win	.cache\95\{95CEF12A-5CA9-448B-67BA-53F3EA9F6708}.wem		\Containers\MX\Game\Win_Loop\Win\Win		48518
+	687341530	Dog	.cache\D5\{D5CB5935-7E54-5BF2-7783-5F756C845FE8}.wem		\Containers\MX\Game\Table_Loop\Table\Dog		86051
+	690663053	Lamb	.cache\2E\{2ECC4B4E-6B01-7256-BB09-944B864911E0}.wem		\Containers\MX\Game\Table_Loop\Table\Lamb		176522
+	823782911	Credits	.cache\61\{61E6676A-EC34-0FD9-A38A-5140DF3F47AC}.wem		\Containers\MX\Game\Menu_Loop\Menu\Credits		633186
+	1001046483	0_Base	.cache\D1\{D1F4C60B-BCDB-892D-983F-002929072B23}.wem		\Containers\MX\Game\Table_Loop\Table\0_Base		318125
+	1063088267	Welcome to You're Not Welcome Here Market	.cache\D1\{D1725FA4-BA78-9594-1334-FBA455FC0A7F}.wem		\Containers\MX\Game\Shop_Loop\Shop\Welcome to You're Not Welcome Here Market		1079539
+
