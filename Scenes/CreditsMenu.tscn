@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://duspptw3ao2y1"]
 
 [ext_resource type="Script" uid="uid://dmgg17wu5q185" path="res://Scripts/UI/CreditsMenu.gd" id="1_creditsmenu"]
+[ext_resource type="Texture2D" uid="uid://8fwvqda7nt46" path="res://AssetDump/Credits/Credits - withNameV002.png" id="2_86ai6"]
 [ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="2_staik"]
+[ext_resource type="Texture2D" uid="uid://bj01tuqhnaayk" path="res://AssetDump/UI/Back_IMG.PNG" id="3_sino0"]
+[ext_resource type="Texture2D" uid="uid://dahfmm5io73i5" path="res://AssetDump/Credits/Credits - withName.png" id="4_sino0"]
 
 [node name="CreditsMenu" type="Control" unique_id=1512167178]
 layout_mode = 3
@@ -13,10 +16,30 @@ grow_vertical = 2
 script = ExtResource("1_creditsmenu")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=483923141]
+texture = ExtResource("2_86ai6")
+centered = false
+
+[node name="BG3" type="Sprite2D" parent="." unique_id=174906742]
+visible = false
+modulate = Color(0.36367702, 0.36367702, 0.36367702, 0.356)
 texture = ExtResource("2_staik")
 centered = false
 
+[node name="Back_IMG" type="Sprite2D" parent="." unique_id=950586195]
+modulate = Color(1, 1, 1, 0.5)
+position = Vector2(179, 121)
+texture = ExtResource("3_sino0")
+
+[node name="Receipt" type="Sprite2D" parent="." unique_id=966602824]
+visible = false
+position = Vector2(716, 130)
+texture = ExtResource("4_sino0")
+centered = false
+region_enabled = true
+region_rect = Rect2(715.3884, 132.31174, 452.72607, 787.5547)
+
 [node name="Content" type="CenterContainer" parent="." unique_id=1988083685]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,3 +60,15 @@ horizontal_alignment = 1
 [node name="BackButton" type="Button" parent="Content/Credits" unique_id=1575765574]
 layout_mode = 2
 text = "Back"
+
+[node name="Back_Button" type="Button" parent="." unique_id=1857734550]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 37.0
+offset_right = 318.0
+offset_bottom = 208.0
+flat = true
+
+[connection signal="mouse_entered" from="Back_Button" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="Back_Button" to="." method="_on_back_button_mouse_exited"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
