@@ -1,0 +1,772 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "702482391",
+    "Type": "User",
+    "GUID": "{A9305128-50E8-402A-B527-C94B3E5D18A2}",
+    "Language": "SFX",
+    "Hash": "{C7BFF409-3F88-9AC9-4E4B-BE9B1BDC44B6}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Game",
+    "ShortName": "Game",
+    "Path": "Game.bnk",
+    "Media": [
+     {
+      "Id": "124661238",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "stress.wav",
+      "CachePath": "C6/{C6970CB2-EC88-564C-6883-0AD1E760E9A6}.wem"
+     },
+     {
+      "Id": "190151592",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "carrot.wav",
+      "CachePath": "E9/{E9BC1426-3AE6-6A46-1305-CDF045C2D99A}.wem"
+     },
+     {
+      "Id": "199129574",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "menu_settings.wav",
+      "CachePath": "2A/{2AF20800-11DF-8EAB-4578-7CA6796DCEDA}.wem"
+     },
+     {
+      "Id": "280986201",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "chicken.wav",
+      "CachePath": "B7/{B73DD8E3-BD15-B953-0C9D-58B2FFFCD621}.wem"
+     },
+     {
+      "Id": "326476565",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "menu_base.wav",
+      "CachePath": "94/{94B3CBDB-1F45-3D09-BE00-713A62DD35D8}.wem"
+     },
+     {
+      "Id": "366179833",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "fox.wav",
+      "CachePath": "44/{4480D943-FD30-3042-04C6-75A94987363C}.wem"
+     },
+     {
+      "Id": "413668921",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ball.wav",
+      "CachePath": "A8/{A80EE627-561B-BE23-5371-4E55A4972357}.wem"
+     },
+     {
+      "Id": "422104676",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "bear.wav",
+      "CachePath": "83/{83ED0C62-509C-3903-0596-DC7A7576691D}.wem"
+     },
+     {
+      "Id": "574803436",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "menu_title.wav",
+      "CachePath": "59/{595B9142-D3CA-F54D-4DF8-24E20BABE0A0}.wem"
+     },
+     {
+      "Id": "631558340",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mx_Item Big.wav",
+      "CachePath": "95/{95CEF12A-5CA9-448B-67BA-53F3EA9F6708}.wem"
+     },
+     {
+      "Id": "687341530",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "dog.wav",
+      "CachePath": "D5/{D5CB5935-7E54-5BF2-7783-5F756C845FE8}.wem"
+     },
+     {
+      "Id": "690663053",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "lamb.wav",
+      "CachePath": "2E/{2ECC4B4E-6B01-7256-BB09-944B864911E0}.wem"
+     },
+     {
+      "Id": "823782911",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "menu_credits.wav",
+      "CachePath": "61/{61E6676A-EC34-0FD9-A38A-5140DF3F47AC}.wem"
+     },
+     {
+      "Id": "1001046483",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "base.wav",
+      "CachePath": "D1/{D1F4C60B-BCDB-892D-983F-002929072B23}.wem"
+     },
+     {
+      "Id": "1063088267",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Welcome to You're Not Welcome Here Market.wav",
+      "CachePath": "D1/{D1725FA4-BA78-9594-1334-FBA455FC0A7F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2801173556",
+      "Name": "ALL_OFF",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\ALL_OFF",
+      "GUID": "{FFE6DA20-777A-4878-84EF-0F25614F8A3E}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1274241660",
+      "Name": "Ball_Off",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\Ball_Off",
+      "GUID": "{1728F136-0086-4FCF-9892-A7A04D4A94B1}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3426962870",
+      "Name": "Ball_On",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\On\\Ball_On",
+      "GUID": "{F7CAAAB2-46EC-4C3E-8C2E-21C9BB9B82AE}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1342821817",
+      "Name": "Bear_Off",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\Bear_Off",
+      "GUID": "{495EBE11-242B-440D-A692-63ABDC387FF7}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2443688461",
+      "Name": "Bear_On",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\On\\Bear_On",
+      "GUID": "{453D25C2-3D5A-4F84-A141-FD695EC23640}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "559073066",
+      "Name": "Carrot_Off",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\Carrot_Off",
+      "GUID": "{FA56324D-6B2A-47A6-9613-C211F999192E}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1482611468",
+      "Name": "Carrot_On",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\On\\Carrot_On",
+      "GUID": "{DB619B4A-1B93-4C7A-B517-152A55BDDB3F}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3196734292",
+      "Name": "Chicken_Off",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\Chicken_Off",
+      "GUID": "{A048F53C-DFDF-4389-B28E-D3928ECA757B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1177341774",
+      "Name": "Chicken_On",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\On\\Chicken_On",
+      "GUID": "{ADC7035F-5E94-4E67-AD6D-FB4A8516E3C9}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2201105581",
+      "Name": "Credits",
+      "ObjectPath": "\\Events\\Default Work Unit\\Menu\\Credits",
+      "GUID": "{0D39A233-5D0D-4D0B-B05B-39FF00B5FF98}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3677222191",
+      "Name": "Dog_Off",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\Dog_Off",
+      "GUID": "{BF27408A-C6DE-4B8B-96DD-FA941B68FEB2}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2138498875",
+      "Name": "Dog_On",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\On\\Dog_On",
+      "GUID": "{9865BDD4-B04A-4360-B959-E102A19ED7E0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3892601754",
+      "Name": "Fox_Off",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\Fox_Off",
+      "GUID": "{6B3450B7-F510-4F1A-8F1A-BB3E9BFE450D}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3200743836",
+      "Name": "Fox_On",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\On\\Fox_On",
+      "GUID": "{5823E49B-4552-4A39-909B-026E28E4E929}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1365208458",
+      "Name": "Game_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game_Open",
+      "GUID": "{E66E941E-B06F-4475-B4EE-B0878577C6B2}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "2607556080",
+         "GUID": "{3716CFA0-4D58-4367-AC7D-515B950C4594}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "199129574"
+         },
+         {
+          "Id": "326476565"
+         },
+         {
+          "Id": "574803436"
+         },
+         {
+          "Id": "823782911"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "2048817515",
+         "GUID": "{8A5C6456-DB09-4D62-AB31-E6060C6E4A6B}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "124661238"
+         },
+         {
+          "Id": "190151592"
+         },
+         {
+          "Id": "280986201"
+         },
+         {
+          "Id": "366179833"
+         },
+         {
+          "Id": "413668921"
+         },
+         {
+          "Id": "422104676"
+         },
+         {
+          "Id": "687341530"
+         },
+         {
+          "Id": "690663053"
+         },
+         {
+          "Id": "1001046483"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "251412225",
+         "GUID": "{90EAD496-DBAE-4706-B97C-FFCE259F1BA5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1063088267"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "979765101",
+         "GUID": "{DF951068-FFC0-4882-98D3-40BEC2E0A871}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "631558340"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "2607556080",
+         "GUID": "{3716CFA0-4D58-4367-AC7D-515B950C4594}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "199129574"
+         },
+         {
+          "Id": "326476565"
+         },
+         {
+          "Id": "574803436"
+         },
+         {
+          "Id": "823782911"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "2048817515",
+         "GUID": "{8A5C6456-DB09-4D62-AB31-E6060C6E4A6B}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "124661238"
+         },
+         {
+          "Id": "190151592"
+         },
+         {
+          "Id": "280986201"
+         },
+         {
+          "Id": "366179833"
+         },
+         {
+          "Id": "413668921"
+         },
+         {
+          "Id": "422104676"
+         },
+         {
+          "Id": "687341530"
+         },
+         {
+          "Id": "690663053"
+         },
+         {
+          "Id": "1001046483"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "251412225",
+         "GUID": "{90EAD496-DBAE-4706-B97C-FFCE259F1BA5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1063088267"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "702482391",
+         "Id": "979765101",
+         "GUID": "{DF951068-FFC0-4882-98D3-40BEC2E0A871}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "631558340"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "702482391",
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Menu",
+        "GUID": "{3716CFA0-4D58-4367-AC7D-515B950C4594}"
+       }
+      ]
+     },
+     {
+      "Id": "1452776751",
+      "Name": "Lamb_Off",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\Off\\Lamb_Off",
+      "GUID": "{05C9330D-5B54-4932-ADD7-A618AF67C7D8}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2836373307",
+      "Name": "Lamb_On",
+      "ObjectPath": "\\Events\\Default Work Unit\\Opponents\\On\\Lamb_On",
+      "GUID": "{56B3CC7D-B330-4CE1-9D59-C3FD0BFA7D80}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "221232704",
+      "Name": "Loss",
+      "ObjectPath": "\\Events\\Default Work Unit\\Gameplay\\Loss",
+      "GUID": "{ADDE652D-5523-4623-9D56-2BF3E8EA6950}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2910527622",
+      "Name": "Settings",
+      "ObjectPath": "\\Events\\Default Work Unit\\Menu\\Settings",
+      "GUID": "{3F060950-A760-4398-B5E3-2AD7DB993332}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "251412225",
+      "Name": "Shop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Gameplay\\Shop",
+      "GUID": "{E8286CA1-AFE7-4F16-9E55-EAA78505D1BC}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "702482391",
+        "Id": "251412225",
+        "Name": "Shop",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Shop",
+        "GUID": "{90EAD496-DBAE-4706-B97C-FFCE259F1BA5}"
+       }
+      ]
+     },
+     {
+      "Id": "2048817515",
+      "Name": "Table",
+      "ObjectPath": "\\Events\\Default Work Unit\\Gameplay\\Table",
+      "GUID": "{5E1FB932-8BF2-41B1-9C09-A4BA541E08E2}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "702482391",
+        "Id": "2048817515",
+        "Name": "Table",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Table",
+        "GUID": "{8A5C6456-DB09-4D62-AB31-E6060C6E4A6B}"
+       }
+      ]
+     },
+     {
+      "Id": "3705726509",
+      "Name": "Title",
+      "ObjectPath": "\\Events\\Default Work Unit\\Menu\\Title",
+      "GUID": "{1C2908C3-91AD-4EFB-B4B7-062D71B07CD5}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "702482391",
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Menu",
+        "GUID": "{3716CFA0-4D58-4367-AC7D-515B950C4594}"
+       }
+      ]
+     },
+     {
+      "Id": "308470013",
+      "Name": "Try_Again",
+      "ObjectPath": "\\Events\\Default Work Unit\\Gameplay\\Try_Again",
+      "GUID": "{19024E7E-31EC-4767-81AC-DFD62E06E3EF}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3762955427",
+      "Name": "Tutorial",
+      "ObjectPath": "\\Events\\Default Work Unit\\Menu\\Tutorial",
+      "GUID": "{BA1CDDE3-642E-49A6-A432-D8F1CB8AA23F}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "979765101",
+      "Name": "Win",
+      "ObjectPath": "\\Events\\Default Work Unit\\Gameplay\\Win",
+      "GUID": "{94DE362B-556D-45F2-86F2-CD025CE37F30}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "702482391",
+        "Id": "979765101",
+        "Name": "Win",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Win",
+        "GUID": "{DF951068-FFC0-4882-98D3-40BEC2E0A871}"
+       }
+      ]
+     }
+    ],
+    "Busses": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX",
+      "GUID": "{B84E5EAB-D603-4503-9EF1-957B7A6AC764}",
+      "Color": "10"
+     },
+     {
+      "Id": "543694036",
+      "Name": "VOX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\VOX",
+      "GUID": "{3F2E40F9-5C1F-4CBB-9E7E-C1174C0479B9}",
+      "Color": "2"
+     },
+     {
+      "Id": "628126519",
+      "Name": "STG",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\STG",
+      "GUID": "{845B0A13-0618-48DD-9089-E6EE737C70AD}",
+      "Color": "8"
+     },
+     {
+      "Id": "1117531639",
+      "Name": "AMB",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\AMB",
+      "GUID": "{5A93D4E6-F1F4-4AD2-B909-6FE323DE1C22}",
+      "Color": "4"
+     },
+     {
+      "Id": "1685527054",
+      "Name": "MX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\MX",
+      "GUID": "{8C82B1CB-28A5-41DD-A609-1B120CBD08D1}",
+      "Color": "25"
+     },
+     {
+      "Id": "2246998526",
+      "Name": "Main Audio Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "221232704",
+      "Name": "Loss",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Gameplay\\Loss",
+      "GUID": "{EB7D72F7-4CB7-43AF-B9E4-136FAF6E520A}"
+     },
+     {
+      "Id": "546651181",
+      "Name": "Dog",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Dog",
+      "GUID": "{5CE4823B-072D-4080-96E4-BED0A6C1F398}"
+     },
+     {
+      "Id": "657744941",
+      "Name": "Lamb",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Lamb",
+      "GUID": "{C59F53C3-4917-43EF-9BD4-014644021A23}"
+     },
+     {
+      "Id": "1083137540",
+      "Name": "Fox",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Fox",
+      "GUID": "{EAFAF965-B0FA-4345-9187-D7D77928CEAA}"
+     },
+     {
+      "Id": "1190179415",
+      "Name": "Bear",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Bear",
+      "GUID": "{38F9C56A-9516-4DB9-89DA-7D3E56B12E8B}"
+     },
+     {
+      "Id": "1777984502",
+      "Name": "Ball",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Ball",
+      "GUID": "{AA447B8A-6B7B-4D5C-83F6-988AD03BF69F}"
+     },
+     {
+      "Id": "2043204404",
+      "Name": "Carrot",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Carrot",
+      "GUID": "{2AF2FFAE-31E1-40DC-A667-06D72049D8C9}"
+     },
+     {
+      "Id": "2201105581",
+      "Name": "Credits",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Menus\\Credits",
+      "GUID": "{0801D18F-AEBA-4219-903D-58B7B85DE5F3}"
+     },
+     {
+      "Id": "2910527622",
+      "Name": "Settings",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Menus\\Settings",
+      "GUID": "{D4E06AEC-3742-4EA3-B814-9F900DC9A3B3}"
+     },
+     {
+      "Id": "3705726509",
+      "Name": "Title",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Menus\\Title",
+      "GUID": "{5BE4CFA2-5E04-46FC-BE10-5D722C2773EC}"
+     },
+     {
+      "Id": "3840192365",
+      "Name": "Stress",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Gameplay\\Stress",
+      "GUID": "{9C095284-1F1D-4804-A7C5-D6B047D998D4}"
+     },
+     {
+      "Id": "4251222990",
+      "Name": "Chicken",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Opponents\\Chicken",
+      "GUID": "{15B13D0B-76BD-446C-8C28-2BCF27ACAE2A}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "702482391",
+      "Name": "Game",
+      "ObjectPath": "\\States\\Default Work Unit\\Game",
+      "GUID": "{9B2A62E2-9C39-49CD-B052-F9AA8143810C}",
+      "States": [
+       {
+        "Id": "221232704",
+        "Name": "Loss",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Loss",
+        "GUID": "{DFF81043-F772-4DB5-BC84-AB118E9CDC66}"
+       },
+       {
+        "Id": "251412225",
+        "Name": "Shop",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Shop",
+        "GUID": "{90EAD496-DBAE-4706-B97C-FFCE259F1BA5}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\None",
+        "GUID": "{EDFC154B-8E67-4782-B268-6A597F807FFA}"
+       },
+       {
+        "Id": "979765101",
+        "Name": "Win",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Win",
+        "GUID": "{DF951068-FFC0-4882-98D3-40BEC2E0A871}"
+       },
+       {
+        "Id": "2048817515",
+        "Name": "Table",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Table",
+        "GUID": "{8A5C6456-DB09-4D62-AB31-E6060C6E4A6B}"
+       },
+       {
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\States\\Default Work Unit\\Game\\Menu",
+        "GUID": "{3716CFA0-4D58-4367-AC7D-515B950C4594}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{EB2C878D-6A50-18A7-AA35-94B6563A5890}"
+ }
+}

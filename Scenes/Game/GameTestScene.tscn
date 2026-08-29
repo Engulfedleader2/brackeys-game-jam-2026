@@ -39,7 +39,9 @@
 [ext_resource type="PackedScene" uid="uid://cmu05d7eyxqpu" path="res://Scenes/Game/CallBluffPrompt.tscn" id="33_pdcst"]
 [ext_resource type="PackedScene" uid="uid://cgq1dqn5xfq52" path="res://Scenes/UI/RoundSurvivedScreen.tscn" id="34_rsrvd"]
 [ext_resource type="PackedScene" uid="uid://b8xnb42yam8gy" path="res://Scenes/UI/YouDiedScreen.tscn" id="35_ydied"]
-[ext_resource type="PackedScene" uid="uid://0egfb2xunmaf" path="res://Scenes/Test/CardReveal.tscn" id="40_n3hua"]
+[ext_resource type="PackedScene" uid="uid://c8p5nb7vbvn1s" path="res://Scenes/Game/ShopScreen.tscn" id="40_q45is"]
+[ext_resource type="PackedScene" uid="uid://gki1gbofmbym" path="res://Scenes/UI/ItemBar.tscn" id="41_1yxlh"]
+[ext_resource type="Script" uid="uid://cffj451ul4a3b" path="res://Scripts/Items/ItemController.gd" id="42_0egu7"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 script = ExtResource("1_1re6w")
@@ -63,29 +65,30 @@ position = Vector2(960, 474)
 portrait_offset = Vector2(-250, -850)
 portrait_size = Vector2(4, 4)
 hand_card_scale = Vector2(0.7, 0.7)
-player_name_placement = Vector2(0, -300)
+think_min = 0.6
+think_max = 1.5
 player_name = "Rival"
 owner_id = 1
 
 [node name="AIPlayer2" parent="." unique_id=541108089 instance=ExtResource("5_aiplayer")]
-position = Vector2(331, 681)
+position = Vector2(404, 525)
 vertical_layout = true
-portrait_offset = Vector2(-500, -800)
+portrait_offset = Vector2(-500, -700)
 portrait_size = Vector2(4, 4)
-hand_skew = 0.5
-hand_card_scale = Vector2(0.5, 0.5)
-player_name_placement = Vector2(-200, -226)
+hand_card_scale = Vector2(0.7, 0.7)
+think_min = 0.6
+think_max = 1.5
 player_name = "Rival 2"
 owner_id = 2
 
 [node name="AIPlayer3" parent="." unique_id=1470739839 instance=ExtResource("5_aiplayer")]
-position = Vector2(1577, 663)
+position = Vector2(1620, 524)
 vertical_layout = true
-portrait_offset = Vector2(-850, -800)
+portrait_offset = Vector2(-850, -700)
 portrait_size = Vector2(4, 4)
-hand_skew = -0.5
-hand_card_scale = Vector2(0.5, 0.5)
-player_name_placement = Vector2(150, -226)
+hand_card_scale = Vector2(0.7, 0.7)
+think_min = 0.6
+think_max = 1.5
 player_name = "Rival 3"
 owner_id = 3
 
@@ -102,6 +105,7 @@ card_resources = Array[ExtResource("2_ptkv3")]([ExtResource("8_card1"), ExtResou
 position = Vector2(960, 650)
 
 [node name="Player" parent="." unique_id=845295021 instance=ExtResource("4_player")]
+z_index = 100
 position = Vector2(960, 850)
 player_name = "You"
 
@@ -113,7 +117,21 @@ offset_bottom = 46.0
 text = "..."
 horizontal_alignment = 1
 
-[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "turn_label", "round_survived_screen", "you_died_screen")]
+[node name="PileTotal" type="Label" parent="." unique_id=987579165]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 926.0
+offset_top = 62.0
+offset_right = 998.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Pile Total:"
+horizontal_alignment = 1
+
+[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "turn_label", "round_survived_screen", "you_died_screen", "pile_total", "shop_screen")]
 script = ExtResource("6_gamemanager")
 turn_manager = NodePath("../TurnManager")
 deck = NodePath("../Deck")
@@ -123,6 +141,8 @@ call_bluff_prompt = NodePath("../CallBluffPrompt")
 turn_label = NodePath("../TurnLabel")
 round_survived_screen = NodePath("../RoundSurvivedScreen")
 you_died_screen = NodePath("../YouDiedScreen")
+pile_total = NodePath("../PileTotal")
+shop_screen = NodePath("../ShopScreen")
 
 [node name="TurnManager" type="Node" parent="." unique_id=676050292]
 script = ExtResource("7_turnmanager")
@@ -135,7 +155,15 @@ visible = false
 [node name="YouDiedScreen" parent="." unique_id=1847364002 instance=ExtResource("35_ydied")]
 visible = false
 
-[node name="CardReveal" parent="." unique_id=18024946 instance=ExtResource("40_n3hua")]
-visible = false
+[node name="ShopScreen" parent="." unique_id=8397411 instance=ExtResource("40_q45is")]
 
-[connection signal="closed" from="CallBluffPrompt" to="CardReveal" method="_on_call_bluff_prompt_closed"]
+[node name="ItemBar" parent="." unique_id=242711091 instance=ExtResource("41_1yxlh")]
+
+[node name="ItemController" type="Node" parent="." unique_id=21738338 node_paths=PackedStringArray("shared_pile", "item_bar", "shop_screen", "call_bluff_prompt")]
+script = ExtResource("42_0egu7")
+human_path = NodePath("../Player")
+shared_pile = NodePath("../SharedPile")
+item_bar = NodePath("../ItemBar")
+shop_screen = NodePath("../ShopScreen")
+call_bluff_prompt = NodePath("../CallBluffPrompt")
+metadata/_custom_type_script = "uid://cffj451ul4a3b"
