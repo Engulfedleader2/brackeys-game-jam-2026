@@ -23,7 +23,6 @@ texture = ExtResource("2_df05h")
 centered = false
 
 [node name="Content" type="CenterContainer" parent="." unique_id=2112824971]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,39 +75,9 @@ offset_bottom = 1060.0
 flat = true
 script = ExtResource("4_df05h")
 
-[node name="Start_Button" type="Button" parent="." unique_id=1591791097]
-layout_mode = 0
-offset_left = 1262.0
-offset_top = 633.0
-offset_right = 1566.0
-offset_bottom = 737.0
-theme_override_font_sizes/font_size = 50
-text = "Start"
-
-[node name="Setting_Button" type="Button" parent="." unique_id=1233151901]
-layout_mode = 0
-offset_left = 1262.0
-offset_top = 758.0
-offset_right = 1566.0
-offset_bottom = 862.0
-theme_override_font_sizes/font_size = 50
-text = "Setting"
-
-[node name="Credit_Button" type="Button" parent="." unique_id=1747957345]
-layout_mode = 0
-offset_left = 1262.0
-offset_top = 892.0
-offset_right = 1566.0
-offset_bottom = 996.0
-theme_override_font_sizes/font_size = 50
-text = "Credit"
-
 [node name="HowToPlay" parent="." unique_id=104590588 instance=ExtResource("5_df05h")]
 visible = false
 
 [connection signal="mouse_entered" from="HowToPlay_Button" to="HowToPlay_Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="HowToPlay_Button" to="HowToPlay_Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="HowToPlay_Button" to="HowToPlay_Button" method="_on_pressed"]
-[connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Setting_Button" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="Credit_Button" to="." method="_on_credit_button_pressed"]
