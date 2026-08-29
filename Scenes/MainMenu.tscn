@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ns3tax1l1h50"]
 
 [ext_resource type="Script" uid="uid://bg7ane45jgyg" path="res://Scripts/UI/MainMenu.gd" id="1_mainmenu"]
-[ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://bxc8swdpcdv44" path="res://AssetDump/Title/TItle_alt.png" id="2_df05h"]
 [ext_resource type="Texture2D" uid="uid://cmgks2jyrb78y" path="res://AssetDump/HowToPlay/How_to_Play_IMG.png" id="3_ghw46"]
 [ext_resource type="Script" uid="uid://dr7fe3qu6wkxd" path="res://Scripts/HowToPlay/how_to_play_button.gd" id="4_df05h"]
 [ext_resource type="PackedScene" uid="uid://c7mqwc03c1ven" path="res://Scenes/HowToPlay/HowToPlay.tscn" id="5_df05h"]
@@ -16,10 +16,14 @@ grow_vertical = 2
 script = ExtResource("1_mainmenu")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1449897982]
-texture = ExtResource("2_853f1")
+modulate = Color(0.743848, 0.743848, 0.743848, 1)
+position = Vector2(-3, 0)
+scale = Vector2(1.0015625, 1.0629921)
+texture = ExtResource("2_df05h")
 centered = false
 
 [node name="Content" type="CenterContainer" parent="." unique_id=2112824971]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +36,7 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="TitleLabel" type="Label" parent="Content/VBoxContainer" unique_id=1697831495]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Brackeys GameJam 2026"
@@ -71,9 +76,39 @@ offset_bottom = 1060.0
 flat = true
 script = ExtResource("4_df05h")
 
+[node name="Start_Button" type="Button" parent="." unique_id=1591791097]
+layout_mode = 0
+offset_left = 1262.0
+offset_top = 633.0
+offset_right = 1566.0
+offset_bottom = 737.0
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="Setting_Button" type="Button" parent="." unique_id=1233151901]
+layout_mode = 0
+offset_left = 1262.0
+offset_top = 758.0
+offset_right = 1566.0
+offset_bottom = 862.0
+theme_override_font_sizes/font_size = 50
+text = "Setting"
+
+[node name="Credit_Button" type="Button" parent="." unique_id=1747957345]
+layout_mode = 0
+offset_left = 1262.0
+offset_top = 892.0
+offset_right = 1566.0
+offset_bottom = 996.0
+theme_override_font_sizes/font_size = 50
+text = "Credit"
+
 [node name="HowToPlay" parent="." unique_id=104590588 instance=ExtResource("5_df05h")]
 visible = false
 
 [connection signal="mouse_entered" from="HowToPlay_Button" to="HowToPlay_Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="HowToPlay_Button" to="HowToPlay_Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="HowToPlay_Button" to="HowToPlay_Button" method="_on_pressed"]
+[connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Setting_Button" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Credit_Button" to="." method="_on_credit_button_pressed"]
