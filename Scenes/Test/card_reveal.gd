@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 var index = 3
 
@@ -21,9 +21,10 @@ const LAMB_CHOP_CALL = preload("uid://bc53lxyq5d2tc")
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	Curtain._hide()
-	$AnimationPlayer.play("Shake")
+#func _ready():
+	#Curtain._hide()
+	#$AnimationPlayer.play("Shake")
+	#$Accused_AnimationPlayer.play("zoom")
 
 
 
@@ -47,3 +48,12 @@ func _whoIsit():
 		accused.texture = CARROT_BLUFF
 	if index == 3:
 		accused.texture  = LAMB_CHOP_BLUFF
+
+
+func _on_call_bluff_prompt_closed(did_call):
+	if did_call == true:
+		$".".show()
+		$AnimationPlayer.play("Shake")
+		$Accused_AnimationPlayer.play("zoom")
+		await get_tree().create_timer(5).timeout
+		$".".hide()

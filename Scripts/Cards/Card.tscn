@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl4kqitdcnjlq"]
 
 [ext_resource type="Script" uid="uid://bggpl0wx1eaoc" path="res://Scripts/Cards/Card.gd" id="1_2h66o"]
-[ext_resource type="Texture2D" uid="uid://cuq63ol8irwc7" path="res://Scripts/Cards/CardResources/Art/BackCard.png" id="2_backcard"]
+[ext_resource type="Texture2D" uid="uid://b2bjxd07cr32" path="res://AssetDump/CardBack.png" id="2_mljol"]
 [ext_resource type="Texture2D" uid="uid://fja0knc3hu2d" path="res://AssetDump/Shop/ItemNegativeSticker.png" id="3_mljol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl2kv"]
@@ -40,7 +40,7 @@ offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_backcard")
+texture = ExtResource("2_mljol")
 expand_mode = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1521004914]
