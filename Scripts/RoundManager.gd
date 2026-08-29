@@ -5,15 +5,19 @@ var shared_pile: SharedPile
 var deck: Deck
 var _current_player_index: int = 0
 var call_bluff_prompt: CallBluffPrompt
+var declaration_prompt: DeclarationPrompt
+
+var _pending_face_down_declaration: int = -1  # Stores declared value (1 or 5) for face-down card
 
 signal round_finished(winner_owner_id: int, loser_owner_id: int, human_place: int)
 signal turn_started(player: Player)
 
-func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck, p_prompt: CallBluffPrompt) -> void:
+func setup(p_players: Array[Player], p_shared_pile: SharedPile, p_deck: Deck, p_prompt: CallBluffPrompt, p_declaration_prompt: DeclarationPrompt = null) -> void:
 	players = p_players
 	shared_pile = p_shared_pile
 	deck = p_deck
 	call_bluff_prompt = p_prompt
+	declaration_prompt = p_declaration_prompt
 
 	for i in players.size():
 		players[i].card_played.connect(_on_player_card_played.bind(players[i].owner_id))
@@ -101,7 +105,23 @@ func _advance_turn() -> void:
 func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: int) -> void:
 	var playing_player = _player_for(owner_id)
 
-	shared_pile.play_card(instance, owner_id, face_down)
+	# If face-down, get declaration (from human player or AI auto-declare)
+	var declared_value: int = -1
+	if face_down and playing_player:
+		if playing_player is AIPlayer:
+			# AI auto-declares: randomly choose 1 or 5
+			declared_value = [1, 5][randi() % 2]
+			print("[RoundManager] AI %s auto-declares: %d" % [playing_player.player_name, declared_value])
+		else:
+			# Human player shows declaration prompt
+			if declaration_prompt:
+				declaration_prompt.open(playing_player.player_name)
+				declared_value = await declaration_prompt.closed
+				print("[RoundManager] Player %s declares: %d" % [playing_player.player_name, declared_value])
+
+	var entry := shared_pile.play_card(instance, owner_id, face_down)
+	if entry and declared_value != -1:
+		entry.declared_value = declared_value
 
 	# Check immediately if this player emptied their hand
 	if playing_player and playing_player.hand.get_card_count() == 0:

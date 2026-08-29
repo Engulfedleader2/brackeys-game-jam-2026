@@ -84,7 +84,13 @@ func _contribution(entry: PileEntry) -> int:
 	return 0 if entry.face_down else entry.effective_value()
 
 func is_lie(entry: PileEntry) -> bool:
-	return entry.face_down and not rules.legal_face_down_values.has(entry.actual_value())
+	if not entry.face_down:
+		return false
+	# If declared value exists, check if it matches actual value (declared lie)
+	if entry.declared_value != -1:
+		return entry.is_declared_lie()
+	# Fallback: check if actual value is legal
+	return not rules.legal_face_down_values.has(entry.actual_value())
 	
 func get_total() -> int:
 	var total := 0
