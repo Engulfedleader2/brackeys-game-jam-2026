@@ -15,10 +15,21 @@ func _ready() -> void:
 	Wwise.register_game_obj(self,self.name)
 	Wwise.add_default_listener(SoundManager)
 	Wwise.post_event("Title",SoundManager)
+
+	# Don't let the buttons be clickable until the curtain is done.
+	_set_buttons_disabled(true)
 	if Curtain.can_play == true:
 		await get_tree().create_timer(2).timeout
-		Curtain._reveal()
+		await Curtain._reveal()
 		Curtain.can_play = false
+	_set_buttons_disabled(false)
+
+
+func _set_buttons_disabled(disabled: bool) -> void:
+	start_button.disabled = disabled
+	settings_button.disabled = disabled
+	credits_button.disabled = disabled
+	quit_button.disabled = disabled
 
 
 func _on_start_button_pressed() -> void:
