@@ -4,7 +4,9 @@ extends Control
 @onready var music_volume_slider: HSlider = $Content/Settings/MusicVolumeSlider
 @onready var sfx_volume_slider: HSlider = $Content/Settings/SfxVolumeSlider
 @onready var vox_volume_slider: HSlider = $Content/Settings/VoxVolumeSlider
-@onready var back_button: Button = $Content/Settings/BackButton
+@onready var back_button: Button = $BackButton
+@onready var back_img: Sprite2D = $Back_IMG
+
 
 
 func _ready() -> void:
@@ -47,3 +49,13 @@ func _on_back_button_pressed() -> void:
 	Curtain._hide()
 	SceneManager.go_to_main_menu()
 	Wwise.post_event("Title", SoundManager)
+
+
+func _on_back_button_mouse_entered() -> void:
+	get_tree().create_tween().tween_property(back_img,"scale",Vector2(1.1,1.1),.1)
+	get_tree().create_tween().tween_property(back_img,"modulate:a",1,.1)
+
+
+func _on_back_button_mouse_exited() -> void:
+	get_tree().create_tween().tween_property(back_img,"scale",Vector2(1,1),.1)
+	get_tree().create_tween().tween_property(back_img,"modulate:a",.5,.1)

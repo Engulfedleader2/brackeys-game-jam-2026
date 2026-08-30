@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://r6chphqnqs02" path="res://Scripts/UI/SettingsMenu.gd" id="1_settingsmenu"]
 [ext_resource type="Texture2D" uid="uid://bd8b37fehwdow" path="res://AssetDump/Spooky/backdrop.png" id="2_bxjf0"]
+[ext_resource type="Texture2D" uid="uid://bj01tuqhnaayk" path="res://AssetDump/UI/Back_IMG.PNG" id="3_4hfd5"]
 
 [node name="SettingsMenu" type="Control" unique_id=2138145686]
 layout_mode = 3
@@ -46,8 +47,6 @@ text = "Music Volume"
 [node name="MusicVolumeSlider" type="HSlider" parent="Content/Settings" unique_id=475478480]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-max_value = 100.0
-step = 1.0
 value = 100.0
 
 [node name="SfxVolumeLabel" type="Label" parent="Content/Settings" unique_id=475478481]
@@ -57,8 +56,6 @@ text = "SFX Volume"
 [node name="SfxVolumeSlider" type="HSlider" parent="Content/Settings" unique_id=475478482]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-max_value = 100.0
-step = 1.0
 value = 100.0
 
 [node name="VoxVolumeLabel" type="Label" parent="Content/Settings" unique_id=475478483]
@@ -68,10 +65,27 @@ text = "Voice Volume"
 [node name="VoxVolumeSlider" type="HSlider" parent="Content/Settings" unique_id=475478484]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-max_value = 100.0
-step = 1.0
 value = 100.0
 
 [node name="BackButton" type="Button" parent="Content/Settings" unique_id=524169493]
+visible = false
 layout_mode = 2
+offset_transform_enabled = true
 text = "Back"
+
+[node name="Back_IMG" type="Sprite2D" parent="." unique_id=710716107]
+modulate = Color(1, 1, 1, 0.5)
+position = Vector2(179, 121)
+texture = ExtResource("3_4hfd5")
+
+[node name="BackButton" type="Button" parent="." unique_id=1836336245]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 37.0
+offset_right = 318.0
+offset_bottom = 208.0
+flat = true
+
+[connection signal="mouse_entered" from="BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="BackButton" to="." method="_on_back_button_mouse_exited"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
