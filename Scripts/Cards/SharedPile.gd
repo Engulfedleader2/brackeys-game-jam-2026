@@ -35,12 +35,12 @@ func _ready() -> void:
 	card_revealed.connect(_on_card_revealed)
 	pile_cleared.connect(_on_pile_cleared)
 
-func play_card(instance: CardInstance, owner_id: int, face_down: bool) -> PileEntry:
+func play_card(instance: CardInstance, owner_id: int, face_down: bool, declared_value: int = -1) -> PileEntry:
 	if instance == null or instance.resource == null:
 		push_error("[SharedPile] play_card called with a null card")
 		return null
 	
-	var entry := PileEntry.new(instance, owner_id, face_down, _next_play_index)
+	var entry := PileEntry.new(instance, owner_id, face_down, _next_play_index, declared_value)
 	_next_play_index += 1
 	_entries.append(entry)
 	var total := get_total()
@@ -81,7 +81,7 @@ func reset_for_new_round() -> Array[CardInstance]:
 	return collect_all(ClearReason.ROUND_RESET)
 	
 func _contribution(entry: PileEntry) -> int:
-	return 0 if entry.face_down else entry.effective_value()
+	return entry.effective_value()
 
 func is_lie(entry: PileEntry) -> bool:
 	if not entry.face_down:
