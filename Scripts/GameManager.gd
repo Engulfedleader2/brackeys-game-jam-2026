@@ -25,13 +25,14 @@ const HUMAN_OWNER_ID := 0
 
 var current_round_number := 0
 var round_wins: Dictionary = {}  # owner_id -> wins
+var _human_eliminated := false # persists across rounds, unlike a per-call local
+var _game_over := false # guards against any stray round_finished firing post-game
 
-# Will run at the start of scene.
+# Will run at the start of scene. Will do an await on curtains before dealing now
 func _ready() -> void:
 	RoundManager.turn_started.connect(_on_turn_started)
 	RoundManager.round_finished.connect(_on_round_finished)
 	RoundManager.pile_picked_up.connect(_on_pile_picked_up)
-	start_game()
 
 
 func _on_turn_started(player: Player) -> void:
@@ -46,8 +47,10 @@ func _on_pile_picked_up(player_name: String, card_count: int) -> void:
 	show_message(message, 2.5)
 
 func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: int) -> void:
+	if _game_over:
+		return
 	print("[GameManager] Round %d finished - Winner: %d, Loser: %d" % [current_round_number, winner_owner_id, loser_owner_id])
-	
+
 	_award_buttons(human_place)
 	# Award round win to the winner
 	if winner_owner_id != -1 and round_wins.has(winner_owner_id):
@@ -78,12 +81,13 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 			if player not in eliminated_players:
 				eliminated_players.append(player)
 
-	# Check if player 0 survived
-	var player_survived = true
+	# Check if player 0 survived - once eliminated, they stay eliminated for
+	# the rest of the game, not just for whatever round they died on.
 	for eliminated in eliminated_players:
 		if eliminated.owner_id == 0:
-			player_survived = false
+			_human_eliminated = true
 			break
+	var player_survived = not _human_eliminated
 
 	# Show appropriate screen for player 0
 	#if player_survived:
@@ -176,6 +180,8 @@ func start_game() -> void:
 func _initialize_round_tracking() -> void:
 	current_round_number = 0
 	round_wins.clear()
+	_human_eliminated = false
+	_game_over = false
 	for path in player_paths:
 		var player = get_node(path) as Player
 		round_wins[player.owner_id] = 0
@@ -265,6 +271,8 @@ func _assign_toys(players: Array[Player]) -> void:
 			var toy_class = toy_pool.pop_front()
 			var ai_player := player as AIPlayer
 			ai_player.toy = toy_class.new()
+			ai_player.player_name = ai_player.toy.display_name
+			ai_player.player_name_label.text = ai_player.player_name
 			print("[GameManager] %s assigned toy: %s" % [ai_player.player_name, ai_player.toy.display_name])
 
 
@@ -291,6 +299,7 @@ func check_game_over() -> void:
 	print("Checking if game is over")
 
 func _end_game_with_winner(winner_owner_id: int) -> void:
+	_game_over = true
 	print("[GameManager] Game Over! Eliminating all other players...")
 	# Show "You Died" if player 0 lost
 	if winner_owner_id != HUMAN_OWNER_ID and you_died_screen:
@@ -318,4 +327,12 @@ func show_message(text: String, duration: float = 2.0) -> void:
 
 # Function to end the game and display the winner.
 func end_game() -> void:
+	_game_over = true
 	print("Ending game")
+
+	var human := _get_player_by_id(HUMAN_OWNER_ID)
+	var human_won := human != null and human in RoundManager.players and not _human_eliminated
+	show_message("You win!" if human_won else "Game Over", 3.0)
+
+	await get_tree().create_timer(3.5).timeout
+	SceneManager.go_to_main_menu()

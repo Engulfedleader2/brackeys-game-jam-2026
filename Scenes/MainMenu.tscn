@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ns3tax1l1h50"]
 
 [ext_resource type="Script" uid="uid://bg7ane45jgyg" path="res://Scripts/UI/MainMenu.gd" id="1_mainmenu"]
-[ext_resource type="Texture2D" uid="uid://boi0hlbh8f6m7" path="res://AssetDump/Title/TItle_alt.png" id="2_df05h"]
+[ext_resource type="Texture2D" uid="uid://bxc8swdpcdv44" path="res://AssetDump/Title/TItle_alt.png" id="2_df05h"]
 [ext_resource type="Texture2D" uid="uid://cmgks2jyrb78y" path="res://AssetDump/HowToPlay/How_to_Play_IMG.png" id="3_ghw46"]
 [ext_resource type="Script" uid="uid://dr7fe3qu6wkxd" path="res://Scripts/HowToPlay/how_to_play_button.gd" id="4_df05h"]
 [ext_resource type="PackedScene" uid="uid://c7mqwc03c1ven" path="res://Scenes/HowToPlay/HowToPlay.tscn" id="5_df05h"]

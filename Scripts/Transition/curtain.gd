@@ -4,9 +4,10 @@ extends CanvasLayer
 
 var can_play = true
 
-func _reveal():
+func _reveal() -> void:
 	if can_play == true:
 		animation.play("Reveal")
+		await animation.animation_finished
 	else:
 		$Control.position = Vector2(0,-1000)
 
