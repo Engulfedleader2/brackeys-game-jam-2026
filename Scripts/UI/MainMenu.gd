@@ -14,10 +14,10 @@ extends Control
 
 
 func _ready() -> void:
-	start_button.pressed.connect(_on_start_button_pressed)
-	settings_button.pressed.connect(_on_settings_button_pressed)
-	credits_button.pressed.connect(_on_credits_button_pressed)
-	quit_button.pressed.connect(_on_quit_button_pressed)
+	#start_button.pressed.connect(_on_start_button_pressed)
+	#settings_button.pressed.connect(_on_settings_button_pressed)
+	#credits_button.pressed.connect(_on_credits_button_pressed)
+	#quit_button.pressed.connect(_on_quit_button_pressed)
 	Wwise.register_game_obj(self,self.name)
 	Wwise.add_default_listener(SoundManager)
 	Wwise.post_event("Title",SoundManager)
@@ -40,6 +40,7 @@ func showbutton():
 
 
 func _on_start_button_pressed() -> void:
+	hidebutton()
 	Curtain._on_main_menu_start_game_signal()
 	#SceneManager.go_to_game()
 	Wwise.post_event("Table",SoundManager)
