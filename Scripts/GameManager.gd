@@ -273,6 +273,7 @@ func _assign_toys(players: Array[Player]) -> void:
 			ai_player.toy = toy_class.new()
 			ai_player.player_name = ai_player.toy.display_name
 			ai_player.player_name_label.text = ai_player.player_name
+			ai_player.portrait.texture = ai_player.toy.icon
 			print("[GameManager] %s assigned toy: %s" % [ai_player.player_name, ai_player.toy.display_name])
 
 
