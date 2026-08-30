@@ -55,6 +55,7 @@ texture_under = SubResource("AtlasTexture_esxfw")
 texture_progress = SubResource("AtlasTexture_ycp26")
 
 [node name="CallButton" type="Button" parent="Root/Group" unique_id=368488804]
+visible = false
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 0
 offset_left = 840.0
@@ -89,12 +90,51 @@ offset_bottom = 511.47064
 horizontal_alignment = 1
 
 [node name="Skip" type="Button" parent="Root/Group" unique_id=999243600]
+visible = false
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 0
 offset_left = 783.05536
 offset_top = 693.0355
-offset_right = 903.0554
+offset_right = 903.05536
 offset_bottom = 737.0355
 icon = ExtResource("6_54bkf")
 flat = true
 expand_icon = true
+
+[node name="Call_img" type="Sprite2D" parent="Root" unique_id=1303129431]
+position = Vector2(1437.9999, 858.00006)
+rotation = 0.23212878
+scale = Vector2(0.18396251, 0.18396254)
+texture = ExtResource("2_esxfw")
+
+[node name="Skip_img" type="Sprite2D" parent="Root" unique_id=427397068]
+position = Vector2(1303.0001, 834.99994)
+rotation = 0.23212878
+scale = Vector2(0.18396251, 0.18396254)
+texture = ExtResource("6_54bkf")
+
+[node name="Control" type="Control" parent="." unique_id=1105001723]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -220.13208
+offset_top = 550.45776
+offset_right = -180.13208
+offset_bottom = 590.45776
+rotation = 0.25132743
+pivot_offset = Vector2(1525.996, 291.01187)
+
+[node name="Skip" type="Button" parent="Control" unique_id=1992689972]
+layout_mode = 0
+offset_left = 1478.2886
+offset_top = 261.47876
+offset_right = 1565.2886
+offset_bottom = 311.47876
+flat = true
+
+[node name="CallButton" type="Button" parent="Control" unique_id=1682451156]
+layout_mode = 0
+offset_left = 1612.5813
+offset_top = 249.71184
+offset_right = 1699.5813
+offset_bottom = 299.71185
+flat = true

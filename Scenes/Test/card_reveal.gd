@@ -73,7 +73,7 @@ func _on_call_bluff_prompt_closed(did_call):
 		$".".show()
 		$AnimationPlayer.play("Shake")
 		$Accused_AnimationPlayer.play("zoom")
-		await get_tree().create_timer(5).timeout
+		await $AnimationPlayer.animation_finished
 		$".".hide()
 		get_tree().paused = false
 

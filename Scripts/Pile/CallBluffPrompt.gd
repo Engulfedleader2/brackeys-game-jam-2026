@@ -10,10 +10,12 @@ var peek_available := false
 
 @onready var root: Control = $Root
 @onready var timer_bar: TextureProgressBar = $Root/Group/ProgressBar
-@onready var call_button: Button = $Root/Group/CallButton
-@onready var skip_button: Button = $Root/Group/Skip
+@onready var call_button: Button = $Control/CallButton
+@onready var skip_button: Button = $Control/Skip
 @onready var peek_button: Button = $Root/Group/Peek
 @onready var peek_label: Label = $Root/Group/PeekLabel
+
+
 
 var _time_left := 0.0
 var _active := false

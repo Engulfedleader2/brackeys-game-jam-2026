@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://0egfb2xunmaf"]
 
-[ext_resource type="Texture2D" uid="uid://vfmssiyxt2n8" path="res://AssetDump/Cards/BackCard.png" id="1_3k4v4"]
 [ext_resource type="Script" uid="uid://2ye5ohyh0k2d" path="res://Scenes/Test/card_reveal.gd" id="1_iby7k"]
 [ext_resource type="Texture2D" uid="uid://3et1dbclb8y5" path="res://AssetDump/Spooky/example_table.png" id="1_ilspr"]
 [ext_resource type="AudioStream" uid="uid://bah2rqirg6pxr" path="res://AssetDump/SFX/784658__music_is_wiggly_air__heartbeat-sub-kick-softer.wav" id="1_ub3fg"]
 [ext_resource type="Texture2D" uid="uid://d0vm0wuh17gbd" path="res://AssetDump/Cards/Uno Cards/Uno1.png" id="2_ub3fg"]
 [ext_resource type="AudioStream" uid="uid://b80hmb5ot88n3" path="res://AssetDump/SFX/784658__music_is_wiggly_air__heartbeat-sub-kick-softer.mp3" id="4_hopbu"]
+[ext_resource type="Texture2D" uid="uid://b2bjxd07cr32" path="res://AssetDump/CardBack.png" id="5_hopbu"]
 [ext_resource type="Texture2D" uid="uid://davd8ckv0fahp" path="res://AssetDump/Characters/Carrot_Bluff.png" id="6_m00uc"]
 
 [sub_resource type="Animation" id="Animation_ilspr"]
@@ -73,7 +73,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_iby7k"]
 resource_name = "Shake"
-length = 5.0
+length = 5.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -109,7 +109,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(4.2, 4.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 2.75), Vector2(2.75, 2.75)]
+"values": [Vector2(0, 1.3), Vector2(1.3, 1.3)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -296,7 +296,7 @@ libraries/ = SubResource("AnimationLibrary_m00uc")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=681698615]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(939, 482)
-texture = ExtResource("1_3k4v4")
+texture = ExtResource("5_hopbu")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2033060300]
 position = Vector2(960, 481)
