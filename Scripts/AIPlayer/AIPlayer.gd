@@ -18,19 +18,11 @@ enum Facing { FRONT, LEFT, RIGHT }
 
 var toy: Toy
 
-const PORTRAITS: Array[Texture2D] = [
-	preload("res://Scripts/AIPlayer/Portraits/Bear.png"),
-	preload("res://Scripts/AIPlayer/Portraits/Dachshund.png"),
-	preload("res://Scripts/AIPlayer/Portraits/Fox.png"),
-	preload("res://Scripts/AIPlayer/Portraits/LambChop.png"),
-]
-
 @onready var portrait: TextureRect = $Portrait
 
 
 func _ready() -> void:
 	super._ready()
-	portrait.texture = PORTRAITS.pick_random()
 	_apply_facing()
 	portrait.position = portrait_offset
 	hand.vertical_layout = vertical_layout

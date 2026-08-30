@@ -5,6 +5,7 @@ func _init() -> void:
 	id = &"lamb_chop"
 	display_name = "Lamb Chop"
 	description = "Call when pile total is even."
+	icon = preload("res://AssetDump/Spooky/Lamb_Chop.png")
 
 func should_call(pile_state: Dictionary) -> bool:
 	var pile_total = pile_state.get("pile_total", 0)

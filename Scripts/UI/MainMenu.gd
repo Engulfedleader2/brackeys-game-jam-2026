@@ -9,40 +9,37 @@ extends Control
 @onready var settings_img: Sprite2D = $Settings_img
 
 
-
-
-
-
 func _ready() -> void:
-	#start_button.pressed.connect(_on_start_button_pressed)
-	#settings_button.pressed.connect(_on_settings_button_pressed)
-	#credits_button.pressed.connect(_on_credits_button_pressed)
-	#quit_button.pressed.connect(_on_quit_button_pressed)
 	Wwise.register_game_obj(self,self.name)
 	Wwise.add_default_listener(SoundManager)
 	Wwise.post_event("Title",SoundManager)
+
+	# Don't let the buttons be clickable until the curtain is done.
+	hidebutton()
 	if Curtain.can_play == true:
-		hidebutton()
 		await get_tree().create_timer(2).timeout
-		Curtain._reveal()
+		await Curtain._reveal()
 		Curtain.can_play = false
-		showbutton()
+	showbutton()
+
 
 func hidebutton():
 	start_button.hide()
 	settings_button.hide()
 	credits_button.hide()
+	quit_button.hide()
+
 
 func showbutton():
 	start_button.show()
 	settings_button.show()
 	credits_button.show()
+	quit_button.show()
 
 
 func _on_start_button_pressed() -> void:
 	hidebutton()
-	Curtain._on_main_menu_start_game_signal()
-	#SceneManager.go_to_game()
+	SceneManager.go_to_character_select()
 	Wwise.post_event("Table",SoundManager)
 
 
