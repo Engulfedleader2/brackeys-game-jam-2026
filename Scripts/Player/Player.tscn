@@ -8,12 +8,14 @@ script = ExtResource("1_7cvjj")
 player_name = "Player"
 
 [node name="PlayerNameLabel" type="Label" parent="." unique_id=239930997]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="CardCountLabel" type="Label" parent="." unique_id=3819405088]
-offset_right = 40.0
+[node name="CardCountLabel" type="Label" parent="." unique_id=-475562208]
+visible = false
 offset_top = 24.0
+offset_right = 40.0
 offset_bottom = 47.0
 text = "Cards: 0"
 

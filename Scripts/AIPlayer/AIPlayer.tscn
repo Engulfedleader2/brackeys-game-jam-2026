@@ -31,6 +31,9 @@ offset_bottom = 220.0
 expand_mode = 1
 stretch_mode = 5
 
+[node name="CardCountLabel" parent="." index="2" unique_id=-475562208]
+visible = false
+
 [node name="Hand" parent="." index="3" unique_id=1584552490]
 z_index = 2
 reveal_cards = false
