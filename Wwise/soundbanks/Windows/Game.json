@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{A9305128-50E8-402A-B527-C94B3E5D18A2}",
     "Language": "SFX",
-    "Hash": "{A1406EB4-AAEE-3204-6EAA-E75AA31BFF6E}",
+    "Hash": "{004F657B-2683-C8E5-AB70-B41231609D96}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Game",
     "ShortName": "Game",
     "Path": "Game.bnk",
@@ -88,14 +88,6 @@
       "CachePath": "59/{595B9142-D3CA-F54D-4DF8-24E20BABE0A0}.wem"
      },
      {
-      "Id": "630165125",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Shop theme - Brackey's Jam (v.1.2) - MyaMusical.wav",
-      "CachePath": "C3/{C360442B-C48C-50EF-9718-077D830ECBB4}.wem"
-     },
-     {
       "Id": "631558340",
       "Language": "SFX",
       "Streaming": "false",
@@ -134,6 +126,14 @@
       "Location": "Memory",
       "ShortName": "base.wav",
       "CachePath": "D1/{D1F4C60B-BCDB-892D-983F-002929072B23}.wem"
+     },
+     {
+      "Id": "1063088267",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Welcome to You're Not Welcome Here Market.wav",
+      "CachePath": "D1/{D1725FA4-BA78-9594-1334-FBA455FC0A7F}.wem"
      }
     ],
     "Events": [
@@ -352,7 +352,7 @@
         },
         "MediaRefs": [
          {
-          "Id": "630165125"
+          "Id": "1063088267"
          }
         ]
        },
@@ -437,7 +437,7 @@
         },
         "MediaRefs": [
          {
-          "Id": "630165125"
+          "Id": "1063088267"
          }
         ]
        },
@@ -851,6 +851,6 @@
     ]
    }
   ],
-  "FileHash": "{0346F4E4-19F6-8696-8B79-3EA63E04B209}"
+  "FileHash": "{8503A3D4-283C-A512-EAD2-7309C5BEFB27}"
  }
 }

@@ -4,8 +4,12 @@ extends CanvasLayer
 signal closed(declared_value: int)
 
 @onready var prompt_label: Label = $Control/VBoxContainer/PromptLabel
-@onready var button_1: Button = $Control/VBoxContainer/HBoxContainer/Button1
-@onready var button_5: Button = $Control/VBoxContainer/HBoxContainer/Button5
+@onready var button_1: Button = $Control/Button1
+@onready var button_5: Button = $Control/Button5
+@onready var button_5_img: Sprite2D = $"Control/5"
+@onready var button_1_img: Sprite2D = $"Control/1"
+
+
 
 func _ready() -> void:
 	button_1.pressed.connect(_on_button_1_pressed)
@@ -23,3 +27,19 @@ func _on_button_1_pressed() -> void:
 func _on_button_5_pressed() -> void:
 	hide()
 	closed.emit(5)
+
+
+func _on_button_1_mouse_entered() -> void:
+	get_tree().create_tween().tween_property(button_1_img,"scale",Vector2(.8,.8),.1)
+
+
+func _on_button_1_mouse_exited() -> void:
+	get_tree().create_tween().tween_property(button_1_img,"scale",Vector2(0.569,0.569),.1)
+
+
+func _on_button_5_mouse_entered() -> void:
+	get_tree().create_tween().tween_property(button_5_img,"scale",Vector2(.8,.8),.1)
+
+
+func _on_button_5_mouse_exited() -> void:
+	get_tree().create_tween().tween_property(button_5_img,"scale",Vector2(0.569,0.569),.1)
