@@ -60,7 +60,7 @@ func _whoIsit():
 	elif CharacterSelection.chosen_toy_class == DachshundDogPlush:
 		accused.texture = DACHSHUND_BLUFF
 	elif CharacterSelection.chosen_toy_class == LambChop:
-		accused.texture = LambChop
+		accused.texture = LAMB_CHOP_BLUFF
 	elif CharacterSelection.chosen_toy_class == SoftChicken:
 		accused.texture = SOFT_CHICKEN_BLUFF
 

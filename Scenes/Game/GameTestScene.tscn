@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://0egfb2xunmaf" path="res://Scenes/Test/CardReveal.tscn" id="44_tky57"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
+process_mode = 1
 script = ExtResource("1_1re6w")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=380697040]

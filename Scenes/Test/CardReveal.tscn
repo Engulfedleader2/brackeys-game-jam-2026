@@ -288,7 +288,7 @@ modulate = Color(1, 1, 1, 0)
 offset_right = 1933.0
 offset_bottom = 1096.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.32156864)
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=981332034]
 libraries/ = SubResource("AnimationLibrary_m00uc")
