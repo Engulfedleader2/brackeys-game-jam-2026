@@ -14,5 +14,5 @@ func should_call(pile_state: Dictionary) -> bool:
 # No extra bluff value - only bluffs the 1s/5s that are mandatory for everyone.
 
 # Unlike every other toy, Bear never lies about which one it is.
-func declare(actual_value: int) -> int:
+func declare(actual_value: int, _context: Dictionary) -> int:
 	return actual_value
