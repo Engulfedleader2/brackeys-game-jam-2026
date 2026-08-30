@@ -263,6 +263,7 @@ libraries/ = SubResource("AnimationLibrary_1re6w")
 [node name="CardReveal" parent="." unique_id=1361101499 instance=ExtResource("46_nvq5u")]
 
 [node name="FinalScreen" parent="." unique_id=2071481192 instance=ExtResource("46_rlq7n")]
+modulate = Color(1, 1, 1, 0)
 
 [connection signal="leave_signal" from="." to="Speech" method="_on_game_test_scene_leave_signal"]
 [connection signal="show_signal" from="." to="Speech" method="_on_game_test_scene_show_signal"]
