@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfkl1asaxcx3w" path="res://AssetDump/Shop/ShopBG.png" id="1_xs647"]
 [ext_resource type="Script" uid="uid://bkabjofxitu66" path="res://Scripts/Items/ItemResource.gd" id="2_lqv2a"]
 [ext_resource type="Resource" uid="uid://cjxccko3qbcbg" path="res://Scripts/Items/ItemRes/Sticker.tres" id="3_kkokl"]
-[ext_resource type="Texture2D" uid="uid://pdwq3imme47d" path="res://AssetDump/Shop/Back_button.png" id="4_8t7ov"]
+[ext_resource type="Texture2D" uid="uid://b2kvdhmxycx4s" path="res://AssetDump/Shop/Back_button.png" id="4_8t7ov"]
 [ext_resource type="Resource" uid="uid://ftkls0p8bopg" path="res://Scripts/Items/ItemRes/MagnifyingGlass.tres" id="4_om2fd"]
 [ext_resource type="Resource" uid="uid://dgm2xxb1fp74d" path="res://Scripts/Items/ItemRes/BookWorm.tres" id="5_wm1r5"]
 [ext_resource type="Resource" uid="uid://dntttxbycjuhx" path="res://Scripts/Items/ItemRes/HallPass.tres" id="6_3md15"]

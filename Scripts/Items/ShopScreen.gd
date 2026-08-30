@@ -90,3 +90,4 @@ func _on_back_pressed() -> void:
 	root.visible = false
 	_player = null
 	closed.emit()
+	Wwise.post_event("Table",SoundManager)

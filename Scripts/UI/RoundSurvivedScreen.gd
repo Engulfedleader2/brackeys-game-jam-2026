@@ -18,6 +18,7 @@ func prompt() -> bool:
 	
 func _on_store_pressed() -> void:
 	choice_made.emit(true)
+	Wwise.post_event("Shop",SoundManager)
 	
 func _on_next_pressed() -> void:
 	choice_made.emit(false)

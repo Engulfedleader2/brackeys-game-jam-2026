@@ -322,6 +322,7 @@ func _end_game_with_winner(winner_owner_id: int) -> void:
 	print("[GameManager] Game Over! Eliminating all other players...")
 	# Show "You Died" if player 0 lost
 	if winner_owner_id != HUMAN_OWNER_ID and you_died_screen:
+		Wwise.post_event("Loss",SoundManager)
 		you_died_screen.visible = true
 		await get_tree().create_timer(3.0).timeout
 		you_died_screen.visible = false
