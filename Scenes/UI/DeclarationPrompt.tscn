@@ -66,6 +66,7 @@ offset_left = 807.0
 offset_top = 490.0
 offset_right = 907.0
 offset_bottom = 608.0
+flat = true
 
 [node name="Button5" type="Button" parent="Control" unique_id=1401379880]
 layout_mode = 0
@@ -73,6 +74,7 @@ offset_left = 1014.0
 offset_top = 486.0
 offset_right = 1116.0
 offset_bottom = 607.0
+flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1091562600]
 position = Vector2(942.00006, 574)
