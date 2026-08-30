@@ -37,17 +37,14 @@ func _ready() -> void:
 	RoundManager.turn_started.connect(_on_turn_started)
 	RoundManager.round_finished.connect(_on_round_finished)
 	RoundManager.pile_picked_up.connect(_on_pile_picked_up)
-	if shared_pile != null:
-		shared_pile.card_added.connect(_on_pile_card_added)
-		shared_pile.pile_cleared.connect(_on_pile_cleared)
 
 
 func _on_turn_started(player: Player) -> void:
 	if turn_label != null:
 		turn_label.text = "%s is playing" % player.player_name
 
-	#if pile_total != null:
-	#	pile_total.text = "Pile Total: %d" % shared_pile.get_total()
+	if pile_total != null:
+		pile_total.text = "Pile Total: %d" % shared_pile.get_total()
 
 func _on_pile_picked_up(player_name: String, card_count: int) -> void:
 	Wwise.post_event("Card",SoundManager)
@@ -133,8 +130,8 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 			if winner.owner_id in round_wins:
 				round_wins[winner.owner_id] += 1
 				print("[GameManager] Player %s wins round %d! (Record: %d wins)" % [winner.player_name, current_round_number, round_wins[winner.owner_id]])
-				end_game()
-				return
+				end_game() 
+
 		# Check if someone has won the game (2 rounds)
 		for owner_id in round_wins:
 			if round_wins[owner_id] >= ROUNDS_TO_WIN:
@@ -386,17 +383,3 @@ func end_game() -> void:
 	Curtain.dropDown()
 	await get_tree().create_timer(2).timeout
 	SceneManager.go_to_main_menu()
-
-func _on_pile_card_added(entry: PileEntry) -> void:
-	if pile_total == null:
-		return
-	var player := _get_player_by_id(entry.owner_id)
-	var who := player.player_name if player != null else "Player %d" % [entry.owner_id]
-	if entry.face_down:
-		pile_total.text = "%s claims %d" % [who, entry.effective_value()]
-	else:
-		pile_total.text = "%s plays %d" % [who, entry.effective_value()]
-	
-func _on_pile_cleared(_reason: SharedPile.ClearReason, _card_count: int) -> void:
-	if pile_total != null:
-		pile_total.text = ""

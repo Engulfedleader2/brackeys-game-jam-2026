@@ -115,7 +115,7 @@ func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: i
 		if playing_player is AIPlayer:
 			var ai_player := playing_player as AIPlayer
 			if ai_player.toy:
-				declared_value = ai_player.toy.declare(instance.resource.value, {"pile_total": shared_pile.get_total(), "bust_threshold": shared_pile.rules.bust_threshold})
+				declared_value = ai_player.toy.declare(instance.resource.value)
 			else:
 				declared_value = [1, 5][randi() % 2]
 			print("[RoundManager] AI %s auto-declares: %d" % [playing_player.player_name, declared_value])
@@ -126,9 +126,9 @@ func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: i
 				declared_value = await declaration_prompt.closed
 				print("[RoundManager] Player %s declares: %d" % [playing_player.player_name, declared_value])
 
-	var entry := shared_pile.play_card(instance, owner_id, face_down, declared_value)
-	#if entry and declared_value != -1:
-	#	entry.declared_value = declared_value
+	var entry := shared_pile.play_card(instance, owner_id, face_down)
+	if entry and declared_value != -1:
+		entry.declared_value = declared_value
 
 	# Wait for card animation to complete
 	await get_tree().create_timer(0.4).timeout
