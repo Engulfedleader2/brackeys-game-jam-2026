@@ -1,5 +1,9 @@
 extends Node
 
+@onready var final_screen: Node2D = $"../FinalScreen"
+
+
+
 @export var turn_manager: Node
 @export var deck: Deck
 @export var shared_pile: SharedPile
@@ -353,6 +357,9 @@ func show_message(text: String, duration: float = 2.0) -> void:
 
 # Function to end the game and display the winner.
 func end_game() -> void:
+	$"../FinalScreen".show()
+	$"../FinalScreen".reveal_final_screen()
+	get_tree().create_tween().tween_property(final_screen,"modulate:a",1,3)
 	_game_over = true
 	print("Ending game")
 
@@ -361,4 +368,6 @@ func end_game() -> void:
 	show_message("You win!" if human_won else "Game Over", 3.0)
 
 	await get_tree().create_timer(3.5).timeout
+	Curtain.dropDown()
+	await get_tree().create_timer(2).timeout
 	SceneManager.go_to_main_menu()

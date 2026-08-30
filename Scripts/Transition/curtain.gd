@@ -21,6 +21,11 @@ func _on_main_menu_start_game_signal() -> void:
 	SceneManager.go_to_game()
 
 
+func dropDown():
+	show()
+	$Control.position = Vector2(0,-1271)
+	animation.play_backwards("Reveal")
+
 func _hide():
 	hide()
 

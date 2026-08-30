@@ -41,6 +41,7 @@ _data = {
 }
 
 [node name="Curtain" type="CanvasLayer" unique_id=1218752143]
+layer = 10
 script = ExtResource("1_km32r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=274990988]

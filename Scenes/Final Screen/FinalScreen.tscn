@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cpmifwg3w4tvj"]
+
+[ext_resource type="Script" uid="uid://bfetwi23qcent" path="res://Scripts/Final Screen/final_screen.gd" id="1_kawoq"]
+[ext_resource type="Texture2D" uid="uid://dkedyw8fqgi4e" path="res://AssetDump/Spooky/DogGrin.png" id="2_08l1v"]
+[ext_resource type="Texture2D" uid="uid://ckho6nugbpqji" path="res://AssetDump/FinalScreen/final_text001.png" id="3_1gyqk"]
+
+[node name="FinalScreen" type="Node2D" unique_id=2071481192]
+script = ExtResource("1_kawoq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=318894605]
+layer = 4
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=404537119]
+offset_right = 1931.0
+offset_bottom = 1094.0
+color = Color(0, 0, 0, 0.82600003)
+
+[node name="dog_img" type="Sprite2D" parent="CanvasLayer" unique_id=2076535133]
+texture = ExtResource("2_08l1v")
+centered = false
+
+[node name="text_img" type="Sprite2D" parent="CanvasLayer" unique_id=1690577836]
+texture = ExtResource("3_1gyqk")
+centered = false
