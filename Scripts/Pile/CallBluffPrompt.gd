@@ -7,6 +7,7 @@ signal peek_requested
 @export var peek_display_seconds := 1.5
 
 var peek_available := false
+signal call_signal
 
 @onready var root: Control = $Root
 @onready var timer_bar: TextureProgressBar = $Root/Group/ProgressBar
@@ -55,9 +56,11 @@ func _process(delta: float) -> void:
 	if _time_left <= 0.0:
 		Wwise.post_event("Bluff_Fail",SoundManager)
 		_finish(false)
-	
+
 func _on_call_pressed() -> void:
 	Wwise.post_event("Bluff_Call",SoundManager)
+	call_signal.emit()
+	await get_tree().create_timer(6.1).timeout
 	_finish(true)
 
 func _finish(did_call: bool) -> void:

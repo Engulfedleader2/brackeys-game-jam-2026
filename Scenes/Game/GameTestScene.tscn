@@ -43,8 +43,62 @@
 [ext_resource type="PackedScene" uid="uid://c8p5nb7vbvn1s" path="res://Scenes/Game/ShopScreen.tscn" id="40_q45is"]
 [ext_resource type="PackedScene" uid="uid://gki1gbofmbym" path="res://Scenes/UI/ItemBar.tscn" id="41_1yxlh"]
 [ext_resource type="Script" uid="uid://cffj451ul4a3b" path="res://Scripts/Items/ItemController.gd" id="42_0egu7"]
-[ext_resource type="PackedScene" uid="uid://cpmifwg3w4tvj" path="res://Scenes/Final Screen/FinalScreen.tscn" id="44_0egu7"]
-[ext_resource type="PackedScene" uid="uid://0egfb2xunmaf" path="res://Scenes/Test/CardReveal.tscn" id="44_tky57"]
+[ext_resource type="PackedScene" uid="uid://dlsjjvnoy8kyc" path="res://Scenes/Speech/Speech.tscn" id="43_speech"]
+[ext_resource type="Texture2D" uid="uid://bj4d2o3xf5h3f" path="res://AssetDump/Spooky/DogBG.png" id="44_dogbg"]
+[ext_resource type="PackedScene" uid="uid://0egfb2xunmaf" path="res://Scenes/Test/CardReveal.tscn" id="46_nvq5u"]
+[ext_resource type="PackedScene" uid="uid://cpmifwg3w4tvj" path="res://Scenes/Final Screen/FinalScreen.tscn" id="46_rlq7n"]
+
+[sub_resource type="Animation" id="Animation_oav0n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Speech:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1986, 19)]
+}
+
+[sub_resource type="Animation" id="Animation_2hm42"]
+resource_name = "Reveal"
+length = 3.0000000000000004
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Speech:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1986, 19), Vector2(612, 19), Vector2(800, 19), Vector2(766, 19)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_leave"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1re6w"]
+_data = {
+&"RESET": SubResource("Animation_oav0n"),
+&"Reveal": SubResource("Animation_2hm42")
+}
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 process_mode = 1
@@ -65,6 +119,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_1re6w")
 
 [node name="AIPlayer" parent="." unique_id=392891926 instance=ExtResource("5_aiplayer")]
+process_mode = 1
 position = Vector2(960, 474)
 portrait_offset = Vector2(-250, -850)
 portrait_size = Vector2(4, 4)
@@ -73,6 +128,7 @@ player_name = "Rival"
 owner_id = 1
 
 [node name="AIPlayer2" parent="." unique_id=541108089 instance=ExtResource("5_aiplayer")]
+process_mode = 1
 position = Vector2(404, 525)
 vertical_layout = true
 portrait_offset = Vector2(-500, -700)
@@ -82,6 +138,7 @@ player_name = "Rival 2"
 owner_id = 2
 
 [node name="AIPlayer3" parent="." unique_id=1470739839 instance=ExtResource("5_aiplayer")]
+process_mode = 1
 position = Vector2(1620, 524)
 vertical_layout = true
 portrait_offset = Vector2(-850, -700)
@@ -100,9 +157,11 @@ script = ExtResource("1_empv6")
 card_resources = Array[ExtResource("2_ptkv3")]([ExtResource("8_card1"), ExtResource("8_card1b"), ExtResource("8_card1c"), ExtResource("8_card1d"), ExtResource("8_card1e"), ExtResource("8_card2"), ExtResource("8_card2b"), ExtResource("8_card2c"), ExtResource("8_card2d"), ExtResource("8_card2e"), ExtResource("8_card3"), ExtResource("8_card3b"), ExtResource("8_card3c"), ExtResource("8_card3d"), ExtResource("8_card3e"), ExtResource("8_card4"), ExtResource("8_card4b"), ExtResource("8_card4c"), ExtResource("8_card4d"), ExtResource("8_card4e"), ExtResource("8_card5"), ExtResource("8_card5b"), ExtResource("8_card5c"), ExtResource("8_card5d"), ExtResource("8_card5e")])
 
 [node name="SharedPile" parent="." unique_id=755290654 instance=ExtResource("3_fq5w4")]
+process_mode = 1
 position = Vector2(960, 650)
 
 [node name="Player" parent="." unique_id=845295021 instance=ExtResource("4_player")]
+process_mode = 1
 z_index = 100
 position = Vector2(960, 850)
 player_name = "You"
@@ -144,7 +203,15 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="DogBG" type="TextureRect" parent="." unique_id=560025993]
+z_index = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("44_dogbg")
+
 [node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "declaration_prompt", "turn_label", "round_survived_screen", "you_died_screen", "pile_total", "shop_screen")]
+process_mode = 1
 script = ExtResource("6_gamemanager")
 turn_manager = NodePath("../TurnManager")
 deck = NodePath("../Deck")
@@ -159,9 +226,11 @@ pile_total = NodePath("../PileTotal")
 shop_screen = NodePath("../ShopScreen")
 
 [node name="TurnManager" type="Node" parent="." unique_id=676050292]
+process_mode = 1
 script = ExtResource("7_turnmanager")
 
 [node name="CallBluffPrompt" parent="." unique_id=2146204010 instance=ExtResource("33_pdcst")]
+process_mode = 1
 
 [node name="DeclarationPrompt" parent="." unique_id=1926374852 instance=ExtResource("33_decl")]
 
@@ -184,11 +253,21 @@ shop_screen = NodePath("../ShopScreen")
 call_bluff_prompt = NodePath("../CallBluffPrompt")
 metadata/_custom_type_script = "uid://cffj451ul4a3b"
 
-[node name="CardReveal" parent="." unique_id=1361101499 instance=ExtResource("44_tky57")]
+[node name="Speech" parent="." unique_id=1512087371 instance=ExtResource("43_speech")]
+offset = Vector2(1986, 19)
+transform = Transform2D(1, 0, 0, 1, 1986, 19)
 
-[node name="FinalScreen" parent="." unique_id=2071481192 instance=ExtResource("44_0egu7")]
-visible = false
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1745860244]
+libraries/ = SubResource("AnimationLibrary_1re6w")
+
+[node name="CardReveal" parent="." unique_id=1361101499 instance=ExtResource("46_nvq5u")]
+
+[node name="FinalScreen" parent="." unique_id=2071481192 instance=ExtResource("46_rlq7n")]
 modulate = Color(1, 1, 1, 0)
 
+[connection signal="leave_signal" from="." to="Speech" method="_on_game_test_scene_leave_signal"]
+[connection signal="show_signal" from="." to="Speech" method="_on_game_test_scene_show_signal"]
+[connection signal="speech_signal" from="SharedPile" to="." method="_on_shared_pile_speech_signal"]
 [connection signal="value_signal" from="SharedPile" to="CardReveal" method="_on_shared_pile_value_signal"]
+[connection signal="call_signal" from="CallBluffPrompt" to="CardReveal" method="_on_call_bluff_prompt_call_signal"]
 [connection signal="closed" from="CallBluffPrompt" to="CardReveal" method="_on_call_bluff_prompt_closed"]

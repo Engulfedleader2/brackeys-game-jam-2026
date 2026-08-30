@@ -67,15 +67,16 @@ func _whoIsit():
 
 
 func _on_call_bluff_prompt_closed(did_call):
-	if did_call == true:
-		_whoIsit()
-		get_tree().paused = true
-		$".".show()
-		$AnimationPlayer.play("Shake")
-		$Accused_AnimationPlayer.play("zoom")
-		await $AnimationPlayer.animation_finished
-		$".".hide()
-		get_tree().paused = false
+	pass
+	#if did_call == true:
+		#_whoIsit()
+		#get_tree().paused = true
+		#$".".show()
+		#$AnimationPlayer.play("Shake")
+		#$Accused_AnimationPlayer.play("zoom")
+		#await $AnimationPlayer.animation_finished
+		#$".".hide()
+		#get_tree().paused = false
 
 
 
@@ -92,3 +93,14 @@ func _on_shared_pile_value_signal(entry) -> void:
 		index = 4
 	if entry == 5:
 		index = 5
+
+
+func _on_call_bluff_prompt_call_signal() -> void:
+	_whoIsit()
+	get_tree().paused = true
+	$".".show()
+	$AnimationPlayer.play("Shake")
+	$Accused_AnimationPlayer.play("zoom")
+	await $AnimationPlayer.animation_finished
+	$".".hide()
+	get_tree().paused = false

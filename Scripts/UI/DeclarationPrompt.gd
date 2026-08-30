@@ -12,8 +12,6 @@ signal closed(declared_value: int)
 
 
 func _ready() -> void:
-	button_1.pressed.connect(_on_button_1_pressed)
-	button_5.pressed.connect(_on_button_5_pressed)
 	hide()
 
 func open(player_name: String) -> void:
