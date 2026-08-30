@@ -1,38 +1,44 @@
 extends Control
 
-@onready var start_button: Button = $Content/VBoxContainer/StartButton
-@onready var settings_button: Button = $Content/VBoxContainer/SettingsButton
-@onready var credits_button: Button = $Content/VBoxContainer/CreditsButton
+@onready var start_button: Button = $StartButton
+@onready var settings_button: Button = $SettingsButton
+@onready var credits_button: Button = $CreditsButton
 @onready var quit_button: Button = $Content/VBoxContainer/QuitButton
-
+@onready var start_img: Sprite2D = $Start_img
+@onready var credits_img: Sprite2D = $Credits_img
+@onready var settings_img: Sprite2D = $Settings_img
 
 
 func _ready() -> void:
-	start_button.pressed.connect(_on_start_button_pressed)
-	settings_button.pressed.connect(_on_settings_button_pressed)
-	credits_button.pressed.connect(_on_credits_button_pressed)
-	quit_button.pressed.connect(_on_quit_button_pressed)
 	Wwise.register_game_obj(self,self.name)
 	Wwise.add_default_listener(SoundManager)
 	Wwise.post_event("Title",SoundManager)
 
 	# Don't let the buttons be clickable until the curtain is done.
-	_set_buttons_disabled(true)
+	hidebutton()
 	if Curtain.can_play == true:
 		await get_tree().create_timer(2).timeout
 		await Curtain._reveal()
 		Curtain.can_play = false
-	_set_buttons_disabled(false)
+	showbutton()
 
 
-func _set_buttons_disabled(disabled: bool) -> void:
-	start_button.disabled = disabled
-	settings_button.disabled = disabled
-	credits_button.disabled = disabled
-	quit_button.disabled = disabled
+func hidebutton():
+	start_button.hide()
+	settings_button.hide()
+	credits_button.hide()
+	quit_button.hide()
+
+
+func showbutton():
+	start_button.show()
+	settings_button.show()
+	credits_button.show()
+	quit_button.show()
 
 
 func _on_start_button_pressed() -> void:
+	hidebutton()
 	SceneManager.go_to_character_select()
 	Wwise.post_event("Table",SoundManager)
 
@@ -47,3 +53,33 @@ func _on_credits_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	SceneManager.quit_game()
+
+
+func _on_start_button_mouse_entered() -> void:
+	get_tree().create_tween().tween_property(start_img,"scale",Vector2(1.1,1.1),.1)
+	get_tree().create_tween().tween_property(start_img,"modulate:a",1,.1)
+
+
+func _on_start_button_mouse_exited() -> void:
+	get_tree().create_tween().tween_property(start_img,"scale",Vector2(1,1),.1)
+	get_tree().create_tween().tween_property(start_img,"modulate:a",.5,.1)
+
+
+func _on_credits_button_mouse_entered() -> void:
+	get_tree().create_tween().tween_property(credits_img,"scale",Vector2(1.1,1.1),.1)
+	get_tree().create_tween().tween_property(credits_img,"modulate:a",1,.1)
+
+
+func _on_credits_button_mouse_exited() -> void:
+	get_tree().create_tween().tween_property(credits_img,"scale",Vector2(1,1),.1)
+	get_tree().create_tween().tween_property(credits_img,"modulate:a",.5,.1)
+
+
+func _on_settings_button_mouse_entered() -> void:
+	get_tree().create_tween().tween_property(settings_img,"scale",Vector2(1.1,1.1),.1)
+	get_tree().create_tween().tween_property(settings_img,"modulate:a",1,.1)
+
+
+func _on_settings_button_mouse_exited() -> void:
+	get_tree().create_tween().tween_property(settings_img,"scale",Vector2(1,1),.1)
+	get_tree().create_tween().tween_property(settings_img,"modulate:a",.5,.1)
