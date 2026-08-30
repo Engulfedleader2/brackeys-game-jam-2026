@@ -40,7 +40,6 @@ func showbutton():
 func _on_start_button_pressed() -> void:
 	hidebutton()
 	SceneManager.go_to_character_select()
-	Wwise.post_event("Table",SoundManager)
 
 
 func _on_settings_button_pressed() -> void:

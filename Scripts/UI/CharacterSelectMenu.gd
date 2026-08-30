@@ -61,6 +61,7 @@ func _disableButton():
 
 func _on_toy_selected(toy_class: Script) -> void:
 	_disableButton()
+	Wwise.post_event("Table",SoundManager)
 	CharacterSelection.select(toy_class)
 	Curtain._on_main_menu_start_game_signal()
 
