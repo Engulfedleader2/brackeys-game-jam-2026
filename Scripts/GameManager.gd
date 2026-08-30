@@ -130,6 +130,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 			if winner.owner_id in round_wins:
 				round_wins[winner.owner_id] += 1
 				print("[GameManager] Player %s wins round %d! (Record: %d wins)" % [winner.player_name, current_round_number, round_wins[winner.owner_id]])
+				end_game() 
 
 		# Check if someone has won the game (2 rounds)
 		for owner_id in round_wins:
@@ -173,6 +174,8 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 	await get_tree().create_timer(1.0).timeout
 	await _show_round_survived(player_survived)
 	_start_next_round()
+
+
 func _show_round_survived(player_survived: bool) -> void:
 	Wwise.post_event("Win",self)
 	if round_survived_screen == null or not player_survived:
