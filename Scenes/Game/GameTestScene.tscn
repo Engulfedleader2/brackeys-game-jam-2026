@@ -45,6 +45,8 @@
 [ext_resource type="Script" uid="uid://cffj451ul4a3b" path="res://Scripts/Items/ItemController.gd" id="42_0egu7"]
 [ext_resource type="PackedScene" uid="uid://dlsjjvnoy8kyc" path="res://Scenes/Speech/Speech.tscn" id="43_speech"]
 [ext_resource type="Texture2D" uid="uid://bj4d2o3xf5h3f" path="res://AssetDump/Spooky/DogBG.png" id="44_dogbg"]
+[ext_resource type="PackedScene" uid="uid://0egfb2xunmaf" path="res://Scenes/Test/CardReveal.tscn" id="46_nvq5u"]
+[ext_resource type="PackedScene" uid="uid://cpmifwg3w4tvj" path="res://Scenes/Final Screen/FinalScreen.tscn" id="46_rlq7n"]
 
 [sub_resource type="Animation" id="Animation_oav0n"]
 length = 0.001
@@ -120,8 +122,6 @@ position = Vector2(960, 474)
 portrait_offset = Vector2(-250, -850)
 portrait_size = Vector2(4, 4)
 hand_card_scale = Vector2(0.7, 0.7)
-think_min = 0.6
-think_max = 1.5
 player_name = "Rival"
 owner_id = 1
 
@@ -131,8 +131,6 @@ vertical_layout = true
 portrait_offset = Vector2(-500, -700)
 portrait_size = Vector2(4, 4)
 hand_card_scale = Vector2(0.7, 0.7)
-think_min = 0.6
-think_max = 1.5
 player_name = "Rival 2"
 owner_id = 2
 
@@ -142,8 +140,6 @@ vertical_layout = true
 portrait_offset = Vector2(-850, -700)
 portrait_size = Vector2(4, 4)
 hand_card_scale = Vector2(0.7, 0.7)
-think_min = 0.6
-think_max = 1.5
 player_name = "Rival 3"
 owner_id = 3
 
@@ -255,6 +251,12 @@ transform = Transform2D(1, 0, 0, 1, 1986, 19)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1745860244]
 libraries/ = SubResource("AnimationLibrary_1re6w")
 
+[node name="CardReveal" parent="." unique_id=1361101499 instance=ExtResource("46_nvq5u")]
+
+[node name="FinalScreen" parent="." unique_id=2071481192 instance=ExtResource("46_rlq7n")]
+
 [connection signal="leave_signal" from="." to="Speech" method="_on_game_test_scene_leave_signal"]
 [connection signal="show_signal" from="." to="Speech" method="_on_game_test_scene_show_signal"]
 [connection signal="speech_signal" from="SharedPile" to="." method="_on_shared_pile_speech_signal"]
+[connection signal="value_signal" from="SharedPile" to="CardReveal" method="_on_shared_pile_value_signal"]
+[connection signal="closed" from="CallBluffPrompt" to="CardReveal" method="_on_call_bluff_prompt_closed"]
