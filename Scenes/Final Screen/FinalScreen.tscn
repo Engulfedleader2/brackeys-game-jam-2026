@@ -2,7 +2,184 @@
 
 [ext_resource type="Script" uid="uid://bfetwi23qcent" path="res://Scripts/Final Screen/final_screen.gd" id="1_kawoq"]
 [ext_resource type="Texture2D" uid="uid://dkedyw8fqgi4e" path="res://AssetDump/Spooky/DogGrin.png" id="2_08l1v"]
+[ext_resource type="Texture2D" uid="uid://c0ouswkf7vcc2" path="res://AssetDump/Spooky/DeathAnim/Bear/Bear-1.png" id="2_kebcj"]
 [ext_resource type="Texture2D" uid="uid://ckho6nugbpqji" path="res://AssetDump/FinalScreen/final_text001.png" id="3_1gyqk"]
+[ext_resource type="Texture2D" uid="uid://c0x003jcj1g01" path="res://AssetDump/Spooky/DeathAnim/Bear/Bear-2.png" id="3_3alfx"]
+[ext_resource type="Texture2D" uid="uid://6jhnyullrsb5" path="res://AssetDump/Spooky/DeathAnim/Bear/Bear-3.png" id="4_ugkr6"]
+[ext_resource type="Texture2D" uid="uid://dkqv35u4jusix" path="res://AssetDump/Spooky/DeathAnim/Bear/Bear-4.png" id="5_8qqvg"]
+[ext_resource type="Texture2D" uid="uid://bqwc2nk0eg22d" path="res://AssetDump/Spooky/DeathAnim/Bear/Bear-5.png" id="6_d2ox4"]
+[ext_resource type="Texture2D" uid="uid://tttuikxhpk0f" path="res://AssetDump/Spooky/DeathAnim/Bear/Bear-6.png" id="7_brpem"]
+[ext_resource type="Texture2D" uid="uid://uqs08rxpy5th" path="res://AssetDump/Spooky/DeathAnim/Carrot/Carrot-1.png" id="8_p35ku"]
+[ext_resource type="Texture2D" uid="uid://cyympu0nfuksr" path="res://AssetDump/Spooky/DeathAnim/Carrot/Carrot-2.png" id="9_asupv"]
+[ext_resource type="Texture2D" uid="uid://mx2yj6sup0fe" path="res://AssetDump/Spooky/DeathAnim/Carrot/Carrot-3.png" id="10_rlqh2"]
+[ext_resource type="Texture2D" uid="uid://d11d3gdiv6n6v" path="res://AssetDump/Spooky/DeathAnim/Carrot/Carrot-4.png" id="11_lcksg"]
+[ext_resource type="Texture2D" uid="uid://b3lrur4r71wbh" path="res://AssetDump/Spooky/DeathAnim/Carrot/Carrot-5.png" id="12_2ovy8"]
+[ext_resource type="Texture2D" uid="uid://cc8sslna6jmdu" path="res://AssetDump/Spooky/DeathAnim/Carrot/Carrot-6.png" id="13_f4t35"]
+[ext_resource type="Texture2D" uid="uid://dy857lmpnwa24" path="res://AssetDump/Spooky/DeathAnim/Chicken/Chicken-1.png" id="14_vowao"]
+[ext_resource type="Texture2D" uid="uid://bkay4vbeih0hs" path="res://AssetDump/Spooky/DeathAnim/Chicken/Chicken-2.png" id="15_r4bga"]
+[ext_resource type="Texture2D" uid="uid://dkjo7rvjug73g" path="res://AssetDump/Spooky/DeathAnim/Chicken/Chicken-3.png" id="16_ivd1h"]
+[ext_resource type="Texture2D" uid="uid://c7hr8rtfb7j7q" path="res://AssetDump/Spooky/DeathAnim/Chicken/Chicken-4.png" id="17_tcbfi"]
+[ext_resource type="Texture2D" uid="uid://bi4dogpuxvyh6" path="res://AssetDump/Spooky/DeathAnim/Chicken/Chicken-5.png" id="18_w5hoc"]
+[ext_resource type="Texture2D" uid="uid://bsnnqwanc4xxp" path="res://AssetDump/Spooky/DeathAnim/Chicken/Chicken-6.png" id="19_bcajl"]
+[ext_resource type="Texture2D" uid="uid://bd7xuyjhvav2l" path="res://AssetDump/Spooky/DeathAnim/Dachshund/Dachshund-1.png" id="20_j6p0t"]
+[ext_resource type="Texture2D" uid="uid://c1ldnm7isw74j" path="res://AssetDump/Spooky/DeathAnim/Dachshund/Dachshund-2.png" id="21_ggk4h"]
+[ext_resource type="Texture2D" uid="uid://bivqoce4c4hue" path="res://AssetDump/Spooky/DeathAnim/Dachshund/Dachshund-3.png" id="22_vqjaw"]
+[ext_resource type="Texture2D" uid="uid://bn2cyhv01xbbc" path="res://AssetDump/Spooky/DeathAnim/Dachshund/Dachshund-4.png" id="23_214uk"]
+[ext_resource type="Texture2D" uid="uid://bo01hfol4o3ah" path="res://AssetDump/Spooky/DeathAnim/Dachshund/Dachshund-5.png" id="24_xmcmh"]
+[ext_resource type="Texture2D" uid="uid://clleaa6bbuutb" path="res://AssetDump/Spooky/DeathAnim/Dachshund/Dachshund-6.png" id="25_1l201"]
+[ext_resource type="Texture2D" uid="uid://tbohhdsp8fjv" path="res://AssetDump/Spooky/DeathAnim/Fox/Fox-1.png" id="26_3qi6c"]
+[ext_resource type="Texture2D" uid="uid://cbpoyp65t6rne" path="res://AssetDump/Spooky/DeathAnim/Fox/Fox-2.png" id="27_xfm1c"]
+[ext_resource type="Texture2D" uid="uid://c4ekedtmjtv3x" path="res://AssetDump/Spooky/DeathAnim/Fox/Fox-3.png" id="28_avsfv"]
+[ext_resource type="Texture2D" uid="uid://dfo4syqas6qss" path="res://AssetDump/Spooky/DeathAnim/Fox/Fox-4.png" id="29_2lgbr"]
+[ext_resource type="Texture2D" uid="uid://cwklbk38mod7m" path="res://AssetDump/Spooky/DeathAnim/Fox/Fox-5.png" id="30_8y1dv"]
+[ext_resource type="Texture2D" uid="uid://dd3bkelqbm2ws" path="res://AssetDump/Spooky/DeathAnim/Fox/Fox-6.png" id="31_k2h1i"]
+[ext_resource type="Texture2D" uid="uid://bqya6s245lefp" path="res://AssetDump/Spooky/DeathAnim/Lamb/Lamb-1.png" id="32_b11yu"]
+[ext_resource type="Texture2D" uid="uid://hrllhyd4yn7y" path="res://AssetDump/Spooky/DeathAnim/Lamb/Lamb-2.png" id="33_1mqsc"]
+[ext_resource type="Texture2D" uid="uid://ldlk3rbvs8uk" path="res://AssetDump/Spooky/DeathAnim/Lamb/Lamb-3.png" id="34_k41cc"]
+[ext_resource type="Texture2D" uid="uid://brkgh2788so66" path="res://AssetDump/Spooky/DeathAnim/Lamb/Lamb-4.png" id="35_d0u7w"]
+[ext_resource type="Texture2D" uid="uid://5mntj5uud1nb" path="res://AssetDump/Spooky/DeathAnim/Lamb/Lamb-5.png" id="36_yufv7"]
+[ext_resource type="Texture2D" uid="uid://h0j44ip5jxu2" path="res://AssetDump/Spooky/DeathAnim/Lamb/Lamb-6.png" id="37_wa0p0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ib0mu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kebcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3alfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ugkr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8qqvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d2ox4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_brpem")
+}],
+"loop": 1,
+"name": &"Bear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p35ku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_asupv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rlqh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lcksg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2ovy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_f4t35")
+}],
+"loop": 1,
+"name": &"Carrot",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_vowao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r4bga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ivd1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tcbfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_w5hoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bcajl")
+}],
+"loop": 1,
+"name": &"Chicken",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_j6p0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ggk4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vqjaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_214uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xmcmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1l201")
+}],
+"loop": 1,
+"name": &"Dachs",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_3qi6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xfm1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_avsfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_2lgbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_8y1dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_k2h1i")
+}],
+"loop": 1,
+"name": &"Fox",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_b11yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1mqsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k41cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_d0u7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_yufv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_wa0p0")
+}],
+"loop": 1,
+"name": &"Lamb",
+"speed": 5.0
+}]
 
 [node name="FinalScreen" type="Node2D" unique_id=2071481192]
 script = ExtResource("1_kawoq")
@@ -15,6 +192,12 @@ visible = false
 offset_right = 1931.0
 offset_bottom = 1094.0
 color = Color(0, 0, 0, 0.82600003)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1488719495]
+position = Vector2(-564, -26)
+sprite_frames = SubResource("SpriteFrames_ib0mu")
+animation = &"Bear"
+centered = false
 
 [node name="dog_img" type="Sprite2D" parent="CanvasLayer" unique_id=2076535133]
 texture = ExtResource("2_08l1v")
