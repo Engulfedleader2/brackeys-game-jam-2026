@@ -60,6 +60,7 @@ func _disableButton():
 	$BackButton.hide()
 
 func _on_toy_selected(toy_class: Script) -> void:
+	Wwise.post_event("Click",SoundManager)
 	_disableButton()
 	Wwise.post_event("Table",SoundManager)
 	CharacterSelection.select(toy_class)
@@ -67,6 +68,7 @@ func _on_toy_selected(toy_class: Script) -> void:
 
 
 func _on_back_pressed() -> void:
+	Wwise.post_event("Back",SoundManager)
 	SceneManager.go_to_main_menu()
 
 
@@ -139,4 +141,5 @@ func _on_back_button_mouse_exited() -> void:
 
 
 func _on_back_button_pressed() -> void:
+	Wwise.post_event("Back",self)
 	SceneManager.go_to_main_menu()

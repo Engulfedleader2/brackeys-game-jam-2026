@@ -23,6 +23,8 @@ var _paused := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Wwise.post_event("Bluff",SoundManager)
+	Wwise.post_event("Stress",SoundManager)
 	root.visible = false
 	set_process(false)
 	call_button.pressed.connect(_on_call_pressed)
@@ -51,9 +53,11 @@ func _process(delta: float) -> void:
 	_time_left -= delta
 	timer_bar.value = maxf(_time_left, 0.0)
 	if _time_left <= 0.0:
+		Wwise.post_event("Bluff_Fail",SoundManager)
 		_finish(false)
 	
 func _on_call_pressed() -> void:
+	Wwise.post_event("Bluff_Call",SoundManager)
 	_finish(true)
 
 func _finish(did_call: bool) -> void:
@@ -66,9 +70,11 @@ func _finish(did_call: bool) -> void:
 	closed.emit(did_call)
 
 func _on_skip_pressed() -> void:
+	Wwise.post_event("Bluff_Fail",SoundManager)
 	_finish(false)
 
 func _on_peek_pressed() -> void:
+	Wwise.post_event("Glass",SoundManager)
 	if not _active or not peek_available:
 		return
 	peek_button.disabled = true

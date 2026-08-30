@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cmgks2jyrb78y" path="res://AssetDump/HowToPlay/How_to_Play_IMG.png" id="3_ghw46"]
 [ext_resource type="Script" uid="uid://dr7fe3qu6wkxd" path="res://Scripts/HowToPlay/how_to_play_button.gd" id="4_df05h"]
 [ext_resource type="PackedScene" uid="uid://c7mqwc03c1ven" path="res://Scenes/HowToPlay/HowToPlay.tscn" id="5_df05h"]
-[ext_resource type="Texture2D" uid="uid://bb1x8r70gqmrw" path="res://AssetDump/Title/Title_txt.png" id="6_loo7a"]
+[ext_resource type="Texture2D" uid="uid://x2mc4v40gnhw" path="res://AssetDump/Title/Title_txt.png" id="6_loo7a"]
 [ext_resource type="Texture2D" uid="uid://3y66x5etgh6a" path="res://AssetDump/Title/button_start.png" id="7_if7li"]
-[ext_resource type="Texture2D" uid="uid://d3abwq1snaa74" path="res://AssetDump/Title/button_credits.png" id="8_rrcx7"]
-[ext_resource type="Texture2D" uid="uid://bq1on7utrlh0g" path="res://AssetDump/Title/button_settings.png" id="9_fh7cp"]
+[ext_resource type="Texture2D" uid="uid://bdttmjwrekfs8" path="res://AssetDump/Title/button_credits.png" id="8_rrcx7"]
+[ext_resource type="Texture2D" uid="uid://cmnbrwr4pfu1r" path="res://AssetDump/Title/button_settings.png" id="9_fh7cp"]
 
 [node name="MainMenu" type="Control" unique_id=60566485]
 layout_mode = 3

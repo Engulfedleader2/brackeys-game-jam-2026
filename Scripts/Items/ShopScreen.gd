@@ -65,6 +65,7 @@ func _refresh() -> void:
 		_buy_buttons[i].disabled = _player.buttons < item.cost or sold_out
 
 func _on_buy_pressed(index: int) -> void:
+	Wwise.post_event("Buy",SoundManager)
 	if _player == null or index >= stock.size():
 		return
 	var item: ItemResource = stock[index]
@@ -86,6 +87,7 @@ func _owned_count(item: ItemResource) -> int:
 	return count
 
 func _on_back_pressed() -> void:
+	Wwise.post_event("Back",SoundManager)
 	visible = false
 	root.visible = false
 	_player = null

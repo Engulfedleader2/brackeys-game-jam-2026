@@ -47,11 +47,13 @@ func _on_turn_started(player: Player) -> void:
 		pile_total.text = "Pile Total: %d" % shared_pile.get_total()
 
 func _on_pile_picked_up(player_name: String, card_count: int) -> void:
+	Wwise.post_event("Card",SoundManager)
 	var message = "%s picked up %d card%s!" % [player_name, card_count, "s" if card_count != 1 else ""]
 	show_message(message, 2.5)
 
 func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: int) -> void:
 	if _game_over:
+		Wwise.post_event("Loss",SoundManager)
 		return
 	print("[GameManager] Round %d finished - Winner: %d, Loser: %d" % [current_round_number, winner_owner_id, loser_owner_id])
 
@@ -69,9 +71,11 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 	if winner_owner_id == -1:
 		var buster := _get_round_loser()
 		if buster != null:
+			Wwise.post_event("Eaten",SoundManager)
 			print("[GameManager] Player %s BUSTED and is EATEN! (%d cards)" % [buster.player_name, buster.hand.get_card_count()])
 			# Show "You Died" screen if the player (owner_id 0) busted
 			if buster.owner_id == 0 and you_died_screen:
+				Wwise.post_event("Loss",SoundManager)
 				you_died_screen.visible = true
 				await get_tree().create_timer(3.0).timeout
 				you_died_screen.visible = false
@@ -81,6 +85,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 	for path in player_paths:
 		var player = get_node(path) as Player
 		if player.hand.get_card_count() >= LOSE_HAND_SIZE:
+			Wwise.post_event("Eaten",self)
 			print("[GameManager] Player %s EATEN! Eliminated with %d cards" % [player.player_name, player.hand.get_card_count()])
 			if player not in eliminated_players:
 				eliminated_players.append(player)
@@ -149,6 +154,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 	if not eliminated_players.is_empty():
 		print("[GameManager] Players eliminated! Restarting round with remaining players...")
 		await get_tree().create_timer(1.0).timeout
+		Wwise.post_event("Win",SoundManager)
 		await _show_round_survived(player_survived)
 		_redeal_and_start_new_round()
 		return
@@ -168,6 +174,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 	await _show_round_survived(player_survived)
 	_start_next_round()
 func _show_round_survived(player_survived: bool) -> void:
+	Wwise.post_event("Win",self)
 	if round_survived_screen == null or not player_survived:
 		return
 	while await round_survived_screen.prompt():
@@ -365,6 +372,8 @@ func end_game() -> void:
 
 	var human := _get_player_by_id(HUMAN_OWNER_ID)
 	var human_won := human != null and human in RoundManager.players and not _human_eliminated
+	Wwise.post_event("End",self)
+	Wwise.post_event("Win_End",self)
 	show_message("You win!" if human_won else "Game Over", 3.0)
 
 	await get_tree().create_timer(3.5).timeout

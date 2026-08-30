@@ -8,3 +8,5 @@ extends Node2D
 
 func reveal_final_screen():
 	$CanvasLayer.show()
+	Wwise.post_event("Win_End",self)
+	Wwise.post_event("End",self)

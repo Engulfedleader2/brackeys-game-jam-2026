@@ -46,6 +46,7 @@ func _on_vox_volume_changed(value: float) -> void:
 
 
 func _on_back_button_pressed() -> void:
+	Wwise.post_event("Back",SoundManager)
 	Curtain._hide()
 	SceneManager.go_to_main_menu()
 	Wwise.post_event("Title", SoundManager)
