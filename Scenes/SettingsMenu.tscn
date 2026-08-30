@@ -34,15 +34,43 @@ theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="MusicToggle" type="CheckButton" parent="Content/Settings" unique_id=801173332]
+[node name="MasterToggle" type="CheckButton" parent="Content/Settings" unique_id=801173332]
 layout_mode = 2
 button_pressed = true
-text = "Music"
+text = "Master"
 
-[node name="SfxToggle" type="CheckButton" parent="Content/Settings" unique_id=1334705724]
+[node name="MusicVolumeLabel" type="Label" parent="Content/Settings" unique_id=475478479]
 layout_mode = 2
-button_pressed = true
-text = "SFX"
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Content/Settings" unique_id=475478480]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+value = 100.0
+
+[node name="SfxVolumeLabel" type="Label" parent="Content/Settings" unique_id=475478481]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SfxVolumeSlider" type="HSlider" parent="Content/Settings" unique_id=475478482]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+value = 100.0
+
+[node name="VoxVolumeLabel" type="Label" parent="Content/Settings" unique_id=475478483]
+layout_mode = 2
+text = "Voice Volume"
+
+[node name="VoxVolumeSlider" type="HSlider" parent="Content/Settings" unique_id=475478484]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+value = 100.0
 
 [node name="BackButton" type="Button" parent="Content/Settings" unique_id=524169493]
 layout_mode = 2
