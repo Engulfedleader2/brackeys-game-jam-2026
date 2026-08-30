@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://gki1gbofmbym" path="res://Scenes/UI/ItemBar.tscn" id="41_1yxlh"]
 [ext_resource type="Script" uid="uid://cffj451ul4a3b" path="res://Scripts/Items/ItemController.gd" id="42_0egu7"]
 [ext_resource type="PackedScene" uid="uid://cpmifwg3w4tvj" path="res://Scenes/Final Screen/FinalScreen.tscn" id="44_0egu7"]
+[ext_resource type="PackedScene" uid="uid://0egfb2xunmaf" path="res://Scenes/Test/CardReveal.tscn" id="44_tky57"]
 
 [node name="GameTestScene" type="Node2D" unique_id=1788772955]
 script = ExtResource("1_1re6w")
@@ -182,6 +183,11 @@ shop_screen = NodePath("../ShopScreen")
 call_bluff_prompt = NodePath("../CallBluffPrompt")
 metadata/_custom_type_script = "uid://cffj451ul4a3b"
 
+[node name="CardReveal" parent="." unique_id=1361101499 instance=ExtResource("44_tky57")]
+
 [node name="FinalScreen" parent="." unique_id=2071481192 instance=ExtResource("44_0egu7")]
 visible = false
 modulate = Color(1, 1, 1, 0)
+
+[connection signal="value_signal" from="SharedPile" to="CardReveal" method="_on_shared_pile_value_signal"]
+[connection signal="closed" from="CallBluffPrompt" to="CardReveal" method="_on_call_bluff_prompt_closed"]
