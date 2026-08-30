@@ -131,6 +131,12 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 					_end_game_with_winner(owner_id)
 					return
 
+		# Out of rounds without anyone reaching ROUNDS_TO_WIN - end it here,
+		# don't start a round beyond the configured cap.
+		if current_round_number >= total_game_rounds:
+			end_game()
+			return
+
 		# Move to next round
 		_start_next_round()
 		return
