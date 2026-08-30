@@ -1,26 +1,31 @@
 [gd_scene format=3 uid="uid://c6q22xvqt3kpt"]
 
-[ext_resource type="Script" path="res://Scripts/UI/DeclarationPrompt.gd" id="1_t6c0j"]
+[ext_resource type="Script" uid="uid://lvnkxn4unkr4" path="res://Scripts/UI/DeclarationPrompt.gd" id="1_t6c0j"]
+[ext_resource type="Texture2D" uid="uid://ddceg1pyg2rrk" path="res://AssetDump/UI/1or5_txt.png" id="2_ibn42"]
 
-[node name="DeclarationPrompt" type="CanvasLayer"]
+[node name="DeclarationPrompt" type="CanvasLayer" unique_id=187451633]
 script = ExtResource("1_t6c0j")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=354710427]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2077167594]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0, 0, 0, 0.7)
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
+color = Color(0, 0, 0, 0.7)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=446297430]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,22 +39,42 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PromptLabel" type="Label" parent="Control/VBoxContainer"]
+[node name="PromptLabel" type="Label" parent="Control/VBoxContainer" unique_id=733195393]
 layout_mode = 2
-text = "Declare your card: 1 or 5?"
+text = "Declare your card:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1249774098]
+visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Button1" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Button1" type="Button" parent="Control/VBoxContainer/HBoxContainer" unique_id=854751470]
 custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
 text = "1"
 
-[node name="Button5" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Button5" type="Button" parent="Control/VBoxContainer/HBoxContainer" unique_id=232427571]
 custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
 text = "5"
+
+[node name="Button1" type="Button" parent="Control" unique_id=356375610]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 490.0
+offset_right = 907.0
+offset_bottom = 608.0
+
+[node name="Button5" type="Button" parent="Control" unique_id=1401379880]
+layout_mode = 0
+offset_left = 1014.0
+offset_top = 486.0
+offset_right = 1116.0
+offset_bottom = 607.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1091562600]
+position = Vector2(942.00006, 574)
+scale = Vector2(0.56875, 0.56875)
+texture = ExtResource("2_ibn42")

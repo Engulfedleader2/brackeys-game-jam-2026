@@ -4,8 +4,8 @@ extends CanvasLayer
 signal closed(declared_value: int)
 
 @onready var prompt_label: Label = $Control/VBoxContainer/PromptLabel
-@onready var button_1: Button = $Control/VBoxContainer/HBoxContainer/Button1
-@onready var button_5: Button = $Control/VBoxContainer/HBoxContainer/Button5
+@onready var button_1: Button = $Control/Button1
+@onready var button_5: Button = $Control/Button5
 
 func _ready() -> void:
 	button_1.pressed.connect(_on_button_1_pressed)
