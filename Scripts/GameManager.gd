@@ -105,9 +105,9 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 	#if player_survived:
 		# Show round survived screen only if player survived
 		#if round_survived_screen:
-		#	round_survived_screen.visible = true
-		#	await get_tree().create_timer(2.0).timeout
-		#	round_survived_screen.visible = false
+			#round_survived_screen.visible = true
+			#await get_tree().create_timer(2.0).timeout
+			#round_survived_screen.visible = false
 
 	# Remove eliminated players from active play
 	for player in eliminated_players:

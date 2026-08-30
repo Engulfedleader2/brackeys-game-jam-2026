@@ -47,6 +47,8 @@ func open(accused_name: String, duration := -1.0) -> void:
 	_active = true
 	_paused = false
 	set_process(true)
+	$Control/Skip.show()
+	$Control/CallButton.show()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if _paused:
@@ -58,6 +60,8 @@ func _process(delta: float) -> void:
 		_finish(false)
 
 func _on_call_pressed() -> void:
+	$Control/Skip.hide()
+	$Control/CallButton.hide()
 	Wwise.post_event("Bluff_Call",SoundManager)
 	call_signal.emit()
 	await get_tree().create_timer(6.1).timeout
@@ -73,6 +77,8 @@ func _finish(did_call: bool) -> void:
 	closed.emit(did_call)
 
 func _on_skip_pressed() -> void:
+	$Control/Skip.hide()
+	$Control/CallButton.hide()
 	Wwise.post_event("Bluff_Fail",SoundManager)
 	_finish(false)
 
