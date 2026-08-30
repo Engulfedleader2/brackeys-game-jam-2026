@@ -58,66 +58,86 @@ centered = false
 texture = ExtResource("8_y2c6c")
 centered = false
 
-[node name="Bear_Button" type="Button" parent="." unique_id=855396641]
+[node name="Buttons" type="Control" parent="." unique_id=476465940]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bear_Button" type="Button" parent="Buttons" unique_id=855396641]
+layout_mode = 0
 offset_left = 852.0
 offset_top = 142.0
 offset_right = 1037.0
 offset_bottom = 599.0
 flat = true
 
-[node name="Fox_Button" type="Button" parent="." unique_id=1515994902]
+[node name="Fox_Button" type="Button" parent="Buttons" unique_id=1515994902]
+layout_mode = 0
 offset_left = 1068.0
 offset_top = 221.0
 offset_right = 1625.0
 offset_bottom = 451.0
 flat = true
 
-[node name="Dachs_Button" type="Button" parent="." unique_id=1720499994]
+[node name="Dachs_Button" type="Button" parent="Buttons" unique_id=1720499994]
+layout_mode = 0
 offset_left = 1165.0
 offset_top = 469.0
 offset_right = 1377.0
 offset_bottom = 808.0
 flat = true
 
-[node name="Broc_Button" type="Button" parent="." unique_id=58666879]
+[node name="Broc_Button" type="Button" parent="Buttons" unique_id=58666879]
+layout_mode = 0
 offset_left = 1050.0
 offset_top = 467.0
 offset_right = 1151.0
 offset_bottom = 777.0
 flat = true
 
-[node name="Lamb_Button" type="Button" parent="." unique_id=20044891]
+[node name="Lamb_Button" type="Button" parent="Buttons" unique_id=20044891]
+layout_mode = 0
 offset_left = 782.0
 offset_top = 693.0
 offset_right = 998.0
 offset_bottom = 1003.0
 flat = true
 
-[node name="Chicken_Button" type="Button" parent="." unique_id=609028209]
+[node name="Chicken_Button" type="Button" parent="Buttons" unique_id=609028209]
+layout_mode = 0
 offset_left = 293.0
 offset_top = 650.0
 offset_right = 749.0
 offset_bottom = 805.0
 flat = true
 
-[node name="Carrot_Button" type="Button" parent="." unique_id=2057204659]
+[node name="Carrot_Button" type="Button" parent="Buttons" unique_id=2057204659]
+layout_mode = 0
 offset_left = 519.0
 offset_top = 340.0
 offset_right = 809.0
 offset_bottom = 495.0
 flat = true
 
-[connection signal="mouse_entered" from="Bear_Button" to="." method="_on_bear_button_mouse_entered"]
-[connection signal="mouse_exited" from="Bear_Button" to="." method="_on_bear_button_mouse_exited"]
-[connection signal="mouse_entered" from="Fox_Button" to="." method="_on_fox_button_mouse_entered"]
-[connection signal="mouse_exited" from="Fox_Button" to="." method="_on_fox_button_mouse_exited"]
-[connection signal="mouse_entered" from="Dachs_Button" to="." method="_on_dachs_button_mouse_entered"]
-[connection signal="mouse_exited" from="Dachs_Button" to="." method="_on_dachs_button_mouse_exited"]
-[connection signal="mouse_entered" from="Broc_Button" to="." method="_on_broc_button_mouse_entered"]
-[connection signal="mouse_exited" from="Broc_Button" to="." method="_on_broc_button_mouse_exited"]
-[connection signal="mouse_entered" from="Lamb_Button" to="." method="_on_lamb_button_mouse_entered"]
-[connection signal="mouse_exited" from="Lamb_Button" to="." method="_on_lamb_button_mouse_exited"]
-[connection signal="mouse_entered" from="Chicken_Button" to="." method="_on_chicken_button_mouse_entered"]
-[connection signal="mouse_exited" from="Chicken_Button" to="." method="_on_chicken_button_mouse_exited"]
-[connection signal="mouse_entered" from="Carrot_Button" to="." method="_on_carrot_button_mouse_entered"]
-[connection signal="mouse_exited" from="Carrot_Button" to="." method="_on_carrot_button_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons/Bear_Button" to="." method="_on_bear_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Bear_Button" to="." method="_on_bear_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Bear_Button" to="." method="_on_bear_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Fox_Button" to="." method="_on_fox_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Fox_Button" to="." method="_on_fox_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Fox_Button" to="." method="_on_fox_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Dachs_Button" to="." method="_on_dachs_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Dachs_Button" to="." method="_on_dachs_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Dachs_Button" to="." method="_on_dachs_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Broc_Button" to="." method="_on_broc_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Broc_Button" to="." method="_on_broc_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Broc_Button" to="." method="_on_broc_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Lamb_Button" to="." method="_on_lamb_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Lamb_Button" to="." method="_on_lamb_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Lamb_Button" to="." method="_on_lamb_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Chicken_Button" to="." method="_on_chicken_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Chicken_Button" to="." method="_on_chicken_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Chicken_Button" to="." method="_on_chicken_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Carrot_Button" to="." method="_on_carrot_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Carrot_Button" to="." method="_on_carrot_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Carrot_Button" to="." method="_on_carrot_button_pressed"]
