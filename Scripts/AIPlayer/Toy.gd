@@ -17,5 +17,12 @@ func should_bluff(_card_value: int, _context: Dictionary) -> bool:
 
 # What to claim a face-down card is. Defaults to a random pick between the
 # two legal declared values - override to always tell the truth instead.
-func declare(_actual_value: int) -> int:
+func declare(_actual_value: int, context: Dictionary) -> int:
+	var total: int = context.get("pile_total", 0)
+	var threshold: int = context.get("bust_threshold", 20)
+	
+	if total < 5:
+		return 5
+	if total + 5 > threshold:
+		return 1
 	return [1, 5][randi() % 2]
