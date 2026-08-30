@@ -267,7 +267,7 @@ func _assign_toys(players: Array[Player]) -> void:
 	var toy_classes: Array[Variant] = [
 		SoftChicken,
 		ClothCarrot,
-		BallChicken,
+		Broccoli,
 		LambChop,
 		DachshundDogPlush,
 		FoxPlush,

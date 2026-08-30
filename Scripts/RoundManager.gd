@@ -113,8 +113,11 @@ func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: i
 	var declared_value: int = -1
 	if face_down and playing_player:
 		if playing_player is AIPlayer:
-			# AI auto-declares: randomly choose 1 or 5
-			declared_value = [1, 5][randi() % 2]
+			var ai_player := playing_player as AIPlayer
+			if ai_player.toy:
+				declared_value = ai_player.toy.declare(instance.resource.value)
+			else:
+				declared_value = [1, 5][randi() % 2]
 			print("[RoundManager] AI %s auto-declares: %d" % [playing_player.player_name, declared_value])
 		else:
 			# Human player shows declaration prompt

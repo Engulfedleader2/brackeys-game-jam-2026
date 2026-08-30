@@ -1,16 +1,17 @@
-class_name BallChicken
+class_name Broccoli
 extends Toy
 
 func _init() -> void:
-	id = &"ball_chicken"
-	display_name = "Ball Chicken"
+	id = &"broccoli"
+	display_name = "Broccoli"
 	description = "Call when top card holds a 1 or 5."
-	# No dedicated art exists for Ball Chicken yet - reusing Soft Chicken's as a placeholder.
+	# No dedicated art exists for Broccoli yet - reusing Soft Chicken's as a placeholder.
 	icon = preload("res://AssetDump/Spooky/Soft_Chicken.png")
 
 func should_call(pile_state: Dictionary) -> bool:
 	var top_value = pile_state.get("top_value", -1)
 	return top_value == 1 or top_value == 5
 
-func should_bluff() -> bool:
-	return false
+# Bluffs whenever they're playing a 2.
+func should_bluff(card_value: int, _context: Dictionary) -> bool:
+	return card_value == 2

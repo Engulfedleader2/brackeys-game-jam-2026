@@ -9,5 +9,13 @@ extends Resource
 func should_call(pile_state: Dictionary) -> bool:
 	return false
 
-func should_bluff() -> bool:
+# Whether to play card_value face-down. Only ever consulted for values other
+# than 1 or 5 - those are always played face-down for every toy, no exceptions.
+# context holds whatever this toy's rule needs: "pile_total", "turns_taken".
+func should_bluff(_card_value: int, _context: Dictionary) -> bool:
 	return false
+
+# What to claim a face-down card is. Defaults to a random pick between the
+# two legal declared values - override to always tell the truth instead.
+func declare(_actual_value: int) -> int:
+	return [1, 5][randi() % 2]

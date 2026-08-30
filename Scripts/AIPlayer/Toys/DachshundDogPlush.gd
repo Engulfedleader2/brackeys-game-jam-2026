@@ -12,5 +12,7 @@ func should_call(pile_state: Dictionary) -> bool:
 	var last_was_face_down = pile_state.get("last_was_face_down", false)
 	return last_was_face_down
 
-func should_bluff() -> bool:
-	return false
+# Bluffs 1, 4, or 5 - 1 and 5 are already mandatory for everyone, so the
+# only thing this actually adds is bluffing with a 4.
+func should_bluff(card_value: int, _context: Dictionary) -> bool:
+	return card_value == 4

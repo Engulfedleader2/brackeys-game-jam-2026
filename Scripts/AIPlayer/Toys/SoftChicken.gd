@@ -10,5 +10,7 @@ func _init() -> void:
 func should_call(_pile_state: Dictionary) -> bool:
 	return true
 
-func should_bluff() -> bool:
-	return false
+# Bluffs every 3rd turn, no matter what card they're playing.
+func should_bluff(_card_value: int, context: Dictionary) -> bool:
+	var turns_taken: int = context.get("turns_taken", 0)
+	return turns_taken > 0 and turns_taken % 3 == 0

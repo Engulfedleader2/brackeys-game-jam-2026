@@ -34,18 +34,31 @@ func _process(_delta):
 	if right_side_player == true:
 		portrait.flip_h = true
 
+var _turns_taken := 0
+
+
 func start_turn() -> void:
 	if hand.cards.is_empty():
 		return
 
+	_turns_taken += 1
+
 	var card: Card = hand.cards[0]
+	var card_value := 0
+	if card.instance != null and card.instance.resource != null:
+		card_value = card.instance.resource.value
+
 	var face_down := false
 
-	# 1s and 5s always face down
-	if card.instance != null and card.instance.resource != null and card.instance.resource.value in [1, 5]:
+	# 1s and 5s always face down for everyone, no exceptions.
+	if card_value == 1 or card_value == 5:
 		face_down = true
 	elif toy:
-		face_down = toy.should_bluff()
+		var context := {
+			"pile_total": RoundManager.shared_pile.get_total(),
+			"turns_taken": _turns_taken,
+		}
+		face_down = toy.should_bluff(card_value, context)
 	else:
 		face_down = randf() < bluff_chance
 

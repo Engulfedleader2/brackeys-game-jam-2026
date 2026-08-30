@@ -8,7 +8,7 @@ extends Control
 
 @onready var soft_chicken_button: Button = $Content/VBoxContainer/GridContainer/SoftChickenButton
 @onready var cloth_carrot_button: Button = $Content/VBoxContainer/GridContainer/ClothCarrotButton
-@onready var ball_chicken_button: Button = $Content/VBoxContainer/GridContainer/BallChickenButton
+@onready var broccoli_button: Button = $Content/VBoxContainer/GridContainer/BroccoliButton
 @onready var lamb_chop_button: Button = $Content/VBoxContainer/GridContainer/LambChopButton
 @onready var dachshund_button: Button = $Content/VBoxContainer/GridContainer/DachshundButton
 @onready var fox_plush_button: Button = $Content/VBoxContainer/GridContainer/FoxPlushButton
@@ -20,7 +20,7 @@ func _ready() -> void:
 
 	soft_chicken_button.pressed.connect(_on_toy_selected.bind(SoftChicken))
 	cloth_carrot_button.pressed.connect(_on_toy_selected.bind(ClothCarrot))
-	ball_chicken_button.pressed.connect(_on_toy_selected.bind(BallChicken))
+	broccoli_button.pressed.connect(_on_toy_selected.bind(Broccoli))
 	lamb_chop_button.pressed.connect(_on_toy_selected.bind(LambChop))
 	dachshund_button.pressed.connect(_on_toy_selected.bind(DachshundDogPlush))
 	fox_plush_button.pressed.connect(_on_toy_selected.bind(FoxPlush))

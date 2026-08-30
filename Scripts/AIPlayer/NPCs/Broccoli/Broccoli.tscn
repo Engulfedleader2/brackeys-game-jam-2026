@@ -2,6 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cr7x834jgmql0" path="res://Scripts/AIPlayer/AIPlayer.tscn" id="1_5lnka"]
 
-[node name="BallChicken" unique_id=569748688 instance=ExtResource("1_5lnka")]
-player_name = "BallChicken"
+[node name="Broccoli" unique_id=569748688 instance=ExtResource("1_5lnka")]
+player_name = "Broccoli"
 owner_id = 1

@@ -13,5 +13,6 @@ func should_call(pile_state: Dictionary) -> bool:
 	var pile_total = pile_state.get("pile_total", 0)
 	return pile_total == 5
 
-func should_bluff() -> bool:
-	return false
+# Bluffs whatever card they're playing once the pile total is over 7.
+func should_bluff(_card_value: int, context: Dictionary) -> bool:
+	return context.get("pile_total", 0) > 7

@@ -10,5 +10,4 @@ func _init() -> void:
 func should_call(_pile_state: Dictionary) -> bool:
 	return false
 
-func should_bluff() -> bool:
-	return true
+# No extra bluff value - only bluffs the 1s/5s that are mandatory for everyone.
