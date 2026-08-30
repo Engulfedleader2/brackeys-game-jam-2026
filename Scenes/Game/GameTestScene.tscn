@@ -36,8 +36,8 @@
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5c.tres" id="8_card5c"]
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5d.tres" id="8_card5d"]
 [ext_resource type="Resource" path="res://Scripts/Cards/CardResources/5e.tres" id="8_card5e"]
-[ext_resource type="PackedScene" uid="uid://cmu05d7eyxqpu" path="res://Scenes/Game/CallBluffPrompt.tscn" id="33_pdcst"]
 [ext_resource type="PackedScene" uid="uid://c6q22xvqt3kpt" path="res://Scenes/UI/DeclarationPrompt.tscn" id="33_decl"]
+[ext_resource type="PackedScene" uid="uid://cmu05d7eyxqpu" path="res://Scenes/Game/CallBluffPrompt.tscn" id="33_pdcst"]
 [ext_resource type="PackedScene" uid="uid://cgq1dqn5xfq52" path="res://Scenes/UI/RoundSurvivedScreen.tscn" id="34_rsrvd"]
 [ext_resource type="PackedScene" uid="uid://b8xnb42yam8gy" path="res://Scenes/UI/YouDiedScreen.tscn" id="35_ydied"]
 [ext_resource type="PackedScene" uid="uid://c8p5nb7vbvn1s" path="res://Scenes/Game/ShopScreen.tscn" id="40_q45is"]
@@ -144,11 +144,10 @@ offset_right = 200.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-text = ""
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "declaration_prompt", "turn_label", "round_survived_screen", "you_died_screen", "pile_total", "action_message", "shop_screen")]
+[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "declaration_prompt", "turn_label", "round_survived_screen", "you_died_screen", "pile_total", "shop_screen")]
 script = ExtResource("6_gamemanager")
 turn_manager = NodePath("../TurnManager")
 deck = NodePath("../Deck")
