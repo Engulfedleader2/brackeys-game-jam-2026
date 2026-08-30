@@ -83,8 +83,11 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 
 	# Check if player 0 survived - once eliminated, they stay eliminated for
 	# the rest of the game, not just for whatever round they died on.
+	var human_just_eliminated := false
 	for eliminated in eliminated_players:
 		if eliminated.owner_id == 0:
+			if not _human_eliminated:
+				human_just_eliminated = true
 			_human_eliminated = true
 			break
 	var player_survived = not _human_eliminated
@@ -102,6 +105,12 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 		player_paths.erase(get_path_to(player))
 		RoundManager.eliminate_player(player)
 		player.visible = false
+
+	# The human dying ends the game right away - don't leave them stuck
+	# watching the remaining AI keep playing rounds against each other.
+	if human_just_eliminated:
+		end_game()
+		return
 
 	# Check if only 1 or 0 players left - round is over
 	if RoundManager.players.size() <= 1:
