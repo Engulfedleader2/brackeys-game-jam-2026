@@ -41,7 +41,10 @@ func start_turn() -> void:
 	var card: Card = hand.cards[0]
 	var face_down := false
 
-	if toy:
+	# 1s and 5s always face down
+	if card.instance != null and card.instance.resource != null and card.instance.resource.value in [1, 5]:
+		face_down = true
+	elif toy:
 		face_down = toy.should_bluff()
 	else:
 		face_down = randf() < bluff_chance

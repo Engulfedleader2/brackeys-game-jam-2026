@@ -31,10 +31,17 @@ func _on_mouse_exited() -> void:
 
 func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		# 1s and 5s awlays face down
+		if _must_play_face_down():
+			played.emit(true)
+		elif event.button_index == MOUSE_BUTTON_LEFT:
 			played.emit(false)
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			played.emit(true)
+
+
+func _must_play_face_down() -> bool:
+	return instance != null and instance.resource != null and instance.resource.value in [1, 5]
 
 
 func setup(card_instance: CardInstance) -> void:
