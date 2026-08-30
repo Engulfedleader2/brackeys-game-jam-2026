@@ -4,6 +4,7 @@ const MAIN_MENU := "res://Scenes/MainMenu.tscn"
 const SETTINGS_MENU := "res://Scenes/SettingsMenu.tscn"
 const CREDITS_MENU := "res://Scenes/CreditsMenu.tscn"
 const GAME_SCENE := "res://Scenes/Game/GameTestScene.tscn"
+const CHARACTER_SELECT_MENU := "res://Scenes/CharacterSelectMenu.tscn"
 
 
 func change_scene(scene_path: String) -> void:
@@ -37,6 +38,10 @@ func go_to_settings_menu() -> void:
 
 func go_to_credits_menu() -> void:
 	change_scene(CREDITS_MENU)
+
+
+func go_to_character_select() -> void:
+	change_scene(CHARACTER_SELECT_MENU)
 
 
 func quit_game() -> void:

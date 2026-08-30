@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://djj2u1wmdbyld"]
+
+[ext_resource type="Script" uid="uid://bugts4stp2n0p" path="res://Scripts/UI/CharacterSelectMenu.gd" id="1_charselect"]
+[ext_resource type="Texture2D" uid="uid://dagovlmo4c8bk" path="res://AssetDump/Spooky/Soft_Chicken.png" id="2_softchicken"]
+[ext_resource type="Texture2D" uid="uid://caiold5qyi0r7" path="res://AssetDump/Spooky/Carrot.png" id="3_carrot"]
+[ext_resource type="Texture2D" uid="uid://idmpnt1bxu5q" path="res://AssetDump/Spooky/Lamb_Chop.png" id="4_lambchop"]
+[ext_resource type="Texture2D" uid="uid://dg7x6gim874hb" path="res://AssetDump/Spooky/Dachshund.png" id="5_dachshund"]
+[ext_resource type="Texture2D" uid="uid://dwe67lvk8slqo" path="res://AssetDump/Spooky/Fox.png" id="6_fox"]
+[ext_resource type="Texture2D" uid="uid://ddv72rfq1cavy" path="res://AssetDump/Spooky/Bear.png" id="7_bear"]
+
+[node name="CharacterSelectMenu" type="Control" unique_id=1973308774]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_charselect")
+
+[node name="Content" type="CenterContainer" parent="." unique_id=1206576479]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content" unique_id=426163058]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="Content/VBoxContainer" unique_id=1460760101]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Choose Your Toy"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Content/VBoxContainer" unique_id=1379950145]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="SoftChickenButton" type="Button" parent="Content/VBoxContainer/GridContainer" unique_id=972176030]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Soft Chicken"
+icon = ExtResource("2_softchicken")
+expand_icon = true
+
+[node name="ClothCarrotButton" type="Button" parent="Content/VBoxContainer/GridContainer" unique_id=258320865]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Cloth Carrot"
+icon = ExtResource("3_carrot")
+expand_icon = true
+
+[node name="BallChickenButton" type="Button" parent="Content/VBoxContainer/GridContainer" unique_id=1205878586]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Ball Chicken"
+icon = ExtResource("2_softchicken")
+expand_icon = true
+
+[node name="LambChopButton" type="Button" parent="Content/VBoxContainer/GridContainer" unique_id=1245723527]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Lamb Chop"
+icon = ExtResource("4_lambchop")
+expand_icon = true
+
+[node name="DachshundButton" type="Button" parent="Content/VBoxContainer/GridContainer" unique_id=373626062]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Dachshund"
+icon = ExtResource("5_dachshund")
+expand_icon = true
+
+[node name="FoxPlushButton" type="Button" parent="Content/VBoxContainer/GridContainer" unique_id=60053670]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Fox Plush"
+icon = ExtResource("6_fox")
+expand_icon = true
+
+[node name="SqueakyBearButton" type="Button" parent="Content/VBoxContainer/GridContainer" unique_id=191096099]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Squeaky Bear"
+icon = ExtResource("7_bear")
+expand_icon = true
+
+[node name="BackButton" type="Button" parent="Content/VBoxContainer" unique_id=750749518]
+layout_mode = 2
+text = "Back"

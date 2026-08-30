@@ -33,8 +33,7 @@ func _set_buttons_disabled(disabled: bool) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	Curtain._on_main_menu_start_game_signal()
-	#SceneManager.go_to_game()
+	SceneManager.go_to_character_select()
 	Wwise.post_event("Table",SoundManager)
 
 

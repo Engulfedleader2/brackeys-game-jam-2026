@@ -268,6 +268,15 @@ func _assign_toys(players: Array[Player]) -> void:
 		SqueakyBear,
 	]
 
+	# Let's the player pick their identiy 
+	var human := _get_player_by_id(HUMAN_OWNER_ID)
+	var human_toy_class = CharacterSelection.chosen_toy_class
+	if human != null and human_toy_class != null:
+		var human_toy: Toy = human_toy_class.new()
+		human.player_name = human_toy.display_name
+		human.player_name_label.text = human.player_name
+		toy_classes.erase(human_toy_class)
+
 	var toy_pool := toy_classes.duplicate()
 	toy_pool.shuffle()
 
