@@ -37,6 +37,7 @@ func set_open(open: bool) -> void:
 	panel.visible = open
 
 func _on_items_button_pressed() -> void:
+	Wwise.post_event("Click",self)
 	set_open(not panel.visible)
 
 func refresh(player: Player) -> void:

@@ -7,13 +7,16 @@ signal peek_requested
 @export var peek_display_seconds := 1.5
 
 var peek_available := false
+signal call_signal
 
 @onready var root: Control = $Root
 @onready var timer_bar: TextureProgressBar = $Root/Group/ProgressBar
-@onready var call_button: Button = $Root/Group/CallButton
-@onready var skip_button: Button = $Root/Group/Skip
+@onready var call_button: Button = $Control/CallButton
+@onready var skip_button: Button = $Control/Skip
 @onready var peek_button: Button = $Root/Group/Peek
 @onready var peek_label: Label = $Root/Group/PeekLabel
+
+
 
 var _time_left := 0.0
 var _active := false
@@ -21,6 +24,8 @@ var _paused := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Wwise.post_event("Bluff",SoundManager)
+	Wwise.post_event("Stress",SoundManager)
 	root.visible = false
 	set_process(false)
 	call_button.pressed.connect(_on_call_pressed)
@@ -42,6 +47,8 @@ func open(accused_name: String, duration := -1.0) -> void:
 	_active = true
 	_paused = false
 	set_process(true)
+	$Control/Skip.show()
+	$Control/CallButton.show()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if _paused:
@@ -49,9 +56,15 @@ func _process(delta: float) -> void:
 	_time_left -= delta
 	timer_bar.value = maxf(_time_left, 0.0)
 	if _time_left <= 0.0:
+		Wwise.post_event("Bluff_Fail",SoundManager)
 		_finish(false)
-	
+
 func _on_call_pressed() -> void:
+	$Control/Skip.hide()
+	$Control/CallButton.hide()
+	Wwise.post_event("Bluff_Call",SoundManager)
+	call_signal.emit()
+	await get_tree().create_timer(6.1).timeout
 	_finish(true)
 
 func _finish(did_call: bool) -> void:
@@ -64,9 +77,13 @@ func _finish(did_call: bool) -> void:
 	closed.emit(did_call)
 
 func _on_skip_pressed() -> void:
+	$Control/Skip.hide()
+	$Control/CallButton.hide()
+	Wwise.post_event("Bluff_Fail",SoundManager)
 	_finish(false)
 
 func _on_peek_pressed() -> void:
+	Wwise.post_event("Glass",SoundManager)
 	if not _active or not peek_available:
 		return
 	peek_button.disabled = true

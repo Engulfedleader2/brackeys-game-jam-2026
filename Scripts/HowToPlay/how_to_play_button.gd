@@ -23,4 +23,5 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
+	Wwise.post_event("howto",self)
 	$"../HowToPlay".show()

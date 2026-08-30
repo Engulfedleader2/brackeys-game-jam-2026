@@ -24,6 +24,7 @@ func _on_back_button_mouse_exited() -> void:
 
 
 func _on_back_button_pressed() -> void:
+	Wwise.post_event("Back",SoundManager)
 	Curtain._hide()
 	SceneManager.go_to_main_menu()
 	Wwise.post_event("Title",SoundManager)

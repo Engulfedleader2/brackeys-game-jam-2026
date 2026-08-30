@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://di3o402gmyd0e"]
+
+[ext_resource type="Texture2D" uid="uid://ms2opvvcf418" path="res://AssetDump/Character_select/Character_Select_Layering_Example.png" id="1_hw7hx"]
+[ext_resource type="Script" uid="uid://d2iopap05iu51" path="res://Scripts/Character_select/character_select.gd" id="1_wfrs0"]
+[ext_resource type="Texture2D" uid="uid://vbe4x3tm6xle" path="res://AssetDump/Character_select/SelectBear.png" id="2_wfrs0"]
+[ext_resource type="Texture2D" uid="uid://dwv4g3wi6weao" path="res://AssetDump/Character_select/SelectBroccoli.png" id="3_yr4u1"]
+[ext_resource type="Texture2D" uid="uid://bivi2rbkovhv0" path="res://AssetDump/Character_select/SelectCarrot.png" id="4_bq80x"]
+[ext_resource type="Texture2D" uid="uid://b54ynaocbnlbq" path="res://AssetDump/Character_select/SelectChicken.png" id="5_um0ry"]
+[ext_resource type="Texture2D" uid="uid://db4uobcjh83s5" path="res://AssetDump/Character_select/SelectDachshund.png" id="6_r7stq"]
+[ext_resource type="Texture2D" uid="uid://bhti6nf4pqphm" path="res://AssetDump/Character_select/SelectFox.png" id="7_nopyo"]
+[ext_resource type="Texture2D" uid="uid://dax5m5g1mb70" path="res://AssetDump/Character_select/SelectLamb.png" id="8_y2c6c"]
+
+[node name="CharacterSelect" type="Node2D" unique_id=7775149]
+script = ExtResource("1_wfrs0")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=2138861157]
+texture = ExtResource("1_hw7hx")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2124223498]
+offset_right = 1924.0
+offset_bottom = 1086.0
+color = Color(0, 0, 0, 0.62100005)
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="." unique_id=1217424294]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bear" type="Sprite2D" parent="Control" unique_id=1545663502]
+texture = ExtResource("2_wfrs0")
+centered = false
+
+[node name="Broc" type="Sprite2D" parent="Control" unique_id=1439138155]
+texture = ExtResource("3_yr4u1")
+centered = false
+
+[node name="Carrot" type="Sprite2D" parent="Control" unique_id=1234251661]
+texture = ExtResource("4_bq80x")
+centered = false
+
+[node name="Chicken" type="Sprite2D" parent="Control" unique_id=1100456845]
+texture = ExtResource("5_um0ry")
+centered = false
+
+[node name="Dachs" type="Sprite2D" parent="Control" unique_id=1725831521]
+texture = ExtResource("6_r7stq")
+centered = false
+
+[node name="Fox" type="Sprite2D" parent="Control" unique_id=245666566]
+texture = ExtResource("7_nopyo")
+centered = false
+
+[node name="Lamb" type="Sprite2D" parent="Control" unique_id=1104532350]
+texture = ExtResource("8_y2c6c")
+centered = false
+
+[node name="Buttons" type="Control" parent="." unique_id=476465940]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bear_Button" type="Button" parent="Buttons" unique_id=855396641]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 142.0
+offset_right = 1037.0
+offset_bottom = 599.0
+flat = true
+
+[node name="Fox_Button" type="Button" parent="Buttons" unique_id=1515994902]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 221.0
+offset_right = 1625.0
+offset_bottom = 451.0
+flat = true
+
+[node name="Dachs_Button" type="Button" parent="Buttons" unique_id=1720499994]
+layout_mode = 0
+offset_left = 1165.0
+offset_top = 469.0
+offset_right = 1377.0
+offset_bottom = 808.0
+flat = true
+
+[node name="Broc_Button" type="Button" parent="Buttons" unique_id=58666879]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 467.0
+offset_right = 1151.0
+offset_bottom = 777.0
+flat = true
+
+[node name="Lamb_Button" type="Button" parent="Buttons" unique_id=20044891]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 693.0
+offset_right = 998.0
+offset_bottom = 1003.0
+flat = true
+
+[node name="Chicken_Button" type="Button" parent="Buttons" unique_id=609028209]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 650.0
+offset_right = 749.0
+offset_bottom = 805.0
+flat = true
+
+[node name="Carrot_Button" type="Button" parent="Buttons" unique_id=2057204659]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 340.0
+offset_right = 809.0
+offset_bottom = 495.0
+flat = true
+
+[connection signal="mouse_entered" from="Buttons/Bear_Button" to="." method="_on_bear_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Bear_Button" to="." method="_on_bear_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Bear_Button" to="." method="_on_bear_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Fox_Button" to="." method="_on_fox_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Fox_Button" to="." method="_on_fox_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Fox_Button" to="." method="_on_fox_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Dachs_Button" to="." method="_on_dachs_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Dachs_Button" to="." method="_on_dachs_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Dachs_Button" to="." method="_on_dachs_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Broc_Button" to="." method="_on_broc_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Broc_Button" to="." method="_on_broc_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Broc_Button" to="." method="_on_broc_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Lamb_Button" to="." method="_on_lamb_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Lamb_Button" to="." method="_on_lamb_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Lamb_Button" to="." method="_on_lamb_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Chicken_Button" to="." method="_on_chicken_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Chicken_Button" to="." method="_on_chicken_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Chicken_Button" to="." method="_on_chicken_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/Carrot_Button" to="." method="_on_carrot_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Carrot_Button" to="." method="_on_carrot_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/Carrot_Button" to="." method="_on_carrot_button_pressed"]

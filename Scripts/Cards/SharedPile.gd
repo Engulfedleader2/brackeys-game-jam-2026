@@ -9,7 +9,7 @@ signal bluff_called(result: BluffResult)
 signal pile_cleared(reason: ClearReason, card_count: int)
 
 signal speech_signal
-
+signal value_signal
 const CARD_SCENE: PackedScene = preload("res://Scripts/Cards/Card.tscn")
 
 @export var rules: PileRules
@@ -136,6 +136,7 @@ func _reveal_entry(entry: PileEntry) -> void:
 	entry.revealed = true
 	print("[SharedPile] revealed player %d: %d %s" % [entry.owner_id, entry.actual_value(), "LIE" if is_lie(entry) else "LEGAL"])
 	card_revealed.emit(entry)
+	value_signal.emit(entry.actual_value())
 	
 func reveal_all() -> void:
 	for entry in _entries:

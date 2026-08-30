@@ -19,10 +19,12 @@ func open(player_name: String) -> void:
 	show()
 
 func _on_button_1_pressed() -> void:
+	Wwise.post_event("Click",self)
 	hide()
 	closed.emit(1)
 
 func _on_button_5_pressed() -> void:
+	Wwise.post_event("Click",self)
 	hide()
 	closed.emit(5)
 

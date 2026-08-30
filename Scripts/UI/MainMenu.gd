@@ -38,20 +38,23 @@ func showbutton():
 
 
 func _on_start_button_pressed() -> void:
+	Wwise.post_event("Click",SoundManager)
 	hidebutton()
 	SceneManager.go_to_character_select()
-	Wwise.post_event("Table",SoundManager)
 
 
 func _on_settings_button_pressed() -> void:
+	Wwise.post_event("Click",SoundManager)
 	SceneManager.go_to_settings_menu()
 
 
 func _on_credits_button_pressed() -> void:
+	Wwise.post_event("Click",SoundManager)
 	SceneManager.go_to_credits_menu()
 
 
 func _on_quit_button_pressed() -> void:
+	Wwise.post_event("Back",SoundManager)
 	SceneManager.quit_game()
 
 

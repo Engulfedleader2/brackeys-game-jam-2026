@@ -3,33 +3,51 @@ Event	ID	Name			Wwise Object Path	Notes
 	251412225	Shop			\Default Work Unit\Gameplay\Shop	
 	308470013	Try_Again			\Default Work Unit\Gameplay\Try_Again	
 	429466468	SFX_Off			\Default Work Unit\Settings\SFX_Off	
+	529532966	Shopkeep			\Default Work Unit\VOX\Shopkeep	
+	529726532	End			\Default Work Unit\Gameplay\End	
 	559073066	Carrot_Off			\Default Work Unit\Opponents\Off\Carrot_Off	
+	714721615	Buy			\Default Work Unit\SFX\Buy	
+	714721617	Bug			\Default Work Unit\SFX\Bug	
 	813768044	VOX_On			\Default Work Unit\Settings\VOX_On	
-	979765101	Win			\Default Work Unit\Gameplay\Win	
+	979765101	Win			\Default Work Unit\STG\Win	
 	1177341774	Chicken_On			\Default Work Unit\Opponents\On\Chicken_On	
 	1274241660	Ball_Off			\Default Work Unit\Opponents\Off\Ball_Off	
+	1285706374	Sticker			\Default Work Unit\SFX\Sticker	
 	1342821817	Bear_Off			\Default Work Unit\Opponents\Off\Bear_Off	
 	1365208458	Game_Open			\Default Work Unit\Game_Open	
 	1452776751	Lamb_Off			\Default Work Unit\Opponents\Off\Lamb_Off	
 	1482611468	Carrot_On			\Default Work Unit\Opponents\On\Carrot_On	
+	1559875400	Back			\Default Work Unit\SFX\Back	
+	1584507803	Click			\Default Work Unit\SFX\Click	
+	1627031574	Pass			\Default Work Unit\SFX\Pass	
+	1696571311	Bluff_Fail			\Default Work Unit\VOX\Bluff_Fail	
 	1986657934	MX_On			\Default Work Unit\Settings\MX_On	
 	2048817515	Table			\Default Work Unit\Gameplay\Table	
 	2138498875	Dog_On			\Default Work Unit\Opponents\On\Dog_On	
+	2179486487	Heartbeat			\Default Work Unit\SFX\Heartbeat	
 	2201105581	Credits			\Default Work Unit\Menu\Credits	
 	2443688461	Bear_On			\Default Work Unit\Opponents\On\Bear_On	
+	2449969375	Glass			\Default Work Unit\SFX\Glass	
 	2801173556	ALL_OFF			\Default Work Unit\Opponents\Off\ALL_OFF	
 	2836373307	Lamb_On			\Default Work Unit\Opponents\On\Lamb_On	
 	2910527622	Settings			\Default Work Unit\Menu\Settings	
+	2987805699	Bluff_Call			\Default Work Unit\VOX\Bluff_Call	
+	3174847407	Win_End			\Default Work Unit\VOX\Win_End	
 	3196734292	Chicken_Off			\Default Work Unit\Opponents\Off\Chicken_Off	
 	3200743836	Fox_On			\Default Work Unit\Opponents\On\Fox_On	
 	3208725514	VOX_Off			\Default Work Unit\Settings\VOX_Off	
 	3426962870	Ball_On			\Default Work Unit\Opponents\On\Ball_On	
+	3510896056	Bluff			\Default Work Unit\SFX\Bluff	
+	3528611172	Eaten			\Default Work Unit\VOX\Eaten	
 	3677222191	Dog_Off			\Default Work Unit\Opponents\Off\Dog_Off	
 	3705726509	Title			\Default Work Unit\Menu\Title	
 	3762955427	Tutorial			\Default Work Unit\Menu\Tutorial	
+	3840192365	Stress			\Default Work Unit\Gameplay\Stress	
 	3892601754	Fox_Off			\Default Work Unit\Opponents\Off\Fox_Off	
 	3963402814	SFX_On			\Default Work Unit\Settings\SFX_On	
 	4007373972	MX_Off			\Default Work Unit\Settings\MX_Off	
+	4106070450	Howto			\Default Work Unit\SFX\Howto	
+	4189504227	Card			\Default Work Unit\SFX\Card	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	702482391	Game			\Default Work Unit\Game	
@@ -43,6 +61,7 @@ State	ID	Name	State Group			Notes
 	2607556080	Menu	Game			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	213475909	SFX_Bus			\Default Work Unit\Settings\SFX_Bus	
 	221232704	Loss			\Default Work Unit\Gameplay\Loss	
 	546651181	Dog			\Default Work Unit\Opponents\Dog	
 	563208321	VOX_Volume			\Default Work Unit\Settings\VOX_Volume	
@@ -55,8 +74,10 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2043204404	Carrot			\Default Work Unit\Opponents\Carrot	
 	2201105581	Credits			\Default Work Unit\Menus\Credits	
 	2910527622	Settings			\Default Work Unit\Menus\Settings	
+	3461125263	VOX_Bus			\Default Work Unit\Settings\VOX_Bus	
 	3705726509	Title			\Default Work Unit\Menus\Title	
 	3840192365	Stress			\Default Work Unit\Gameplay\Stress	
+	3960924992	STG_Bus			\Default Work Unit\Settings\STG_Bus	
 	4251222990	Chicken			\Default Work Unit\Opponents\Chicken	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
@@ -66,20 +87,42 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	1117531639	AMB			\Default Work Unit\Main Audio Bus\AMB	
 	1685527054	MX			\Default Work Unit\Main Audio Bus\MX	
 
+Effect plug-ins	ID	Name	Type				Notes
+	119056561	Meter (Custom)	Wwise Meter			
+	298146804	Meter (Custom)	Wwise Meter			
+	805010113	Meter (Custom)	Wwise Meter			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	9063276	SFX_GAM	.cache\60\{60E905CF-BD0C-DCD4-34D5-8B19163F848C}.wem		\Containers\SFX\VOX\End\SFX_GAM		50818
+	106116605	SFX_ITM	.cache\BA\{BA4894FD-12D3-3495-B01D-FCC84351AF36}.wem		\Containers\SFX\Diagetic Sounds\Sticker\SFX_ITM		7787
 	124661238	Stress	.cache\C6\{C6970CB2-EC88-564C-6883-0AD1E760E9A6}.wem		\Containers\MX\Game\Table_Loop\Table\Stress		133953
+	142140594	SFX_UI	.cache\3F\{3F77DD3B-0D6B-6EB3-1DF1-27AC5EA8CF70}.wem		\Containers\SFX\UI Sounds\Howto\SFX_UI		5843
+	155632041	SFX_GAM	.cache\9E\{9E797DA6-0C1B-BB8A-C984-7039A32A988F}.wem		\Containers\SFX\Diagetic Sounds\Card\SFX_GAM		3573
 	190151592	Carrot	.cache\E9\{E9BC1426-3AE6-6A46-1305-CDF045C2D99A}.wem		\Containers\MX\Game\Table_Loop\Table\Carrot		176885
 	199129574	Settings	.cache\2A\{2AF20800-11DF-8EAB-4578-7CA6796DCEDA}.wem		\Containers\MX\Game\Menu_Loop\Menu\Settings		653877
+	202673053	SFX_ITM	.cache\5C\{5C2418EF-C821-9167-1A27-2F5ADD0FD515}.wem		\Containers\SFX\Diagetic Sounds\Pass\SFX_ITM		9585
+	228446094	SFX_CHA	.cache\44\{446EF2F5-A062-7EC3-7355-2EC66340122A}.wem		\Containers\SFX\VOX\Bluff_Fail\SFX_CHA		10343
+	270448304	SFX_UI	.cache\F9\{F978B33E-C460-613C-3664-BE3ABD5A6FE2}.wem		\Containers\SFX\UI Sounds\Back\SFX_UI		2415
 	280986201	Chicken	.cache\B7\{B73DD8E3-BD15-B953-0C9D-58B2FFFCD621}.wem		\Containers\MX\Game\Table_Loop\Table\Chicken		119720
 	326476565	Base	.cache\94\{94B3CBDB-1F45-3D09-BE00-713A62DD35D8}.wem		\Containers\MX\Game\Menu_Loop\Menu\Base		709156
 	366179833	Fox	.cache\44\{4480D943-FD30-3042-04C6-75A94987363C}.wem		\Containers\MX\Game\Table_Loop\Table\Fox		123646
 	413668921	Ball	.cache\A8\{A80EE627-561B-BE23-5371-4E55A4972357}.wem		\Containers\MX\Game\Table_Loop\Table\Ball		90874
 	422104676	Bear	.cache\83\{83ED0C62-509C-3903-0596-DC7A7576691D}.wem		\Containers\MX\Game\Table_Loop\Table\Bear		104339
+	466692845	SFX_ITM	.cache\C1\{C1516932-3179-44F7-118F-D74DD8FA0B61}.wem		\Containers\SFX\Diagetic Sounds\Bug\SFX_ITM		11334
+	553127604	SFX_CHA	.cache\9C\{9CE3D275-FD40-041E-96E0-73F180C1E6CA}.wem		\Containers\SFX\Diagetic Sounds\Bluff\SFX_CHA		11337
 	574803436	Title	.cache\59\{595B9142-D3CA-F54D-4DF8-24E20BABE0A0}.wem		\Containers\MX\Game\Menu_Loop\Menu\Title		307015
+	593366454	SFX_CHA	.cache\C4\{C4D2AFCB-F4B9-4143-E124-34CE3EBBA408}.wem		\Containers\SFX\VOX\Shopkeep\SFX_CHA		4743
+	619991151	SFX_ITM	.cache\79\{79C1E424-948F-7102-CCD6-EC3F5AB6AF7E}.wem		\Containers\SFX\Diagetic Sounds\Glass\SFX_ITM		11592
 	630165125	Shop theme - Brackey's Jam (v_1	.cache\C3\{C360442B-C48C-50EF-9718-077D830ECBB4}.wem		\Containers\MX\Game\Shop_Loop\Shop\Shop theme - Brackey's Jam (v_1		1929403
 	631558340	Win	.cache\95\{95CEF12A-5CA9-448B-67BA-53F3EA9F6708}.wem		\Containers\MX\Game\Win_Loop\Win\Win		48518
 	687341530	Dog	.cache\D5\{D5CB5935-7E54-5BF2-7783-5F756C845FE8}.wem		\Containers\MX\Game\Table_Loop\Table\Dog		86051
 	690663053	Lamb	.cache\2E\{2ECC4B4E-6B01-7256-BB09-944B864911E0}.wem		\Containers\MX\Game\Table_Loop\Table\Lamb		176522
+	717352707	SFX_GAM	.cache\AF\{AFA3EA0A-985D-3315-A0C0-8BA0022AB3C5}.wem		\Containers\SFX\Stingers\Win\SFX_GAM		16621
 	823782911	Credits	.cache\61\{61E6676A-EC34-0FD9-A38A-5140DF3F47AC}.wem		\Containers\MX\Game\Menu_Loop\Menu\Credits		633186
+	955989578	SFX_GAM	.cache\9E\{9E1ECA43-D871-1739-193E-775520966FEB}.wem		\Containers\SFX\Diagetic Sounds\Buy\SFX_GAM		19953
 	1001046483	0_Base	.cache\D1\{D1F4C60B-BCDB-892D-983F-002929072B23}.wem		\Containers\MX\Game\Table_Loop\Table\0_Base		318125
+	1009851892	SFX_UI	.cache\A5\{A59C424C-967F-9A35-00E4-07DD16DA683F}.wem		\Containers\SFX\UI Sounds\Click\SFX_UI		4510
+	1029380708	SFX_GAM	.cache\61\{6107984A-CD1F-66A6-A09D-4379C2ABCDEB}.wem		\Containers\SFX\Diagetic Sounds\Heartbeat\SFX_GAM		35751
+	1042982017	SFX_CHA	.cache\96\{9614B6D5-4656-2A61-4113-5D1F9CC6736D}.wem		\Containers\SFX\VOX\Bluff_Call\SFX_CHA		8869
+	1073607246	SFX_CHA	.cache\A2\{A230282E-6E7D-1DC1-A878-359E51C6F879}.wem		\Containers\SFX\VOX\Eaten\SFX_CHA		45050
 

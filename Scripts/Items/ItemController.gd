@@ -100,6 +100,7 @@ func _on_card_targeted(card: Card) -> void:
 	
 	match item.id:
 		ITEM_NEGATIVE_STICKER:
+			Wwise.post_event("Sticker",self)
 			if card.instance.negated:
 				item_bar.show_prompt("That card already has a sticker.")
 				return
@@ -107,6 +108,7 @@ func _on_card_targeted(card: Card) -> void:
 			card.refresh_sticker()
 			item_bar.show_prompt("Stickered - that card is now worth %d." % card.instance.effective_value())
 		ITEM_BOOKWORM:
+			Wwise.post_event("Bug",self)
 			_human.hand.discard_card(card)
 			item_bar.show_prompt("The bookworm ate a card")
 		_:
@@ -120,6 +122,7 @@ func _apply_to_player(item: ItemResource, target: Player) -> void:
 		return
 	
 	if target == _human and RoundManager.is_current_player(_human):
+		Wwise.post_event("Pass",self)
 		_consume(item)
 		item_bar.show_prompt("You passed your turn.")
 		RoundManager.pass_current_turn()

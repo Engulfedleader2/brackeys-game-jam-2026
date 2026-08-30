@@ -14,29 +14,46 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID ALL_OFF = 2801173556U;
+        static const AkUniqueID BACK = 1559875400U;
         static const AkUniqueID BALL_OFF = 1274241660U;
         static const AkUniqueID BALL_ON = 3426962870U;
         static const AkUniqueID BEAR_OFF = 1342821817U;
         static const AkUniqueID BEAR_ON = 2443688461U;
+        static const AkUniqueID BLUFF = 3510896056U;
+        static const AkUniqueID BLUFF_CALL = 2987805699U;
+        static const AkUniqueID BLUFF_FAIL = 1696571311U;
+        static const AkUniqueID BUG = 714721617U;
+        static const AkUniqueID BUY = 714721615U;
+        static const AkUniqueID CARD = 4189504227U;
         static const AkUniqueID CARROT_OFF = 559073066U;
         static const AkUniqueID CARROT_ON = 1482611468U;
         static const AkUniqueID CHICKEN_OFF = 3196734292U;
         static const AkUniqueID CHICKEN_ON = 1177341774U;
+        static const AkUniqueID CLICK = 1584507803U;
         static const AkUniqueID CREDITS = 2201105581U;
         static const AkUniqueID DOG_OFF = 3677222191U;
         static const AkUniqueID DOG_ON = 2138498875U;
+        static const AkUniqueID EATEN = 3528611172U;
+        static const AkUniqueID END = 529726532U;
         static const AkUniqueID FOX_OFF = 3892601754U;
         static const AkUniqueID FOX_ON = 3200743836U;
         static const AkUniqueID GAME_OPEN = 1365208458U;
+        static const AkUniqueID GLASS = 2449969375U;
+        static const AkUniqueID HEARTBEAT = 2179486487U;
+        static const AkUniqueID HOWTO = 4106070450U;
         static const AkUniqueID LAMB_OFF = 1452776751U;
         static const AkUniqueID LAMB_ON = 2836373307U;
         static const AkUniqueID LOSS = 221232704U;
         static const AkUniqueID MX_OFF = 4007373972U;
         static const AkUniqueID MX_ON = 1986657934U;
+        static const AkUniqueID PASS = 1627031574U;
         static const AkUniqueID SETTINGS = 2910527622U;
         static const AkUniqueID SFX_OFF = 429466468U;
         static const AkUniqueID SFX_ON = 3963402814U;
         static const AkUniqueID SHOP = 251412225U;
+        static const AkUniqueID SHOPKEEP = 529532966U;
+        static const AkUniqueID STICKER = 1285706374U;
+        static const AkUniqueID STRESS = 3840192365U;
         static const AkUniqueID TABLE = 2048817515U;
         static const AkUniqueID TITLE = 3705726509U;
         static const AkUniqueID TRY_AGAIN = 308470013U;
@@ -44,6 +61,7 @@ namespace AK
         static const AkUniqueID VOX_OFF = 3208725514U;
         static const AkUniqueID VOX_ON = 813768044U;
         static const AkUniqueID WIN = 979765101U;
+        static const AkUniqueID WIN_END = 3174847407U;
     } // namespace EVENTS
 
     namespace STATES
@@ -131,10 +149,13 @@ namespace AK
         static const AkUniqueID MX_VOLUME = 1441253587U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID SETTINGS = 2910527622U;
+        static const AkUniqueID SFX_BUS = 213475909U;
         static const AkUniqueID SFX_VOLUME = 1564184899U;
+        static const AkUniqueID STG_BUS = 3960924992U;
         static const AkUniqueID STRESS = 3840192365U;
         static const AkUniqueID TABLE_STAGE = 536018156U;
         static const AkUniqueID TITLE = 3705726509U;
+        static const AkUniqueID VOX_BUS = 3461125263U;
         static const AkUniqueID VOX_VOLUME = 563208321U;
     } // namespace GAME_PARAMETERS
 

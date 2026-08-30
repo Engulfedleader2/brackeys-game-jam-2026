@@ -10,11 +10,37 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{2504B84C-C82B-B828-A178-71CFE99BFCC3}",
+    "Hash": "{A3A165E6-A8EF-92BA-C0FB-2B8C6C8940A1}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "Custom": [
+      {
+       "Id": "119056561",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{F4689A6D-1F2B-46F9-A62F-E021E42BA2E4}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "298146804",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\VOX\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{728C87E2-CB20-4D5A-894A-1A7905CC70C1}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "805010113",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\STG\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{4D7315C8-3E17-426C-B3F0-A2C225808AC2}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -40,21 +66,42 @@
       "Name": "SFX",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX",
       "GUID": "{B84E5EAB-D603-4503-9EF1-957B7A6AC764}",
-      "Color": "10"
+      "Color": "10",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "119056561"
+        }
+       ]
+      }
      },
      {
       "Id": "543694036",
       "Name": "VOX",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\VOX",
       "GUID": "{3F2E40F9-5C1F-4CBB-9E7E-C1174C0479B9}",
-      "Color": "2"
+      "Color": "2",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "298146804"
+        }
+       ]
+      }
      },
      {
       "Id": "628126519",
       "Name": "STG",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\STG",
       "GUID": "{845B0A13-0618-48DD-9089-E6EE737C70AD}",
-      "Color": "8"
+      "Color": "8",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "805010113"
+        }
+       ]
+      }
      },
      {
       "Id": "1117531639",
@@ -78,6 +125,12 @@
      }
     ],
     "GameParameters": [
+     {
+      "Id": "213475909",
+      "Name": "SFX_Bus",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\SFX_Bus",
+      "GUID": "{2E906D40-2BA5-44F9-B7D4-72A1E3B3F66C}"
+     },
      {
       "Id": "221232704",
       "Name": "Loss",
@@ -169,6 +222,12 @@
       "GUID": "{7ED2BD8E-8860-4BF4-9899-076E1C3938DE}"
      },
      {
+      "Id": "3461125263",
+      "Name": "VOX_Bus",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\VOX_Bus",
+      "GUID": "{EDC0EA7D-314B-46E6-94A0-D01D0BDF9F77}"
+     },
+     {
       "Id": "3705726509",
       "Name": "Title",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Menus\\Title",
@@ -179,6 +238,12 @@
       "Name": "Stress",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Gameplay\\Stress",
       "GUID": "{9C095284-1F1D-4804-A7C5-D6B047D998D4}"
+     },
+     {
+      "Id": "3960924992",
+      "Name": "STG_Bus",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\STG_Bus",
+      "GUID": "{3FE25FB2-20D4-42F5-B5CF-E4C7A526C962}"
      },
      {
       "Id": "4251222990",
@@ -381,6 +446,6 @@
     ]
    }
   ],
-  "FileHash": "{E1E0FA57-9700-EFFB-A82D-BA6B05925ACE}"
+  "FileHash": "{6ED642C0-7350-90F9-7965-243AE5814FB7}"
  }
 }
