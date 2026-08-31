@@ -3,7 +3,7 @@ extends CanvasLayer
 
 signal closed(did_call: bool)
 signal peek_requested
-@export var window_seconds := 5.0
+@export var window_seconds := 7.0
 @export var peek_display_seconds := 1.5
 
 var peek_available := false
