@@ -100,7 +100,10 @@ func open_player_picker(players: Array[Player]) -> Player:
 	
 	for p in players:
 		var button := Button.new()
-		button.text = p.player_name
+		if p is AIPlayer:
+			button.text = p.player_name
+		else:
+			button.text = "%s (You)" % p.player_name
 		button.pressed.connect(func(): player_chosen.emit(p))
 		picker_list.add_child(button)
 	
