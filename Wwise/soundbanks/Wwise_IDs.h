@@ -155,6 +155,7 @@ namespace AK
         static const AkUniqueID STRESS = 3840192365U;
         static const AkUniqueID TABLE_STAGE = 536018156U;
         static const AkUniqueID TITLE = 3705726509U;
+        static const AkUniqueID UI_BUS = 3247222208U;
         static const AkUniqueID VOX_BUS = 3461125263U;
         static const AkUniqueID VOX_VOLUME = 563208321U;
     } // namespace GAME_PARAMETERS
@@ -172,6 +173,7 @@ namespace AK
         static const AkUniqueID MX = 1685527054U;
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID STG = 628126519U;
+        static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID VOX = 543694036U;
     } // namespace BUSSES
 

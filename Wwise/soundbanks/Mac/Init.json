@@ -10,12 +10,20 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{0F3247CB-1065-F856-B294-04EAF39CBAC9}",
+    "Hash": "{49C48B47-E553-8701-5744-E832739A5FEE}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
      "Custom": [
+      {
+       "Id": "87161674",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\UI\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{06DED160-ECF1-42C1-9222-FF8D87291095}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
       {
        "Id": "119056561",
        "Name": "Meter (Custom)",
@@ -39,6 +47,16 @@
        "GUID": "{4D7315C8-3E17-426C-B3F0-A2C225808AC2}",
        "LibName": "Wwise Meter",
        "LibId": "8454147"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "2945072214",
+       "Name": "My_Closet",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Claustrophobia\\My_Closet",
+       "GUID": "{384A82A1-3C92-4AC5-AFC2-474F2080642C}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
       }
      ],
      "AudioDevices": [
@@ -71,6 +89,11 @@
        "Custom": [
         {
          "Id": "119056561"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "2945072214"
         }
        ]
       }
@@ -109,6 +132,20 @@
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\AMB",
       "GUID": "{5A93D4E6-F1F4-4AD2-B909-6FE323DE1C22}",
       "Color": "4"
+     },
+     {
+      "Id": "1551306167",
+      "Name": "UI",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\UI",
+      "GUID": "{90355D8C-1E7F-4B2B-BCC9-5EDF9D2AB587}",
+      "Color": "10",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "87161674"
+        }
+       ]
+      }
      },
      {
       "Id": "1685527054",
@@ -220,6 +257,12 @@
       "Name": "Pause",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Menus\\Pause",
       "GUID": "{7ED2BD8E-8860-4BF4-9899-076E1C3938DE}"
+     },
+     {
+      "Id": "3247222208",
+      "Name": "UI_Bus",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\UI_Bus",
+      "GUID": "{70CB5364-2404-47BE-A617-22A4CFC69BA4}"
      },
      {
       "Id": "3461125263",
@@ -446,6 +489,6 @@
     ]
    }
   ],
-  "FileHash": "{4E3112E2-66E1-EF02-5284-97A4723B0C74}"
+  "FileHash": "{DCD1968D-E1A2-EF9A-14DF-30A31582177F}"
  }
 }

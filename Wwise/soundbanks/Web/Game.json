@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{A9305128-50E8-402A-B527-C94B3E5D18A2}",
     "Language": "SFX",
-    "Hash": "{60E31D1C-568A-A3B2-8353-EC81C67DDF76}",
+    "Hash": "{0651521F-5237-6CB5-AB5F-08702EC11393}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Game",
     "ShortName": "Game",
     "Path": "Game.bnk",
@@ -275,6 +275,14 @@
     "Plugins": {
      "Custom": [
       {
+       "Id": "87161674",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\UI\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{06DED160-ECF1-42C1-9222-FF8D87291095}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
        "Id": "119056561",
        "Name": "Meter (Custom)",
        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
@@ -297,6 +305,32 @@
        "GUID": "{4D7315C8-3E17-426C-B3F0-A2C225808AC2}",
        "LibName": "Wwise Meter",
        "LibId": "8454147"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "2945072214",
+       "Name": "My_Closet",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Claustrophobia\\My_Closet",
+       "GUID": "{384A82A1-3C92-4AC5-AFC2-474F2080642C}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "2995775460",
+       "Name": "Room_Small",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Rooms\\Room_Small",
+       "GUID": "{577F1466-A63B-47F7-98BD-C56E433F8B5D}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "3407225994",
+       "Name": "Phone_Booth",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Claustrophobia\\Phone_Booth",
+       "GUID": "{180A35FE-BF4E-4BCD-8D7F-872B580E55EC}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
       }
      ]
     },
@@ -391,7 +425,14 @@
        {
         "Id": "1042982017"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2995775460"
+        }
+       ]
+      }
      },
      {
       "Id": "1696571311",
@@ -545,7 +586,14 @@
        {
         "Id": "1073607246"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2945072214"
+        }
+       ]
+      }
      },
      {
       "Id": "529726532",
@@ -1019,7 +1067,14 @@
        {
         "Id": "593366454"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3407225994"
+        }
+       ]
+      }
      },
      {
       "Id": "1285706374",
@@ -1251,6 +1306,11 @@
         {
          "Id": "119056561"
         }
+       ],
+       "ShareSets": [
+        {
+         "Id": "2945072214"
+        }
        ]
       }
      },
@@ -1288,6 +1348,20 @@
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\AMB",
       "GUID": "{5A93D4E6-F1F4-4AD2-B909-6FE323DE1C22}",
       "Color": "4"
+     },
+     {
+      "Id": "1551306167",
+      "Name": "UI",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\UI",
+      "GUID": "{90355D8C-1E7F-4B2B-BCC9-5EDF9D2AB587}",
+      "Color": "10",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "87161674"
+        }
+       ]
+      }
      },
      {
       "Id": "1685527054",
@@ -1389,6 +1463,12 @@
       "GUID": "{D4E06AEC-3742-4EA3-B814-9F900DC9A3B3}"
      },
      {
+      "Id": "3247222208",
+      "Name": "UI_Bus",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\UI_Bus",
+      "GUID": "{70CB5364-2404-47BE-A617-22A4CFC69BA4}"
+     },
+     {
       "Id": "3461125263",
       "Name": "VOX_Bus",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Settings\\VOX_Bus",
@@ -1467,6 +1547,6 @@
     ]
    }
   ],
-  "FileHash": "{89580922-48E5-820B-6752-B3977F385381}"
+  "FileHash": "{3C55C609-DF76-D78D-FF7A-2F88C23267AB}"
  }
 }
