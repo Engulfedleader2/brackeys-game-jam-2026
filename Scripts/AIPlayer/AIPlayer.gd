@@ -41,6 +41,11 @@ func start_turn() -> void:
 	if hand.cards.is_empty():
 		return
 
+	# Add some more time between plays
+	await get_tree().create_timer(0.9).timeout
+	if hand.cards.is_empty():
+		return
+
 	_turns_taken += 1
 
 	var card: Card = hand.cards[0]

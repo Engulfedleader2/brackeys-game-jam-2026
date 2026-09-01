@@ -14,6 +14,7 @@ extends Node
 @export var round_survived_screen: RoundSurvivedScreen
 @export var you_died_screen: CanvasLayer
 @export var pile_total: Label
+@export var pile_value: Label
 @export var action_message: Label
 @export var shop_screen: ShopScreen
 
@@ -40,11 +41,16 @@ func _ready() -> void:
 	if shared_pile != null:
 		shared_pile.card_added.connect(_on_pile_card_added)
 		shared_pile.pile_cleared.connect(_on_pile_cleared)
+		shared_pile.total_changed.connect(_on_pile_total_changed)
+		_on_pile_total_changed(shared_pile.get_total())
 
 
 func _on_turn_started(player: Player) -> void:
 	if turn_label != null:
-		turn_label.text = "%s is playing" % player.player_name
+		if player.owner_id == HUMAN_OWNER_ID:
+			turn_label.text = "(You) are playing"
+		else:
+			turn_label.text = "%s is playing" % player.player_name
 
 	#if pile_total != null:
 	#	pile_total.text = "Pile Total: %d" % shared_pile.get_total()
@@ -400,3 +406,7 @@ func _on_pile_card_added(entry: PileEntry) -> void:
 func _on_pile_cleared(_reason: SharedPile.ClearReason, _card_count: int) -> void:
 	if pile_total != null:
 		pile_total.text = ""
+
+func _on_pile_total_changed(total: int) -> void:
+	if pile_value != null:
+		pile_value.text = "Pile Total: %d" % total
