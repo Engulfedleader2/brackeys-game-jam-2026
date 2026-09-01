@@ -7,8 +7,11 @@ var text2: String = "Good little Plushies"
 var text3: String = "Eeny. Meeny. Miny. Moe."
 var text4: String = "Your scent is….delectable"
 var text5: String = "[p][center]Why did the chicken cross the road…[/center][p][center]not to get away from me, I hope.[/center]"
+var text6: String = "Mine, mine, mine. Such soft fur you got"
 
-var final = 5
+
+
+var final = 6
 var rng = RandomNumberGenerator.new()
 var random_range = randi_range(1,final)
 
@@ -41,6 +44,8 @@ func _text():
 		write_text.text = text4
 	if index == 5:
 		write_text.text = text5
+	if index == 6:
+		write_text.text = text6
 
 
 func randomText():
