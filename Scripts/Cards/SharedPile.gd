@@ -36,6 +36,7 @@ func _ready() -> void:
 	pile_cleared.connect(_on_pile_cleared)
 
 func play_card(instance: CardInstance, owner_id: int, face_down: bool, declared_value: int = -1) -> PileEntry:
+	Wwise.post_event("Card",SoundManager)
 	if instance == null or instance.resource == null:
 		push_error("[SharedPile] play_card called with a null card")
 		return null

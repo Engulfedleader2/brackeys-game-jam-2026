@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{A9305128-50E8-402A-B527-C94B3E5D18A2}",
     "Language": "SFX",
-    "Hash": "{0651521F-5237-6CB5-AB5F-08702EC11393}",
+    "Hash": "{E8BEA4FB-7C66-B0F4-13D2-5B1873581263}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Game",
     "ShortName": "Game",
     "Path": "Game.bnk",
@@ -1547,6 +1547,6 @@
     ]
    }
   ],
-  "FileHash": "{3C55C609-DF76-D78D-FF7A-2F88C23267AB}"
+  "FileHash": "{979A5ECE-88E8-BD9A-E9E9-0ED71313022E}"
  }
 }
