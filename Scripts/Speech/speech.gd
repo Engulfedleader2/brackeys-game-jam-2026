@@ -58,9 +58,13 @@ func _on_test_speech_new_text_signal():
 
 
 func _on_shared_pile_speech_signal() -> void:
-	show()
-	get_tree().create_tween().tween_property(self,"modulate:a", 1, .1)
-	randomText()
+	var result = randi_range(1,300)
+	if result % 7: 
+		show()
+		get_tree().create_tween().tween_property(self,"modulate:a", 1, .1)
+		randomText()
+	else:
+		pass
 
 
 func _leave():
