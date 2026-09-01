@@ -30,6 +30,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	1441253587	MX_Volume			\Default Work Unit\Settings\MX_Volume	
 	1564184899	SFX_Volume			\Default Work Unit\Settings\SFX_Volume	
 	1893153281	MTR_Volume			\Default Work Unit\Settings\MTR_Volume	
+	3247222208	UI_Bus			\Default Work Unit\Settings\UI_Bus	
 	3461125263	VOX_Bus			\Default Work Unit\Settings\VOX_Bus	
 	3960924992	STG_Bus			\Default Work Unit\Settings\STG_Bus	
 
@@ -38,13 +39,16 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	543694036	VOX			\Default Work Unit\Main Audio Bus\VOX	
 	628126519	STG			\Default Work Unit\Main Audio Bus\STG	
 	1117531639	AMB			\Default Work Unit\Main Audio Bus\AMB	
+	1551306167	UI			\Default Work Unit\Main Audio Bus\UI	
 	1685527054	MX			\Default Work Unit\Main Audio Bus\MX	
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
 
 Effect plug-ins	ID	Name	Type				Notes
+	87161674	Meter (Custom)	Wwise Meter			
 	119056561	Meter (Custom)	Wwise Meter			
 	298146804	Meter (Custom)	Wwise Meter			
 	805010113	Meter (Custom)	Wwise Meter			
+	2945072214	My_Closet	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

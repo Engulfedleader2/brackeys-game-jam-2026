@@ -4,6 +4,13 @@
   "BasePlatform": "Linux",
   "PluginLibs": [
    {
+    "LibName": "Wwise RoomVerb",
+    "LibId": "7733251",
+    "Type": "Effect",
+    "DLL": "AkRoomVerb",
+    "StaticLib": "AkRoomVerbFX"
+   },
+   {
     "LibName": "Wwise Meter",
     "LibId": "8454147",
     "Type": "Effect",
@@ -21,6 +28,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{12795B97-F154-FAC0-CCE3-C784EE76BD5F}"
+  "FileHash": "{B631E5F6-A521-5878-0BB7-538A076197CE}"
  }
 }
