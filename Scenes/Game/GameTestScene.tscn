@@ -94,6 +94,9 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="FontVariation" id="FontVariation_turnlabel"]
+variation_embolden = 0.6
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1re6w"]
 _data = {
 &"RESET": SubResource("Animation_oav0n"),
@@ -167,26 +170,44 @@ position = Vector2(960, 850)
 player_name = "You"
 
 [node name="TurnLabel" type="Label" parent="." unique_id=1105740206]
-offset_left = 860.0
-offset_top = 20.0
-offset_right = 1060.0
-offset_bottom = 46.0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("FontVariation_turnlabel")
+theme_override_font_sizes/font_size = 40
 text = "..."
-horizontal_alignment = 1
+horizontal_alignment = 0
+vertical_alignment = 1
 
 [node name="PileTotal" type="Label" parent="." unique_id=987579165]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 926.0
-offset_top = 62.0
-offset_right = 998.0
-offset_bottom = 85.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
+offset_left = 44.0
+offset_top = 118.0
+offset_right = 44.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(1, 0.898039, 0.588235, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
 text = "Pile Total:"
-horizontal_alignment = 1
+horizontal_alignment = 0
+vertical_alignment = 1
+
+[node name="PileValue" type="Label" parent="." unique_id=987579166]
+offset_left = 44.0
+offset_top = 154.0
+offset_right = 44.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(1, 0.898039, 0.588235, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
+text = "Pile Total: 0"
+horizontal_alignment = 0
+vertical_alignment = 1
 
 [node name="ActionMessage" type="Label" parent="." unique_id=2024681856]
 anchors_preset = 8
@@ -210,7 +231,7 @@ offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("44_dogbg")
 
-[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "declaration_prompt", "turn_label", "round_survived_screen", "you_died_screen", "pile_total", "shop_screen")]
+[node name="GameManager" type="Node" parent="." unique_id=55337855 node_paths=PackedStringArray("turn_manager", "deck", "shared_pile", "call_bluff_prompt", "declaration_prompt", "turn_label", "round_survived_screen", "you_died_screen", "pile_total", "pile_value", "shop_screen")]
 process_mode = 1
 script = ExtResource("6_gamemanager")
 turn_manager = NodePath("../TurnManager")
@@ -223,6 +244,7 @@ turn_label = NodePath("../TurnLabel")
 round_survived_screen = NodePath("../RoundSurvivedScreen")
 you_died_screen = NodePath("../YouDiedScreen")
 pile_total = NodePath("../PileTotal")
+pile_value = NodePath("../PileValue")
 shop_screen = NodePath("../ShopScreen")
 
 [node name="TurnManager" type="Node" parent="." unique_id=676050292]

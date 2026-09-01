@@ -131,7 +131,7 @@ func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: i
 	#	entry.declared_value = declared_value
 
 	# Wait for card animation to complete
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.7).timeout
 
 	# Check immediately if this player emptied their hand
 	if playing_player and playing_player.hand.get_card_count() == 0:
@@ -158,7 +158,7 @@ func _on_player_card_played(instance: CardInstance, face_down: bool, owner_id: i
 		return
 
 	# Brief pause before next player's turn
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.6).timeout
 	_advance_turn()
 
 func _resolve_bust(owner_id: int) -> void:

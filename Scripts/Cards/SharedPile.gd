@@ -218,9 +218,12 @@ func _add_declared_label(card: Card, declared_value: int) -> void:
 	label.position = Vector2(40, -40)
 	card.add_child(label)
 
-	# Fade out and remove after 2 seconds
-	var tween := create_tween()
+	# Fade out and remove after some time. LAbleed hefre..
 	await get_tree().create_timer(1.5).timeout
+	if not is_instance_valid(label):
+		return
+	var tween := create_tween()
 	tween.tween_property(label, "modulate", Color.TRANSPARENT, 0.5)
 	await tween.finished
-	label.queue_free()
+	if is_instance_valid(label):
+		label.queue_free()
