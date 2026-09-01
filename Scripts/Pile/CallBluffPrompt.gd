@@ -24,8 +24,6 @@ var _paused := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Wwise.post_event("Bluff",SoundManager)
-	Wwise.post_event("Stress",SoundManager)
 	root.visible = false
 	set_process(false)
 	call_button.pressed.connect(_on_call_pressed)
@@ -36,6 +34,8 @@ func _ready() -> void:
 
 
 func open(accused_name: String, duration := -1.0) -> void:
+	Wwise.post_event("Bluff",SoundManager)
+	Wwise.post_event("Stress",SoundManager)
 	_time_left = duration if duration > 0.0 else window_seconds
 	#prompt_label.text = "%s played a card face down" % accused_name
 	timer_bar.max_value = _time_left
@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 	_time_left -= delta
 	timer_bar.value = maxf(_time_left, 0.0)
 	if _time_left <= 0.0:
-		Wwise.post_event("Bluff_Fail",SoundManager)
+		Wwise.post_event("Back",SoundManager)
 		_finish(false)
 
 func _on_call_pressed() -> void:
@@ -79,7 +79,7 @@ func _finish(did_call: bool) -> void:
 func _on_skip_pressed() -> void:
 	$Control/Skip.hide()
 	$Control/CallButton.hide()
-	Wwise.post_event("Bluff_Fail",SoundManager)
+	Wwise.post_event("Back",SoundManager)
 	_finish(false)
 
 func _on_peek_pressed() -> void:

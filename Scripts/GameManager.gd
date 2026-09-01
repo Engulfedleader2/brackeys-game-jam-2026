@@ -133,6 +133,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 			if winner.owner_id in round_wins:
 				round_wins[winner.owner_id] += 1
 				print("[GameManager] Player %s wins round %d! (Record: %d wins)" % [winner.player_name, current_round_number, round_wins[winner.owner_id]])
+				# Wwise.post_event("End",SoundManager)
 				end_game()
 				return
 		# Check if someone has won the game (2 rounds)
@@ -141,6 +142,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 				var game_winner = _get_player_by_id(owner_id)
 				if game_winner:
 					print("[GameManager] Player %s WINS THE GAME! (2 rounds won)" % [game_winner.player_name])
+					# Wwise.post_event("End",SoundManager)
 					_end_game_with_winner(owner_id)
 					return
 
@@ -166,6 +168,7 @@ func _on_round_finished(winner_owner_id: int, loser_owner_id: int, human_place: 
 	if winner_owner_id != -1 and round_wins.get(winner_owner_id, 0) >= ROUNDS_TO_WIN:
 		var game_winner = _get_player_by_id(winner_owner_id)
 		print("[GameManager] Player %s WINS THE GAME! (2 rounds won)" % [game_winner.player_name])
+		# Wwise.post_event("End",SoundManager)
 		_end_game_with_winner(winner_owner_id)
 		return
 
@@ -356,6 +359,7 @@ func _end_game_with_winner(winner_owner_id: int) -> void:
 		if player.owner_id != winner_owner_id:
 			print("[GameManager] Player %s EATEN by Wuffles!" % player.player_name)
 			player.visible = false
+			Wwise.post_event("End",SoundManager)
 	end_game()
 
 func show_message(text: String, duration: float = 2.0) -> void:
