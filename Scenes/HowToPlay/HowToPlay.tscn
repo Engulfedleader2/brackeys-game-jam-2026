@@ -10,7 +10,7 @@ script = ExtResource("1_ks3jo")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1994029741]
 offset_right = 1921.0
 offset_bottom = 1085.0
-color = Color(0, 0, 0, 0.34509805)
+color = Color(0, 0, 0, 0.735)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=754794633]
 position = Vector2(653, 58.000004)
@@ -19,15 +19,15 @@ texture = ExtResource("1_1piny")
 centered = false
 
 [node name="Back_IMG" type="Sprite2D" parent="." unique_id=1814308300]
-modulate = Color(1, 1, 1, 0.5)
-position = Vector2(179, 121)
+modulate = Color(1, 1, 1, 0.8)
+position = Vector2(155.93164, 108.99988)
 texture = ExtResource("3_l4hwy")
 
 [node name="Back_Button" type="Button" parent="." unique_id=2116543393]
-offset_left = 39.0
-offset_top = 35.0
-offset_right = 314.0
-offset_bottom = 216.0
+offset_left = 25.931885
+offset_top = 19.0
+offset_right = 300.9319
+offset_bottom = 200.0
 flat = true
 
 [connection signal="mouse_entered" from="Back_Button" to="." method="_on_back_button_mouse_entered"]
